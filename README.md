@@ -2,7 +2,9 @@
 
 This project is my final submission for the Module 2 unit of my Web Development course at South Staffordshire College.
 
-Link to deployed site (https://siaaancode.github.io/Module-2/)
+Link to deployed site (add link here)
+
+(Image of home page here)
 
 ## Table of Contents
 1. [Project information](#project-description)
@@ -15,38 +17,41 @@ Link to deployed site (https://siaaancode.github.io/Module-2/)
 8. [Testing](#testing)
 9. [Deployment](#deployment)
 
-# Project Description (Adjust)
+# Project Description
 
-This app is being created to assist users with budgeting and saving their finances more effectively. Depending on their total income after expenses, the application can either offer them a budgeting plan or saving plan, with realistic goals and achievable outcomes. The application aims to provide a simple and organised way for users to track their financial situation and make better financial decisions.
+This app is being created to help users manage their finances more effectively through budgeting and saving. Based on a user's remaining income after expenses, the application will generate either a personalised budgeting plan or a savings plan with realistic goals and achievable outcomes. The app aims to provide a simple and organised way for users to track their financial situation, develop better financial habits, and make informed financial decisions.
 
+# Website Strategy
 
-# Website Strategy (Adjust)
+The strategy for this project is to create a user-friendly, easy to use budgeting and savings web application that will help users achieve their financial goals. 
 
-- How this project will achieve its goal
-- Who the app is for
-- How users will interact with it
+This app is being designed primarily for business owners, students, and individuals looking to improve their financial management. It will help users gain a clearer understanding of their finances by presenting information on income, expenses, and savings in a simple and easy-to-understand format. By providing personalised budgeting and savings guidance, the app aims to help users make more informed financial decisions and achieving their financial goals.
 
+By using JavaScript to implement logic, the app will automatically calculate the user's financial information based on their numeric inputs. Depending on whether the calculated balance is positive or negative, the application will determine the most appropriate course of action. If the balance is positive, the app will generate a realistic savings plan with achievable goals. If the balance is negative, the app will identify areas of spending that could be reduced and provide budgeting recommendations to help improve the user's financial situation.
 
 ## Project Goals (Adjust)
 The main goals of this project:
  
- 1. Build a fully functional web app that accurately calculates users remaining income to effectively save over a period of time, or assist them on a budgeting option if their income doesn’t cover their expenses.
- 
+ 1. Build a fully functional web app that records and stores incomes and expenses, automatically calculates the balances and provides budgeting or savings recommendations based on the total. 
+
  2. Effectively use JavaScript to implement the logic required to perform the financial calculations within the application.
  
- 3. Help encourage users to be finacially responsible
+ 3. Create a simple to use web app, that focuses on a minimal design and clean aesthetics.
 
 
-## Target Audience (Adjust)
+## Target Audience
 
-1. Businesses
-2. People trying to saving money
-3. Students
-4. People struggling with debt
+1. Business owners tracking business finances
+2. General users looking to improve their budgeting and saving habits
+3. Students managing limited budgets
+
+My main target audience will be general users, as the website will be designed for the inputs to be general life expenses and incomes as apose to business related ones. Given time, I could create a more elaborate option for the users to choose whether they are using this for personal or professional reasons.
 
 ## Research
 
+For this project, I researched a few different web apps that were similar to what I'm trying to create. Through this research, I can begin to understand the key points I'll need to consider when developing my own web app. 
 
+I've noted what was good, what was bad, what I could gain and what I'd improve. From this, I can make informed decisions about the directions I'd like to take with my own project.
 
 
 ## Websites (Adjust)
@@ -128,33 +133,83 @@ https://www.starlingbank.com/current-account/tools/budget-planner/
 - I can’t think of anything I’d improve, overall a very good website
 
 
-
 ## Research Outcome
+
+Through this research, I was able to build an understanding of what elements and features would be needed to best meet the needs of the users.
 
 Top priorities for users:
 
+1. Fully functional, including correct calculations, ability to create additional inputs for both incomes and expenses options, realistic suggestions for both budgeting and saving.
+2. Ease of use and accessibility, including good responsiveness design, a quick input process and simple interface.
+3. Ability to easily understand their financial situation, including easy-to-read results and a simple summery of information.
 
 # Website Scope
 
+For this project, I used an Agile development approach, using GitHub Projects to organise, prioritise, and track the development of the web application’s features.
+
+By identifying and analysing user stories, I was able to define the features that users need, want, and may benefit from, ensuring the application is developed in line with user requirements and expectations.
 
 ## MVP (minimum viable product)
 
+Below are the user stories created for this project. Each one has been labelled as either a must-have, should-have, or could-have. The must-have requirements are considered essential and non-negotiable, as they are fundamental to the core purpose of the application. The should-have requirements are important features that add significant value and enhance the overall functionality of the system. The could-have requirements are optional features that would improve the application further but are not essential for meeting the main objectives of the project.
 
 ## User Stories (User Research)
+
+“As someone trying to save, I want my input data to be saved, so I can access and edit it every month to see if I’m making progress on improving my savings.” Should-have
+
+Feature: Local storage
+
+“As a student, I want to record my expenses and income in one place, so that I can track what money is coming in, and where money is being spent, so I can cut anything I deem pointless purchases. This would allow me to budget better.” Must-have
+
+Feature: Income and expense tracker with calculated totals
+
+“As a person wanting to see how my finances balance, it would be really helpful to have blank input spaces to add my own individual incomes and expenses. This would allow me to put niche names to each section that isn’t a “normal” income or expense.” Must-have
+
+Feature: Additional input slots for incomes and expenses
+
+
+“As a person who wants to budget better, I want to see specifically where I’m wasting money, so that I can make reasonable cuts to my expenses and save money more responsibly.“ Must-have
+
+Feature: Income and expense inputs categorised and grouped
+
+
+“As a student, I want to receive budgeting advice based on my current spending habits, so that I can see where I may be wasting money and improve my financial literacy.” Should-have
+
+Feature: Spending analysis and budgeting suggestions (Consider a limit on expenses considered “luxury”, ie: if “Takeaways” = luxury & is over x amount, add a message to the total page if over spent, suggesting “cut down on Takeaways”, etc.)
+
+
+“As a student who’s struggling financially, I want to be able to easily calculate how much to save over a x month period, to guarantee I save enough for the next semester.” Should-have
+
+Feature: Savings goal calculator (Total to save (£100) / x amount of months (10 months) = y amount per month (£10 per month))
+
+"As someone who wants to understand their finances better, I want to be able to see my totals presented in a way that visually interesting, like a pie chart." Could-have
+
+Feature: Interesting visuals for the data to be presented
 
 
 ## Features
 
 ### Must-Have
-### Should-Have
-### Could-Have
+- Accessibility and responsiveness across all devices
+- Income and expense tracker with calculated totals
+- Additional input slots for incomes and expenses
+- Income and expense inputs categorised and grouped
 
+### Should-Have
+- Local storage
+- Spending analysis and budgeting suggestions
+- Savings goal calculator
+
+### Could-Have
+- Interesting visuals for the data to be presented (ie, pie chart)
 
 ## How user features support user stories:
 
+The application has been designed to provide a positive and accessible user experience for all users. Through responsive design and accessibility considerations, users will be able to access and use the website effectively across a range of devices and screen sizes. The use of local storage allows users to save their financial data for future use, eliminating the need to repeatedly enter the same information and improving convenience. The core feature of the application is its ability to automatically calculate income, expenses, and remaining balance, helping users track their finances more effectively. Additional input fields allow users to customise their financial records, providing greater flexibility and ensuring they are not restricted to predefined categories. Financial information is organised into income and expense categories, making it easier for users to understand and analyse their spending habits. The application also provides personalised suggestions when users are overspending, helping to educate them on areas where they could reduce expenses. Finally, a savings goal calculator provides users with a realistic breakdown of how much they need to save each month to achieve their financial targets.
 
 # Website Structure
 
+The website will be structured to provide a clear and intuitive user experience. The homepage will introduce the purpose of the application and provide users with access to the main budgeting and savings tools. Users will be able to navigate to a financial input section where they can enter their income and expenses. Once the information has been submitted, JavaScript will automatically calculate totals and display a financial summary, including the user's remaining balance. Depending on the results, the application will present either budgeting recommendations or a personalised savings plan. A dedicated savings calculator section will allow users to set savings goals and determine how much they need to save each month to achieve them. The website will use a responsive layout to ensure all content remains accessible and easy to use across mobile, tablet, and desktop devices. Navigation and page elements will be kept simple and intuitive, as the website is focused on a small number of core features. By limiting the number of pages and reducing unnecessary complexity, users will be able to navigate the application more easily and remain focused on its primary purpose: managing their finances and achieving their budgeting or savings goals. This streamlined approach will improve usability, reduce confusion, and create a more efficient user experience.
 
 ## User Journey
 
