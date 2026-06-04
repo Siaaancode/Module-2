@@ -4,7 +4,7 @@ body {
 }
 
 #navbar {
-    background-color: yellow;
+    background-color: #373F51;
     margin: 0;
     padding: 0;
     display: flex;
@@ -29,19 +29,21 @@ a {
     margin: 0 10px;
     list-style-type: none;
     text-decoration: none;
-    color: black;
+    color: #8CBA80;
     font-size: 16px;
 }
 
 #hero-banner {
-    background-color: lightblue;
+    background-color: #8CBA80;
+    color: #373F51;
     text-align: center;
     padding: 50px 20px;
     height: 150px;
 }
 
 #information-section {
-    background-color: lightgray;
+    background-color: white;
+    color: #373F51;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -50,7 +52,8 @@ a {
 }
 
 footer {
-    background-color: yellow;
+    background-color: #373F51;
+    color: #8CBA80;
     text-align: center;
     padding: 10px 0;
     position: fixed;
