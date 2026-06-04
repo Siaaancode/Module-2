@@ -23,7 +23,8 @@ body {
     height: 60px;
 }
 
-#navbar-links, a {
+#navbar-links,
+a {
     display: flex;
     margin: 0 10px;
     list-style-type: none;
@@ -37,4 +38,22 @@ body {
     text-align: center;
     padding: 50px 20px;
     height: 150px;
+}
+
+#information-section {
+    background-color: lightgray;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+footer {
+    background-color: yellow;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
