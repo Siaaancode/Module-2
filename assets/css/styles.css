@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    background-color: yellow;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    width: 100vw;
+}
+
+#navbar-links {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+}
+
+#navbar-links, a {
+    display: flex;
+    margin: 0 10px;
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+#hero-banner {
+    background-color: lightblue;
+    text-align: center;
+    padding: 50px 20px;
+    height: 150px;
+}
