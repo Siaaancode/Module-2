@@ -226,3 +226,111 @@ The website will be structured to provide a clear and intuitive user experience.
 ## Interface elements
 ## Navigation
 ## Wireframes
+## Home page
+
+### Navbar and hero banner
+### Our Team section
+### Testimonials
+### Contact information
+
+## Services page
+## Booking page
+
+### Form
+## Responsiveness
+
+# Website Surface
+
+## Design Choice
+
+## Colour Palette
+
+#373F51 - Charcoal Blue 
+
+#8CBA80 - Muted Olive 
+
+#F8F4F9 - Ghost White
+
+I chose these colours for my project as they created a modern and professional feel for the website. I used the WebAIM colour contrast checker to make sure they contrasted well together. The Muted Olive (#8CBA80) and Ghost White (#F8F4F9) do not contrast well together, so I made sure not to put them together to avoid any legibility issues with users.
+
+## Typography
+
+For the typography I've chosen to use GoogleFont' Roboto Mono (https://fonts.google.com/specimen/Roboto+Mono?preview.layout=grid). I felt this was a good font to use, as it provides a professional look to the website. I used monospace as the secondary font, incase it fails to load.
+
+## Images
+
+# Technologies used
+
+- HTML, Structure of the website.
+- CSS, Styling and layout.
+- Javascript, interactivity and calculations.
+- Git, version control.
+- GitHub, Code hosting and project management.
+- W3C, Markup and CSS validator.
+- DevTools, Inspect and Lighthouse.
+- GoogleFonts, Custom Fonts.
+
+# Testing
+
+## W3C Validators (HTML and CSS)
+
+## DevTools
+
+## Lighthouse
+
+## GitHub Pages
+
+## Testing User Stories
+
+## Final checks
+
+W3C HTML validator - ...
+W3C CSS validator - ...
+DevTools Lighthouse - ...
+Github Pages - ... 
+
+## Testing evaluation
+
+# Deployment
+
+## How to run this project locally
+
+- First, go to the GitHub Repository for https://github.com/Siaaancode/Module-2
+- Click the deployments link, find the most recent deployment and click that, which will open a tab containing the deployed site.
+- If a live deployment isn't available, you need to clone the repository to your own machine by typing "git clone" in the terminal, followed by the above link on a local IDE (Integrated Development Environment), such as VSCode.
+- Open the project folder within the IDE, open the preview option on one of the HTML files in a browser.
+
+
+## Steps to deploy this website
+
+- Open GitHub, log in/sign up and create a repository.
+- Open the terminal in the IDE and link it to your GitHub account. 
+- Then copy the repository information from GitHub to the IDE. This will link them together. 
+- Commit your project with commands through the terminal and push them.
+- Go back to GitHub and click the settings button, then the pages option.
+- Ensure the Source is set to 'Deploy from a branch' and Branch is set to 'main' and '/(root)'
+- Once completed, a link at the top of that page will become available. Simply click it, and it will open a new tab of the deployed site. (https://github.com/Siaaancode/Module-2)
+
+
+## Bugs Discovered
+
+### Fixed
+
+- CSS wouldn't load: Resolved by correcting the file path in the CSS file. I figured this one out by myself from previous experience having this issue. Originally the file path was "href="/assets/css/styles.css"". By removing the first "/" before assets resolved this issue.
+
+### Not Fixed
+# Project Evaluation
+
+## Final screenshots of finished website
+
+### Mobile and screen sizes (under 768px)
+### Laptops and larger (992px and up)
+### Desktop and larger (1200px and up)
+
+## Further improvements that could be made
+
+# Credits
+
+## Content
+## Media 
+## Code
