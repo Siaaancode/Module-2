@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Birdie | Finance Calculator</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div id="page">
+        <header>
+
+            <div id="navbar">
+                <h1 id="logo"><a href="index.html">Budget Birdie</a></h1>
+                <nav>
+                    <ul id="navbar-links">
+                        <li><a href="index.html#information-section">How to use</a></li>
+                        <li><a href="calculation-page.html">Get started</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section id="introduction">
+                <h2>Getting started</h2>
+                <p>Starting your journey to financial freedom is as simple as fill out each section with the information
+                    you have gathered.</p>
+                <p>Remember to include all incomes and expenses to generate an accurate total.</p><br>
+            </section>
+
+            <div id="incomes">
+                <h3>Incomes</h3>
+                <form class="income-form">
+                    <input id="incomes" type="text" placeholder="Income name" required>
+                    <label for="incomes">£</label>
+                    <input id="incomes" type="number" name="number" placeholder="Amount" required><br>
+                    <div id="icons">
+                        <button id="icons"><i class="fa-solid fa-plus fa-2xl" style="color: #8cba80;"></i></button>
+                    </div>
+                    <h4>Total =</h4>
+                </form>
+            </div>
+
+            <section id="expenses">
+                <h3>Expenses</h3>
+                <form class="expense-form">
+                    <input id="expenses" type="text" placeholder="Expense name" required>
+                    <label for="expenses">£</label>
+                    <input id="expenses" type="number" name="number" placeholder="Amount" required><br>
+                    <div id="icons">
+                        <button id="icons"><i class="fa-solid fa-plus fa-2xl" style="color: #8cba80;"></i></button>
+                    </div>
+                    <h4>Total =</h4>
+                </form>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Budget Birdie.</p>
+        </footer>
+
+    </div>
+
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/96c9e4341c.js" crossorigin="anonymous"></script>
+    <!--Javascript-->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
