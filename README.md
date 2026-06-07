@@ -318,6 +318,9 @@ Github Pages - ...
 
 - CSS wouldn't load: Resolved by correcting the file path in the CSS file. I figured this one out by myself from previous experience having this issue. Originally the file path was "href="/assets/css/styles.css"". By removing the first "/" before assets resolved this issue.
 
+- Turning icons into buttons: Struggled to figure out how to turn FontAwesome icons into buttons but resolved by following the instructions from W3schools.com (https://www.w3schools.com/howto/howto_css_icon_buttons.asp)
+
+
 ### Not Fixed
 # Project Evaluation
 

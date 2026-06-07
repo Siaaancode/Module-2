@@ -84,6 +84,7 @@ a {
 /* Button */
 .button {
     background-color: #373F51;
+    text-decoration: none;
     color: #8CBA80;
     border-radius: 10px;
     margin: 0 0 20px 10px;
@@ -147,11 +148,21 @@ footer p {
     padding: 0;
 }
 
-h3 {
+#incomes h3, #expenses h3 {
     padding-left: 20px;
 }
 .income-form, .expense-form {
     padding-left: 20px;
+}
+hr {
+    width: 90%;
+}
+
+#breakdown h4 {
+    padding-left: 20px;
+}
+h5 {
+    padding-left: 25px;
 }
 
 /*Font Awesome Icon*/
