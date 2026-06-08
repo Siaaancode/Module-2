@@ -1,5 +1,5 @@
 /* Adds new input when icon is clicked */
-/* Insert code here */
+/* Code for incomes */
 function addInputIncome () {
     const newRow = document.createElement("div");
 
@@ -15,7 +15,7 @@ function addInputIncome () {
 }
 document.getElementById("icon-income").addEventListener("click", addInputIncome);
 
-
+/* Code for expenses */
 function addInputExpense () {
     const newRow = document.createElement("div");
 
