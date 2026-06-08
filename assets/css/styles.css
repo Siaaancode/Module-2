@@ -148,7 +148,7 @@ footer p {
     padding: 0;
 }
 
-#incomes h3, #expenses h3 {
+h3, h4 {
     padding-left: 20px;
 }
 .income-form, .expense-form {
@@ -167,8 +167,9 @@ h5 {
 
 /*Font Awesome Icon*/
 
-#icons {
-    padding-top: 10px;
+#icon-income,
+#icon-expense {
+    padding-top: 20px;
     border: none;
     background-color: transparent;
 }

@@ -31,30 +31,40 @@
                 <p>Remember to include all incomes and expenses to generate an accurate total.</p><br>
             </section>
 
-            <div id="incomes">
+            <section>
                 <h3>Incomes</h3>
                 <form class="income-form">
-                    <input id="incomes" type="text" placeholder="e.g. Salary" required>
-                    <label for="incomes">£</label>
-                    <input id="incomes" type="number" name="number" placeholder="Amount" required><br>
-                    <div id="icons">
-                        <button id="icons"><i class="fa-solid fa-plus fa-2xl" style="color: #8cba80;"></i></button>
-                    </div>
-                    <h4>Total =</h4>
-                </form>
-            </div>
 
-            <section id="expenses">
+                    <div id="income-list">
+                        <div class="income-row">
+                            <input type="text" placeholder="e.g. Salary">
+                            <label>£</label>
+                            <input type="number" placeholder="Amount"><br>
+                        </div>
+                    </div>
+
+                    <button type="button" id="icon-income">
+                        <i class="fa-solid fa-plus fa-2xl" style="color: #8cba80;"></i></button>
+                </form>
+                <h4>Total =</h4>
+            </section>
+
+            <section>
                 <h3>Expenses</h3>
                 <form class="expense-form">
-                    <input id="expenses" type="text" placeholder="e.g. Rent" required>
-                    <label for="expenses">£</label>
-                    <input id="expenses" type="number" name="number" placeholder="Amount" required><br>
-                    <div id="icons">
-                        <button id="icons"><i class="fa-solid fa-plus fa-2xl" style="color: #8cba80;"></i></button>
+
+                    <div id="expense-list">
+                        <div class="expense-row">
+                            <input type="text" placeholder="e.g. Food">
+                            <label>£</label>
+                            <input type="number" placeholder="Amount"><br>
+                        </div>
                     </div>
-                    <h4>Total =</h4>
+
+                    <button type="button" id="icon-expense">
+                        <i class="fa-solid fa-plus fa-2xl" style="color: #8cba80;"></i></button>
                 </form>
+                <h4>Total =</h4>
             </section>
             <hr>
 
@@ -63,7 +73,6 @@
                 <h5>Incomes - Expenses =</h5>
             </section>
         </main>
-
         <footer>
             <p>&copy; 2026 Budget Birdie.</p>
         </footer>
