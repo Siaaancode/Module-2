@@ -205,11 +205,25 @@ Feature: Interesting visuals for the data to be presented
 
 ## How user features support user stories:
 
-The application has been designed to provide a positive and accessible user experience for all users. Through responsive design and accessibility considerations, users will be able to access and use the website effectively across a range of devices and screen sizes. The use of local storage allows users to save their financial data for future use, eliminating the need to repeatedly enter the same information and improving convenience. The core feature of the application is its ability to automatically calculate income, expenses, and remaining balance, helping users track their finances more effectively. Additional input fields allow users to customise their financial records, providing greater flexibility and ensuring they are not restricted to predefined categories. Financial information is organised into income and expense categories, making it easier for users to understand and analyse their spending habits. The application also provides personalised suggestions when users are overspending, helping to educate them on areas where they could reduce expenses. Finally, a savings goal calculator provides users with a realistic breakdown of how much they need to save each month to achieve their financial targets.
+The application has been designed to provide a positive and accessible user experience for all users. Through responsive design and accessibility considerations, users will be able to access and use the website effectively across a range of devices and screen sizes. 
+
+The use of local storage allows users to save their financial data for future use, eliminating the need to repeatedly enter the same information and improving convenience. 
+
+The core feature of the application is its ability to automatically calculate income, expenses, and remaining balance, helping users track their finances more effectively. Additional input fields allow users to customise their financial records, providing greater flexibility and ensuring they are not restricted to predefined categories. 
+
+Financial information is organised into income and expense categories, making it easier for users to understand and analyse their spending habits. The application also provides personalised suggestions when users are overspending, helping to educate them on areas where they could reduce expenses. 
+
+Finally, a savings goal calculator provides users with a realistic breakdown of how much they need to save each month to achieve their financial targets.
 
 # Website Structure
 
-The website will be structured to provide a clear and intuitive user experience. The homepage will introduce the purpose of the application and provide users with access to the main budgeting and savings tools. Users will be able to navigate to a financial input section where they can enter their income and expenses. Once the information has been submitted, JavaScript will automatically calculate totals and display a financial summary, including the user's remaining balance. Depending on the results, the application will present either budgeting recommendations or a personalised savings plan. A dedicated savings calculator section will allow users to set savings goals and determine how much they need to save each month to achieve them. The website will use a responsive layout to ensure all content remains accessible and easy to use across mobile, tablet, and desktop devices. Navigation and page elements will be kept simple and intuitive, as the website is focused on a small number of core features. By limiting the number of pages and reducing unnecessary complexity, users will be able to navigate the application more easily and remain focused on its primary purpose: managing their finances and achieving their budgeting or savings goals. This streamlined approach will improve usability, reduce confusion, and create a more efficient user experience.
+The website will be structured to provide a clear and intuitive user experience. 
+
+The homepage will introduce the purpose of the application and provide users with access to the main budgeting and savings tools. Users will be able to navigate to a financial input section where they can enter their income and expenses. Once the information has been submitted, JavaScript will automatically calculate totals and display a financial summary, including the user's remaining balance. Depending on the results, the application will present either budgeting recommendations or a personalised savings plan. 
+
+A dedicated savings calculator section will allow users to set savings goals and determine how much they need to save each month to achieve them. The website will use a responsive layout to ensure all content remains accessible and easy to use across mobile, tablet, and desktop devices. Navigation and page elements will be kept simple and intuitive, as the website is focused on a small number of core features. 
+
+By limiting the number of pages and reducing unnecessary complexity, users will be able to navigate the application more easily and remain focused on its primary purpose: managing their finances and achieving their budgeting or savings goals. This streamlined approach will improve usability, reduce confusion, and create a more efficient user experience.
 
 ## User Journey
 
@@ -322,6 +336,8 @@ Github Pages - ...
 
 
 ### Not Fixed
+
+
 # Project Evaluation
 
 ## Final screenshots of finished website
