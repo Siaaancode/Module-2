@@ -31,11 +31,14 @@ function addInputExpense () {
 }
 document.getElementById("icon-expense").addEventListener("click", addInputExpense);
 
+
 /* Calculates the total of income */
 /* Insert code here */
 function incomeTotal() {
-
+    let incomeArray = document.getElementById ("amountNumber");
 }
+
+
 /* Calculates the total of expenses */
 /* Insert code here */
 function expenseTotal() {

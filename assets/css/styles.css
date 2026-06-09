@@ -176,6 +176,14 @@ input[type="number"]::placeholder {
     color: #373F51;
 }
 
+#total-income {
+    display: flex;
+    align-items: center;
+}
+#total-income input {
+    margin: 15px
+}
+
 /*Font Awesome Icon*/
 
 #icon-income,

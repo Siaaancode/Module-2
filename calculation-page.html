@@ -39,14 +39,17 @@
                         <div class="income-row">
                             <input type="text" placeholder="e.g. Salary">
                             <label>£</label>
-                            <input type="number" placeholder="Amount"><br>
+                            <input id="amountNumber" type="number" placeholder="Amount"><br>
                         </div>
                     </div>
 
                     <button type="button" id="icon-income">
                         <i class="fa-solid fa-plus fa-2xl" style="color: #8cba80;"></i></button>
                 </form>
-                <h4>Total =</h4>
+                <div id="total-income">
+                    <h4>Total =</h4>
+                    <input disabled>
+                </div>
             </section>
 
             <section>
