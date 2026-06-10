@@ -176,11 +176,12 @@ input[type="number"]::placeholder {
     color: #373F51;
 }
 
-#total-income {
+#total-income, #total-expense {
     display: flex;
     align-items: center;
 }
-#total-income input {
+#total-income input,
+#total-expense input {
     margin: 15px
 }
 

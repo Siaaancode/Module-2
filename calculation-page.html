@@ -39,7 +39,7 @@
                         <div class="income-row">
                             <input type="text" placeholder="e.g. Salary">
                             <label>£</label>
-                            <input id="amountNumber" type="number" placeholder="Amount"><br>
+                            <input class="amount-number-income" type="number" placeholder="Amount" oninput="incomeTotal()"><br>
                         </div>
                     </div>
 
@@ -48,7 +48,7 @@
                 </form>
                 <div id="total-income">
                     <h4>Total =</h4>
-                    <input disabled>
+                    <input id="total-income-input" disabled>
                 </div>
             </section>
 
@@ -58,16 +58,19 @@
 
                     <div id="expense-list">
                         <div class="expense-row">
-                            <input type="text" placeholder="e.g. Food">
+                            <input type="text" placeholder="e.g. Rent">
                             <label>£</label>
-                            <input type="number" placeholder="Amount"><br>
+                            <input class="amount-number-expense" type="number" placeholder="Amount" oninput="expenseTotal()"><br>
                         </div>
                     </div>
 
                     <button type="button" id="icon-expense">
                         <i class="fa-solid fa-plus fa-2xl" style="color: #8cba80;"></i></button>
                 </form>
-                <h4>Total =</h4>
+                <div id="total-expense">
+                    <h4>Total =</h4>
+                    <input id="total-expense-input" disabled>
+                </div>
             </section>
             <hr>
 
