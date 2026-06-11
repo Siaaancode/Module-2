@@ -334,6 +334,12 @@ Github Pages - ...
 
 - Turning icons into buttons: Struggled to figure out how to turn FontAwesome icons into buttons but resolved by following the instructions from W3schools.com (https://www.w3schools.com/howto/howto_css_icon_buttons.asp)
 
+- Getting the breakdown function to work correctly: The first issue I had was actually getting the input to show a number at all. My mistake was trying to call the function outside of the actual function and naming the const' of the function the same as previous functions.
+
+Example: function incomeTotal() {...} and const incomeTotal = document.getElementById("...");
+
+The second issue was the value kept returning 0, this was because I was only calling the function after the function rather than in all the functions. This was causing the other functions to not update with changes to the inputs. 
+
 
 ### Not Fixed
 
