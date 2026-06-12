@@ -5,8 +5,15 @@ function addInputIncome() {
 
     newRow.innerHTML = `
     <input type="text" placeholder="e.g. Salary">
-    <label>£</label>
-    <input class="amount-number-income" type="number" placeholder="Amount" oninput="incomeTotal()" >
+    <input class="amount-number-income" type="number" placeholder="e.g. £100.00" oninput="incomeTotal()" >
+    <select id="category-selector" type="text" name="categories" required>
+    <option value="" disabled selected>Categories</option>
+    <option value="Employment">Employment income</option>
+    <option value="Self-employment">Self-employment</option>
+    <option value="Pension">Pension</option>
+    <option value="State benefits">State benefits</option>
+    <option value="Other">Other</option>
+    </select>
     `;
 
     const container = document.getElementById("income-list");
@@ -83,5 +90,11 @@ function breakdownOfTotals() {
         Number(expenseInput.value);
 
     finalBreakdownTotal.value = total;
+
 }
 console.log(breakdownOfTotals());
+
+/* if total is + display message suggest saving calculator */
+
+
+/* if total is -  suggest expenses to cut */
