@@ -148,7 +148,6 @@ footer p {
     background-color: #8CBA80;
     color: #373F51;
     padding: 20px 0 0 20px;
-    ;
 }
 
 #introduction h2 {
@@ -184,15 +183,12 @@ input,
     border-radius: 10px;
     padding: 5px;
     margin-bottom: 5px;
-}
-
-#income-list {
     display: flex;
-    
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
+    width: 90%;
+}
+#category-selector {
+    width: 93%;
+    margin-bottom: 20px;
 }
 
 input[type="text"]::placeholder,
@@ -200,15 +196,12 @@ input[type="number"]::placeholder {
     color: #373F51;
 }
 
-#total-income,
-#total-expense,
-#breakdown-total {
-    display: flex;
-    align-items: center;
+#total-income input,
+#total-expense input {
+    margin: 0 20px;
+    width: 85%
 }
 
-#total-income input,
-#total-expense input,
 #breakdown-total-input {
     margin: 15px
 }
@@ -217,7 +210,6 @@ input[type="number"]::placeholder {
 
 #icon-income,
 #icon-expense {
-    padding-top: 20px;
     border: none;
     background-color: transparent;
 }

@@ -29,9 +29,19 @@ function addInputExpense() {
     const newRow = document.createElement("div");
 
     newRow.innerHTML = `
-    <input type="text" placeholder="e.g. Food">
-    <label>£</label>
-    <input class="amount-number-expense" type="number" placeholder="Amount" oninput="expenseTotal()">
+    <input type="text" placeholder="e.g. Rent">
+    <input class="amount-number-expense" type="number" placeholder="e.g. £100.00" oninput="expenseTotal()">
+    <select id="category-selector" type="text" name="categories" required>
+    <option value="" disabled selected>Categories</option>
+    <option value="Housing">Rent / Mortgage</option>
+    <option value="Council tax">Council tax</option>
+    <option value="Utilities">Utilities</option>
+    <option value="Food">Food / Groceries</option>
+    <option value="Transportation">Transportation</option>
+    <option value="Financial commitments">Debt / Loan Payments</option>
+    <option value="Entertainment">Entertainment</option>
+    <option value="Other">Other</option>
+    </select>
     `;
 
     const container = document.getElementById("expense-list");
