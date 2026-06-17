@@ -1,4 +1,4 @@
-/* Adds new input when icon is clicked */
+// Adds new input when icon is clicked
 
 function addInputIncome() {
     const newRow = document.createElement("div");
@@ -23,7 +23,7 @@ function addInputIncome() {
 document.getElementById("icon-income").addEventListener("click", addInputIncome);
 
 
-/* Code for expenses */
+// Code for expenses
 
 function addInputExpense() {
     const newRow = document.createElement("div");
@@ -51,7 +51,7 @@ function addInputExpense() {
 document.getElementById("icon-expense").addEventListener("click", addInputExpense);
 
 
-/* Calculates the total of income */
+// Calculates the total of income
 
 function incomeTotal() {
 
@@ -69,7 +69,7 @@ function incomeTotal() {
 }
 
 
-/* Calculates the total of expenses */
+// Calculates the total of expenses
 
 function expenseTotal() {
 
@@ -87,7 +87,7 @@ function expenseTotal() {
 }
 
 
-/* Calculates the total of both income and expenses */
+// Calculates the total of both income and expenses
 
 function breakdownOfTotals() {
 
@@ -104,7 +104,7 @@ function breakdownOfTotals() {
 }
 console.log(breakdownOfTotals());
 
-/* if total is + display message suggest saving calculator */
+// if total is + display message suggest saving calculator
 
 
-/* if total is -  suggest expenses to cut */
+// if total is -  suggest expenses to cut

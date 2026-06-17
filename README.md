@@ -283,6 +283,52 @@ For the typography I've chosen to use GoogleFont' Roboto Mono (https://fonts.goo
 - W3C, Markup and CSS validator.
 - DevTools, Inspect and Lighthouse.
 - GoogleFonts, Custom Fonts.
+- localStorage API
+
+# API options
+
+## Abilities of Cookies, localStorage and sessionStorage
+
+Cookies 
+- Capacity = 4kb
+- Browsers = Both HTML 4 and HTML 5
+- Accessible from = Any window
+- Expiry = Manually set
+- Location = Browser and server
+- Sent with requests = Yes
+
+localStorage 
+- Capacity = 10mb
+- Browsers = HTML 5
+- Accessible from = Any window
+- Expiry = Never
+- Location = Browser only
+- Sent with requests = No
+
+sessionStorage 
+- Capacity = 5mb
+- Browsers = HTML 5
+- Accessible from = Same tab
+- Expiry = On tab close
+- Location = Browser only
+- Sent with requests = No
+
+### localStorage API
+
+I decided to go with the localStorage API, as it was the best option for storing the data inputted on my project. Its abilities work for my projects needs by:
+
+1. Being accessible from any window. Meaning the information is available for any window inside the browser, not just 1 tab. 
+
+2. It has the biggest amount of capacity. So there won't be any issues with the amount of data the user may need to input.
+
+3. It runs on HTML 5, which most modern browsers use.
+
+4. It never expires. The information logged on the local storage has no expiration, meaning it won't disappear unless the user deletes it. Example, users can close the tab and reopen it, and it will still be there. This removes the annoying task of having to re-enter their information if they accidentally close the tab.
+
+Essentially, localStorage is persistant, data will remain after refreshing the page, closing the tab, closing the browser and restarting the computer.
+
+- Youtube video that helped me understand the options available (https://www.youtube.com/watch?v=GihQAC1I39Q)
+- Youtube video that helped me understand how to incorporate it (https://www.youtube.com/watch?v=Cb_fbi0JCJ8)
 
 # Testing
 
