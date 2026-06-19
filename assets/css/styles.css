@@ -147,47 +147,48 @@ footer p {
 #introduction {
     background-color: #8CBA80;
     color: #373F51;
-    padding: 20px 0 0 20px;
+    padding: 20px;
 }
 
 #introduction h2 {
     padding: 0;
 }
 
-h3,
+section {
+    padding-top: 10px;
+}
+
+h3 {
+    padding: 0 20px 0 20px;
+}
 h4 {
     padding-left: 20px;
+    width: 120px;
 }
 
 .income-form,
 .expense-form {
-    padding-left: 20px;
+   margin: 0;
 }
 
-hr {
-    width: 90%;
-}
-
-#breakdown h4 {
-    padding-left: 20px;
-}
-
-h5 {
-    padding-left: 20px;
-}
-
-input,
-#category-selector {
+#expense-list input,
+#income-list input,
+select {
+    display: block;
     background-color: #8CBA80;
     border: none;
     border-radius: 10px;
     padding: 5px;
-    margin-bottom: 5px;
-    display: flex;
+    margin: 0 auto 5px auto;
     width: 90%;
+    box-sizing: border-box;
 }
+
+.income-row {
+    width: 100%;
+}
+
 #category-selector {
-    width: 93%;
     margin-bottom: 20px;
 }
 
@@ -196,14 +197,51 @@ input[type="number"]::placeholder {
     color: #373F51;
 }
 
-#total-income input,
-#total-expense input {
-    margin: 0 20px;
-    width: 85%
+#total-income,
+#total-expense {
+    display: flex;
+    margin-top: 10px;
+    width: auto;
+    margin-right: 6%;
+    height: 50px;
+    align-items: center;
 }
 
-#breakdown-total-input {
-    margin: 15px
+#total-expense-input,
+#total-income-input {
+    display: block;
+    background-color: #8CBA80;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0 auto;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+hr {
+    width: 90%;
+}
+
+#breakdown h3 {
+    margin: 0;
+    padding-left: 20px;
+}
+
+#breakdown-total {
+    display: flex;
+    margin-left: 20px;
+}
+#breakdown-total input {
+    display: flex;
+    height: 25px;
+    align-self: center;
+    margin-left: 2%;
+    margin-right: 20px;
+    width: 68%;
+    background-color: #8CBA80;
+    border: 20px none;
+    border-radius: 10px;
 }
 
 /*Font Awesome Icon*/
@@ -212,6 +250,7 @@ input[type="number"]::placeholder {
 #icon-expense {
     border: none;
     background-color: transparent;
+    margin-left: 10px;
 }
 
 /*Media Queries*/
@@ -328,3 +367,9 @@ input[type="number"]::placeholder {
         font-size: 40px
     }
 }
+
+/* Last thing I was doing
+
+- Adjusting the total input boxes to align 
+with others while being on the same line as 
+the totals text */
