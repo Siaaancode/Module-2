@@ -243,7 +243,7 @@ hr {
     justify-content: center;
 }
 
-#breakdown-total-input input{
+#breakdown-total-input input {
     background-color: #8CBA80;
     border: none;
     border-radius: 10px;
@@ -329,7 +329,61 @@ hr {
 
     /* Calculator page */
 
-    
+    #income,
+    #expense {
+        display: flex;
+    }
+
+    .income-row,
+    .expense-row {
+        width: 100%;
+    }
+
+    #income-inputs,
+    #expense-inputs {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+
+    h3 {
+        width: 50%;
+        height: 40px;
+    }
+
+    #expense-list input,
+    #income-list input,
+    select {
+        width: 100%;
+        margin-left: 20px;
+    }
+
+    #total-income,
+    #total-expense {
+        justify-content: center;
+        margin: 0 auto 0 auto;
+    }
+
+    #total-income-input input,
+    #total-expense-input input {
+        width: 40vw;
+        margin: 10px 0 0 20px;
+        align-items: flex-end;
+
+    }
+
+    #breakdown h4 {
+        font-size: 1.2rem;
+        width: 50%;
+    }
+    #breakdown-total {
+        display: flex;
+    }
+    #breakdown-total-input {
+        width: 100%;
+        justify-content: flex-end;
+        margin: 20px 40px 20px 0;
+    }git 
 }
 
 /*Media query: Laptops and larger (992px and up)*/
@@ -341,7 +395,10 @@ hr {
     }
 
     /* Calculator page */
-    
+
+    #breakdown-total-input input {
+        width: 70vw;
+    }
 }
 
 /* Media query: Large screens (1200px and up) */
@@ -377,7 +434,11 @@ hr {
     }
 
     /* Calculator page */
-    
+
+    #breakdown-total-input input {
+        width: 75vw;
+        margin-right: 20px;
+    }
 }
 
 /* Last thing I was doing
