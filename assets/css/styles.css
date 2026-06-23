@@ -206,14 +206,14 @@ input[type="number"]::placeholder {
     flex-direction: column;
 }
 
-#total-expense-input,
-#total-income-input {
+.total-expense-input,
+.total-income-input {
     display: flex;
     justify-content: center;
 }
 
-#total-expense-input input,
-#total-income-input input {
+.total-expense-input input,
+.total-income-input input {
     background-color: #8CBA80;
     border: none;
     border-radius: 10px;
@@ -237,13 +237,13 @@ hr {
     margin: 20px 0 20px 20px;
 }
 
-#breakdown-total-input {
+.breakdown-total-input {
     display: flex;
     align-self: center;
     justify-content: center;
 }
 
-#breakdown-total-input input {
+.breakdown-total-input input {
     background-color: #8CBA80;
     border: none;
     border-radius: 10px;
@@ -364,8 +364,8 @@ hr {
         margin: 0 auto 0 auto;
     }
 
-    #total-income-input input,
-    #total-expense-input input {
+    .total-income-input input,
+    .total-expense-input input {
         width: 40vw;
         margin: 10px 0 0 20px;
         align-items: flex-end;
@@ -379,11 +379,11 @@ hr {
     #breakdown-total {
         display: flex;
     }
-    #breakdown-total-input {
+    .breakdown-total-input {
         width: 100%;
         justify-content: flex-end;
         margin: 20px 40px 20px 0;
-    }git 
+    }
 }
 
 /*Media query: Laptops and larger (992px and up)*/
@@ -396,7 +396,7 @@ hr {
 
     /* Calculator page */
 
-    #breakdown-total-input input {
+    .breakdown-total-input input {
         width: 70vw;
     }
 }
@@ -435,7 +435,7 @@ hr {
 
     /* Calculator page */
 
-    #breakdown-total-input input {
+    .breakdown-total-input input {
         width: 75vw;
         margin-right: 20px;
     }
