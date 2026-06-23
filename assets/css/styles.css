@@ -165,7 +165,7 @@ h3 {
 #total-income h4,
 #total-expense h4 {
     padding-left: 20px;
-    width: 120px;
+    width: 30%;
     white-space: nowrap;
 }
 
@@ -188,7 +188,7 @@ select {
 }
 
 .income-row {
-    width: 100%;
+    width: 100vw;
 }
 
 #category-selector {
@@ -203,20 +203,24 @@ input[type="number"]::placeholder {
 #total-income,
 #total-expense {
     display: flex;
-    margin-top: 10px;
-    height: 50px;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 #total-expense-input,
 #total-income-input {
-    display: block;
+    display: flex;
+    justify-content: center;
+}
+
+#total-expense-input input,
+#total-income-input input {
     background-color: #8CBA80;
     border: none;
     border-radius: 10px;
     padding: 5px;
-    margin-right: 20px;
+    width: 90%;
+    margin: 0 auto 5px auto;
+    box-sizing: border-box;
 }
 
 hr {
@@ -228,28 +232,25 @@ hr {
     padding-left: 20px;
 }
 
-#breakdown-total {
-    display: flex;
-    margin-left: 20px;
-    gap: 10px;
-    padding: 0;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
 #breakdown-total h4 {
     font-size: 0.7rem;
+    margin: 20px 0 20px 20px;
 }
 
-#breakdown-total input {
-    display: block;
+#breakdown-total-input {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+#breakdown-total-input input{
     background-color: #8CBA80;
     border: none;
     border-radius: 10px;
-    height: 25px;
-    align-self: center;
-    width: 145px;
-    margin-right: 20px;
+    padding: 5px;
+    width: 90%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
 /*Font Awesome Icon*/
@@ -258,30 +259,10 @@ hr {
 #icon-expense {
     border: none;
     background-color: transparent;
-    margin-left: 10px;
+    margin-left: 5%;
 }
 
 /*Media Queries*/
-
-/*Media query: Smaller mobile screens(667px and up)*/
-@media screen and (min-width: 667px) {
-
-    /*Calculation page*/
-    #total-expense-input,
-    #total-income-input {
-        width: 65%;
-        margin-right: 35px;
-    }
-
-    #breakdown-total input {
-        width: 68%;
-        margin-right: 35px;
-    }
-
-    #breakdown-total {
-        margin-bottom: 20px;
-    }
-}
 
 /*Media query: Tablets and larger (768px and up)*/
 @media screen and (min-width: 768px) {
@@ -347,20 +328,9 @@ hr {
     }
 
     /* Calculator page */
-    #total-expense-input,
-    #total-income-input {
-        width: 70%;
-        margin-right: 45px;
-    }
 
-    #breakdown-total input {
-        width: 72%;
-        margin-right: 45px;
-    }
+    
 }
-
-
-
 
 /*Media query: Laptops and larger (992px and up)*/
 @media screen and (min-width: 992px) {
@@ -371,9 +341,8 @@ hr {
     }
 
     /* Calculator page */
+    
 }
-
-
 
 /* Media query: Large screens (1200px and up) */
 @media screen and (min-width: 1200px) {
@@ -408,6 +377,7 @@ hr {
     }
 
     /* Calculator page */
+    
 }
 
 /* Last thing I was doing
