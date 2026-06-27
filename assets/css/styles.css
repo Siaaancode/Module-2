@@ -191,7 +191,7 @@ select {
     width: 100vw;
 }
 
-#category-selector {
+.category-selector {
     margin-bottom: 20px;
 }
 
@@ -443,6 +443,5 @@ hr {
 
 /* Last thing I was doing
 
-- Adjusting the total input boxes to align 
-with others while being on the same line as 
-the totals text */
+- Add localStorage to javascript
+- Look at how to implement a javascript pie chart */
