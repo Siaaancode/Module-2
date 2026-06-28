@@ -3,10 +3,11 @@
 function addInputIncome() {
     const newRow = document.createElement("div");
 
+    newRow.classList.add("income-row");
     newRow.innerHTML = `
-    <input type="text" placeholder="e.g. Salary">
+    <input class="income-description" type="text" placeholder="e.g. Salary">
     <input class="amount-number-income" type="number" placeholder="e.g. £100.00" oninput="incomeTotal()" >
-    <select id="category-selector" type="text" name="categories" required>
+    <select class="category-selector" type="text" name="categories" required>
     <option value="" disabled selected>Categories</option>
     <option value="Employment">Employment income</option>
     <option value="Self-employment">Self-employment</option>
@@ -21,7 +22,6 @@ function addInputIncome() {
     container.appendChild(newRow);
 }
 document.getElementById("icon-income").addEventListener("click", addInputIncome);
-
 
 // Code for expenses
 
