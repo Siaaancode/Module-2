@@ -103,7 +103,6 @@ function breakdownOfTotals() {
     finalBreakdownTotal.value = total;
 
 }
-console.log(breakdownOfTotals());
 
 // if total is + display message suggest saving calculator
 
@@ -136,15 +135,16 @@ document.addEventListener("input", (event) => {
         event.target.matches(".amount-number-income")
     ) {
         saveIncome();
+        incomeTotal();
     }
 });
 
 document.addEventListener("change", (event) => {
     if (event.target.matches(".category-selector")) {
         saveIncome();
+        incomeTotal();
     }
 });
-
 
 // Load income with localStorage functions 
 
@@ -188,7 +188,6 @@ function loadIncome() {
         incomeList.appendChild(row);
     });
 }
-
 document.addEventListener("DOMContentLoaded", loadIncome);
 
 loadIncome();
@@ -220,12 +219,14 @@ document.addEventListener("input", (event) => {
         event.target.matches(".amount-number-expense")
     ) {
         saveExpense();
+        expenseTotal();
     }
 });
 
 document.addEventListener("change", (event) => {
     if (event.target.matches(".category-selector")) {
         saveExpense();
+        expenseTotal();
     }
 });
 

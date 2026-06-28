@@ -386,6 +386,16 @@ Example: function incomeTotal() {...} and const incomeTotal = document.getElemen
 
 The second issue was the value kept returning 0, this was because I was only calling the function after the function rather than in all the functions. This was causing the other functions to not update with changes to the inputs. 
 
+- Struggled to get the new input rows function (function addInputIncome() / function addInputExpense()) to save: These functions did not have a class linked to them so when I tried to save and load them they were'nt saving like the original input. I fixed this by adding (newRow.classList.add("income-row"); and newRow.classList.add("expense-row");) into the function.
+
+- Both incomeTotal() and expenseTotal() functions weren't loading after save and load: By adding a function call for incomeTotal and expenseTotal after the loadIncome and loadExpense functions fixed this issue.
+
+- id="category-selector" wasn't functioning properly: I was using an id instead of a class, which was causing the function to not work properly.
+
+- Error for javascript on homepage: I mistakenly added a script tag linking the javascript file to the homepage html document. This was not needed, as there was no javascript used on the homepage, so I deleted that line of code.
+
+- incomeTotal() and expenseTotal() didn't update when data inputted was changed, unless page is refreshed: The incomeTotal and expenseTotal functions weren't being called in the eventListener of the saveIncome and saveExpense functions. Simply added the code to call the incomeTotal and expenseTotal, in the eventListener of saveIncome and saveExpense function.
+
 
 ### Not Fixed
 
