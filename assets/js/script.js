@@ -28,10 +28,11 @@ document.getElementById("icon-income").addEventListener("click", addInputIncome)
 function addInputExpense() {
     const newRow = document.createElement("div");
 
+    newRow.classList.add("expense-row");
     newRow.innerHTML = `
-    <input type="text" placeholder="e.g. Rent">
+    <input class="expense-description" type="text" placeholder="e.g. Rent">
     <input class="amount-number-expense" type="number" placeholder="e.g. £100.00" oninput="expenseTotal()">
-    <select id="category-selector" type="text" name="categories" required>
+    <select class="category-selector" type="text" name="categories" required>
     <option value="" disabled selected>Categories</option>
     <option value="Housing">Rent / Mortgage</option>
     <option value="Council tax">Council tax</option>
@@ -191,6 +192,88 @@ function loadIncome() {
 document.addEventListener("DOMContentLoaded", loadIncome);
 
 loadIncome();
+incomeTotal();
 
 
-// Load localStorage functions
+// Save expense with localStorage functions 
+
+function saveExpense() {
+
+    const rows = document.querySelectorAll(".expense-row");
+    const expenses = [];
+
+    rows.forEach(row => {
+
+        expenses.push({
+            description: row.querySelector(".expense-description").value,
+            amount: Number(row.querySelector(".amount-number-expense").value),
+            category: row.querySelector(".category-selector").value
+        });
+    });
+
+    localStorage.setItem("expenseData", JSON.stringify(expenses));
+}
+
+document.addEventListener("input", (event) => {
+    if (
+        event.target.matches(".expense-description") ||
+        event.target.matches(".amount-number-expense")
+    ) {
+        saveExpense();
+    }
+});
+
+document.addEventListener("change", (event) => {
+    if (event.target.matches(".category-selector")) {
+        saveExpense();
+    }
+});
+
+
+// Load expense with localStorage functions 
+
+function loadExpense() {
+
+    const savedData = localStorage.getItem("expenseData");
+    if (!savedData) return;
+
+    const expenses = JSON.parse(savedData);
+
+    const expenseList = document.getElementById("expense-list");
+    expenseList.innerHTML = "";
+
+    expenses.forEach(item => {
+
+        const row = document.createElement("div");
+        row.classList.add("expense-row");
+
+        row.innerHTML = `
+        <input
+        class="expense-description"
+        type="text"
+        value="${item.description}"
+        >
+        
+        <input
+        class="amount-number-expense"
+        type="number"
+        value="${item.amount}"
+        >
+        
+        <select class="category-selector" name="categories" required>
+            <option value="" disabled selected>Categories</option>
+            <option value="Employment" ${item.category === "Employment" ? "selected" : ""}>Employment income</option>
+            <option value="Self-employment" ${item.category === "Self-employment" ? "selected" : ""}>Self-employment</option>
+            <option value="Pension" ${item.category === "Pension" ? "selected" : ""}>Pension</option>
+            <option value="State benefits" ${item.category === "State benefits" ? "selected" : ""}>State benefits</option>
+            <option value="Other" ${item.category === "Other" ? "selected" : ""}>Other</option>
+        </select>`;
+
+        expenseList.appendChild(row);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", loadExpense);
+
+loadExpense();
+expenseTotal();
