@@ -42,7 +42,7 @@
                                 <input class="amount-number-income" type="number" placeholder="e.g. £100.00"
                                     oninput="incomeTotal()">
 
-                                <select class="category-selector" name="categories" required>
+                                <select class="categories-income" name="categories" required>
                                     <option value="" disabled selected>Categories</option>
                                     <option value="Employment">Employment income</option>
                                     <option value="Self-employment">Self-employment</option>
@@ -77,7 +77,7 @@
                                 <input class="amount-number-expense" type="number" placeholder="e.g. £100.00"
                                     oninput="expenseTotal()">
 
-                                <select class="category-selector" name="categories" required>
+                                <select class="categories-expense" name="categories" required>
                                     <option value="" disabled selected>Categories</option>
                                     <option value="Housing">Rent / Mortgage</option>
                                     <option value="Council tax">Council tax</option>
@@ -114,6 +114,13 @@
                     </div>
                 </div>
             </section>
+
+            <div id="chart">
+                <div id="pie-chart">
+                    <canvas id="my-chart"></canvas>
+                </div>
+            </div>
+
         </main>
         <footer>
             <p>&copy; 2026 Budget Birdie.</p>
@@ -123,8 +130,117 @@
 
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/96c9e4341c.js" crossorigin="anonymous"></script>
+    <!--Chartjs-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
     <!--Javascript-->
     <script src="assets/js/script.js"></script>
+
+
+    <script>
+        //Chart structure
+        const ctx = document.getElementById("my-chart");
+
+        const myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    'Housing',
+                    'Council tax',
+                    'Utilities',
+                    'Food',
+                    'Transportation',
+                    'Financial commitments',
+                    'Entertainment',
+                    'Other'
+                ],
+                datasets: [{
+                    label: 'Total',
+                    backgroundColor: [
+                        '#373F51',
+                        '#535E79',
+                        '#6D7B9C',
+                        '#8691AC',
+                        '#8CBA80',
+                        '#ABCDA2',
+                        '#C3DBBD',
+                        '#DBE9D8'
+                    ],
+                    data: [1, 1, 1, 1, 1, 1, 1, 1],
+                    borderWidth: 5,
+                }]
+            },
+            options: {
+                animation: {
+                    duration: 1500,
+                    easing: 'easeOutBounce'
+                }
+            }
+        });
+
+        function getExpenseCategoryTotals() {
+
+            const expenses = document.querySelectorAll(".expense-row");
+
+            const totals = {
+                "Housing": 0,
+                "Council tax": 0,
+                "Utilities": 0,
+                "Food": 0,
+                "Transportation": 0,
+                "Financial commitments": 0,
+                "Entertainment": 0,
+                "Other": 0
+            };
+
+            expenses.forEach(row => {
+
+                const amount = Number(row.querySelector(".amount-number-expense").value) || 0;
+                const category = row.querySelector(".categories-expense").value;
+
+                if (totals[category] !== undefined) {
+                    totals[category] += amount;
+                }
+            });
+
+            return totals;
+        }
+
+        function updateChart() {
+
+            const totals = getExpenseCategoryTotals();
+
+            myChart.data.datasets[0].data = [
+                totals["Housing"],
+                totals["Council tax"],
+                totals["Utilities"],
+                totals["Food"],
+                totals["Transportation"],
+                totals["Financial commitments"],
+                totals["Entertainment"],
+                totals["Other"]
+            ];
+
+            myChart.update();
+        }
+
+        document.addEventListener("input", (event) => {
+            if (event.target.matches(".amount-number-expense")) {
+                expenseTotal();
+                updateChart();
+            }
+        });
+
+        document.addEventListener("change", (event) => {
+            if (event.target.matches(".categories-expense")) {
+                saveExpense();
+                expenseTotal();
+                updateChart();
+            }
+        });
+
+
+
+    </script>
 </body>
 
 </html>

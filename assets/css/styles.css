@@ -191,7 +191,8 @@ select {
     width: 100vw;
 }
 
-.category-selector {
+.categories-income,
+.categories-expense {
     margin-bottom: 20px;
 }
 
@@ -251,6 +252,12 @@ hr {
     width: 90%;
     box-sizing: border-box;
     margin-bottom: 20px;
+}
+
+/*Pie chart*/
+
+#pie-chart {
+    margin: 0 20px;
 }
 
 /*Font Awesome Icon*/

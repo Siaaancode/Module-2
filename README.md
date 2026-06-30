@@ -173,12 +173,12 @@ Feature: Additional input slots for incomes and expenses
 Feature: Income and expense inputs categorised and grouped
 
 
-“As a student, I want to receive budgeting advice based on my current spending habits, so that I can see where I may be wasting money and improve my financial literacy.” Should-have
+“As a student, I want to receive budgeting advice based on my current spending habits, so that I can see where I may be wasting money and improve my financial literacy.” Could-have
 
 Feature: Spending analysis and budgeting suggestions (Consider a limit on expenses considered “luxury”, ie: if “Takeaways” = luxury & is over x amount, add a message to the total page if over spent, suggesting “cut down on Takeaways”, etc.)
 
 
-“As a student who’s struggling financially, I want to be able to easily calculate how much to save over a x month period, to guarantee I save enough for the next semester.” Should-have
+“As a student who’s struggling financially, I want to be able to easily calculate how much to save over a x month period, to guarantee I save enough for the next semester.” Could-have
 
 Feature: Savings goal calculator (Total to save (£100) / x amount of months (10 months) = y amount per month (£10 per month))
 

@@ -7,7 +7,7 @@ function addInputIncome() {
     newRow.innerHTML = `
     <input class="income-description" type="text" placeholder="e.g. Salary">
     <input class="amount-number-income" type="number" placeholder="e.g. £100.00" oninput="incomeTotal()" >
-    <select class="category-selector" type="text" name="categories" required>
+    <select class="categories-income" type="text" name="categories" required>
     <option value="" disabled selected>Categories</option>
     <option value="Employment">Employment income</option>
     <option value="Self-employment">Self-employment</option>
@@ -32,7 +32,7 @@ function addInputExpense() {
     newRow.innerHTML = `
     <input class="expense-description" type="text" placeholder="e.g. Rent">
     <input class="amount-number-expense" type="number" placeholder="e.g. £100.00" oninput="expenseTotal()">
-    <select class="category-selector" type="text" name="categories" required>
+    <select class="categories-expense" type="text" name="categories" required>
     <option value="" disabled selected>Categories</option>
     <option value="Housing">Rent / Mortgage</option>
     <option value="Council tax">Council tax</option>
@@ -122,7 +122,7 @@ function saveIncome() {
         incomes.push({
             description: row.querySelector(".income-description").value,
             amount: Number(row.querySelector(".amount-number-income").value),
-            category: row.querySelector(".category-selector").value
+            category: row.querySelector(".categories-income").value
         });
     });
 
@@ -140,7 +140,7 @@ document.addEventListener("input", (event) => {
 });
 
 document.addEventListener("change", (event) => {
-    if (event.target.matches(".category-selector")) {
+    if (event.target.matches(".categories-income")) {
         saveIncome();
         incomeTotal();
     }
@@ -176,7 +176,7 @@ function loadIncome() {
         value="${item.amount}"
         >
         
-        <select class="category-selector" name="categories" required>
+        <select class="categories-income" name="categories" required>
             <option value="" disabled selected>Categories</option>
             <option value="Employment" ${item.category === "Employment" ? "selected" : ""}>Employment income</option>
             <option value="Self-employment" ${item.category === "Self-employment" ? "selected" : ""}>Self-employment</option>
@@ -206,7 +206,7 @@ function saveExpense() {
         expenses.push({
             description: row.querySelector(".expense-description").value,
             amount: Number(row.querySelector(".amount-number-expense").value),
-            category: row.querySelector(".category-selector").value
+            category: row.querySelector(".categories-expense").value
         });
     });
 
@@ -224,7 +224,7 @@ document.addEventListener("input", (event) => {
 });
 
 document.addEventListener("change", (event) => {
-    if (event.target.matches(".category-selector")) {
+    if (event.target.matches(".categories-expense")) {
         saveExpense();
         expenseTotal();
     }
@@ -261,20 +261,27 @@ function loadExpense() {
         value="${item.amount}"
         >
         
-        <select class="category-selector" name="categories" required>
+        <select class="categories-expense" name="categories" required>
             <option value="" disabled selected>Categories</option>
-            <option value="Employment" ${item.category === "Employment" ? "selected" : ""}>Employment income</option>
-            <option value="Self-employment" ${item.category === "Self-employment" ? "selected" : ""}>Self-employment</option>
-            <option value="Pension" ${item.category === "Pension" ? "selected" : ""}>Pension</option>
-            <option value="State benefits" ${item.category === "State benefits" ? "selected" : ""}>State benefits</option>
+            <option value="Housing" ${item.category === "Housing" ? "selected" : ""}>Rent / Mortgage</option>
+            <option value="Council tax" ${item.category === "Council tax" ? "selected" : ""}>Council tax</option>
+            <option value="Utilities" ${item.category === "Utilities" ? "selected" : ""}>Utilities</option>
+            <option value="Food" ${item.category === "Food" ? "selected" : ""}>Food / Groceries</option>
+            <option value="Transportation" ${item.category === "Transportation" ? "selected" : ""}>Transportation</option>
+            <option value="Financial commitments" ${item.category === "Financial commitments" ? "selected" : ""}>Debt / Loan Payments</option>
+            <option value="Entertainment" ${item.category === "Entertainment" ? "selected" : ""}>Entertainment</option>
             <option value="Other" ${item.category === "Other" ? "selected" : ""}>Other</option>
         </select>`;
 
         expenseList.appendChild(row);
     });
+    incomeTotal();
+    expenseTotal();
+    updateChart();
 }
+document.addEventListener("DOMContentLoaded", () => {
+    loadIncome();
+    loadExpense();
 
-document.addEventListener("DOMContentLoaded", loadExpense);
 
-loadExpense();
-expenseTotal();
+});
