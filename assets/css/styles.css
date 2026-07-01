@@ -43,7 +43,7 @@ main {
     width: 100vw;
 }
 
-#logo a {
+#logo  {
     font-size: 15px;
     display: flex;
     flex-direction: row;
