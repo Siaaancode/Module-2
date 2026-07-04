@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget Birdie | Finance Calculator</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/pie.js" defer></script>
 </head>
 
 <body>
@@ -28,7 +29,7 @@
                 <h1>Getting started</h1>
                 <p>Starting your journey to financial freedom is as simple as fill out each section with the information
                     you have gathered.</p>
-                <p>Remember to include all incomes and expenses to generate an accurate total.</p><br>
+                <p>Remember to include all incomes and expenses to generate an accurate total.</p>
             </section>
 
             <section id="income">
@@ -106,25 +107,84 @@
             <hr>
 
             <section id="breakdown">
-                <h2>Breakdown Total</h2>
                 <div id="breakdown-total">
-                    <h3>Income - Expenses =</h3>
+                    <h2>Breakdown Total</h2>
                     <div class="breakdown-total-input">
-                        <input id="breakdown-total-input" readonly>
+                        <h3>Income - Expenses =</h3>
+                        <input id="breakdown-total-input" disabled>
                     </div>
                 </div>
-            </section>
 
-            <div id="chart">
+                <div id="chart">
+                <div class="legend">
+
+                    <div class="legend-item">
+                        <div class="legend-square" style="--color: #373F51;"></div>
+                        <div class="legend-content">
+                            <h4>Rent / Mortgage</h4>
+                        </div>
+                    </div>
+
+                    <div class="legend-item">
+                        <div class="legend-square" style="--color: #535E79;"></div>
+                        <div class="legend-content">
+                            <h4>Council tax</h4>
+                        </div>
+                    </div>
+
+                    <div class="legend-item">
+                        <div class="legend-square" style="--color: #6D7B9C;"></div>
+                        <div class="legend-content">
+                            <h4>Utilities</h4>
+                        </div>
+                    </div>
+
+                    <div class="legend-item">
+                        <div class="legend-square" style="--color: #8691AC;"></div>
+                        <div class="legend-content">
+                            <h4>Food / Groceries</h4>
+                        </div>
+                    </div>
+
+                    <div class="legend-item">
+                        <div class="legend-square" style="--color: #8CBA80;"></div>
+                        <div class="legend-content">
+                            <h4>Transportation</h4>
+                        </div>
+                    </div>
+
+                    <div class="legend-item">
+                        <div class="legend-square" style="--color: #ABCDA2;"></div>
+                        <div class="legend-content">
+                            <h4>Debt / Loan Payments</h4>
+                        </div>
+                    </div>
+
+                    <div class="legend-item">
+                        <div class="legend-square" style="--color: #C3DBBD;"></div>
+                        <div class="legend-content">
+                            <h4>Entertainment</h4>
+                        </div>
+                    </div>
+
+                    <div class="legend-item">
+                        <div class="legend-square" style="--color: #DBE9D8;"></div>
+                        <div class="legend-content">
+                            <h4>Other</h4>
+                        </div>
+                    </div>
+                </div>
+
                 <div id="pie-chart">
                     <canvas id="my-chart"></canvas>
                 </div>
-            </div>
+    </div>
+    </section>
 
-        </main>
-        <footer>
-            <p>&copy; 2026 Budget Birdie.</p>
-        </footer>
+    </main>
+    <footer>
+        <p>&copy; 2026 Budget Birdie.</p>
+    </footer>
 
     </div>
 
@@ -135,112 +195,6 @@
     <!--Javascript-->
     <script src="assets/js/script.js"></script>
 
-
-    <script>
-        //Chart structure
-        const ctx = document.getElementById("my-chart");
-
-        const myChart = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: [
-                    'Housing',
-                    'Council tax',
-                    'Utilities',
-                    'Food',
-                    'Transportation',
-                    'Financial commitments',
-                    'Entertainment',
-                    'Other'
-                ],
-                datasets: [{
-                    label: 'Total',
-                    backgroundColor: [
-                        '#373F51',
-                        '#535E79',
-                        '#6D7B9C',
-                        '#8691AC',
-                        '#8CBA80',
-                        '#ABCDA2',
-                        '#C3DBBD',
-                        '#DBE9D8'
-                    ],
-                    data: [1, 1, 1, 1, 1, 1, 1, 1],
-                    borderWidth: 5,
-                }]
-            },
-            options: {
-                animation: {
-                    duration: 1500,
-                    easing: 'easeOutBounce'
-                }
-            }
-        });
-
-        function getExpenseCategoryTotals() {
-
-            const expenses = document.querySelectorAll(".expense-row");
-
-            const totals = {
-                "Housing": 0,
-                "Council tax": 0,
-                "Utilities": 0,
-                "Food": 0,
-                "Transportation": 0,
-                "Financial commitments": 0,
-                "Entertainment": 0,
-                "Other": 0
-            };
-
-            expenses.forEach(row => {
-
-                const amount = Number(row.querySelector(".amount-number-expense").value) || 0;
-                const category = row.querySelector(".categories-expense").value;
-
-                if (totals[category] !== undefined) {
-                    totals[category] += amount;
-                }
-            });
-
-            return totals;
-        }
-
-        function updateChart() {
-
-            const totals = getExpenseCategoryTotals();
-
-            myChart.data.datasets[0].data = [
-                totals["Housing"],
-                totals["Council tax"],
-                totals["Utilities"],
-                totals["Food"],
-                totals["Transportation"],
-                totals["Financial commitments"],
-                totals["Entertainment"],
-                totals["Other"]
-            ];
-
-            myChart.update();
-        }
-
-        document.addEventListener("input", (event) => {
-            if (event.target.matches(".amount-number-expense")) {
-                expenseTotal();
-                updateChart();
-            }
-        });
-
-        document.addEventListener("change", (event) => {
-            if (event.target.matches(".categories-expense")) {
-                saveExpense();
-                expenseTotal();
-                updateChart();
-            }
-        });
-
-
-
-    </script>
 </body>
 
 </html>

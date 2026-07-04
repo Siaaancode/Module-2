@@ -12,7 +12,6 @@
 /* Global Styles */
 html,
 body {
-    height: 100%;
     margin: 0;
 }
 
@@ -43,7 +42,7 @@ main {
     width: 100vw;
 }
 
-#logo  {
+#logo {
     font-size: 15px;
     display: flex;
     flex-direction: row;
@@ -73,17 +72,23 @@ main {
 #hero-banner {
     background-color: #8CBA80;
     color: #373F51;
+    height: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-#hero-banner,
-h2 {
+#hero-banner h1 {
     margin: 0;
-    padding: 20px 10px;
+    padding: 20px;
 }
 
 #hero-banner p {
-    margin: 0;
-    padding: 10px 10px 30px;
+    margin: 5px 20px;
+}
+
+#hero-banner a {
+    margin: 20px 20px;
+    text-align: center;
 }
 
 /* Button */
@@ -143,35 +148,19 @@ footer p {
 }
 
 /* Calculator page */
-
 #introduction {
     background-color: #8CBA80;
     color: #373F51;
     padding: 20px;
 }
 
-#introduction h2 {
-    padding: 0;
-}
-
-section {
-    padding-top: 10px;
-}
-
-h3 {
-    padding: 0 20px 0 20px;
-}
-
-#total-income h4,
-#total-expense h4 {
-    padding-left: 20px;
-    width: 30%;
-    white-space: nowrap;
-}
-
-.income-form,
-.expense-form {
+#introduction h1 {
     margin: 0;
+}
+
+#income-inputs h2,
+#expense-inputs h2 {
+    margin-left: 20px;
 }
 
 #expense-list input,
@@ -194,6 +183,7 @@ select {
 .categories-income,
 .categories-expense {
     margin-bottom: 20px;
+    color: #373F51
 }
 
 input[type="text"]::placeholder,
@@ -205,6 +195,16 @@ input[type="number"]::placeholder {
 #total-expense {
     display: flex;
     flex-direction: column;
+    margin: 0;
+}
+
+#total-income h3,
+#total-expense h3 {
+    margin: 10px 0 0 20px;
+    width: 30%;
+    height: 30px;
+    white-space: nowrap;
+
 }
 
 .total-expense-input,
@@ -219,8 +219,7 @@ input[type="number"]::placeholder {
     border: none;
     border-radius: 10px;
     padding: 5px;
-    width: 90%;
-    margin: 0 auto 5px auto;
+    width: 90vw;
     box-sizing: border-box;
 }
 
@@ -228,40 +227,79 @@ hr {
     width: 90%;
 }
 
-#breakdown h3 {
-    margin: 0;
-    padding-left: 20px;
+input,
+select {
+    font-size: 1rem;
+    font-family: "Roboto Mono", monospace;
 }
 
-#breakdown-total h4 {
-    font-size: 0.7rem;
-    margin: 20px 0 20px 20px;
+/* Breakdown section */
+#breakdown h2 {
+    margin: 0;
+    margin-left: 20px;
+}
+
+.breakdown-total-input h3 {
+    align-self: flex-start;
+    font-size: 1rem;
+    margin-top: 10px;
 }
 
 .breakdown-total-input {
     display: flex;
-    align-self: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
 }
 
 .breakdown-total-input input {
+    display: flex;
     background-color: #8CBA80;
     border: none;
     border-radius: 10px;
     padding: 5px;
-    width: 90%;
+    width: 90vw;
     box-sizing: border-box;
+}
+
+#breakdown-total-input {
+    display: block;
     margin-bottom: 20px;
 }
 
-/*Pie chart*/
+/* Legend */
+.legend {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin-bottom: 20px;
+}
 
-#pie-chart {
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin: 0 20px;
 }
 
-/*Font Awesome Icon*/
+.legend-square {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: var(--color);
+    flex-shrink: 0;
+}
 
+.legend-content h4 {
+    margin: 0;
+    font-size: 12px;
+}
+
+#pie-chart {
+    margin-bottom: 30px;
+}
+
+/*Font Awesome Icon*/
 #icon-income,
 #icon-expense {
     border: none;
@@ -275,8 +313,8 @@ hr {
 @media screen and (min-width: 768px) {
 
     /* Home page */
-    #logo a {
-        font-size: 24px;
+    #logo {
+        font-size: 20px;
     }
 
     #navbar-links a {
@@ -286,34 +324,38 @@ hr {
     }
 
     /* Hero Banner */
-    #hero-banner {
-        padding: 40px 20px;
-    }
-
-    #hero-banner,
-    h2 {
-        font-size: 35px;
+    #hero-banner h1 {
+        font-size: 1.6rem;
+        padding: 20px;
     }
 
     #hero-banner p {
-        font-size: 25px;
-        padding-top: 30px;
-        margin: 0;
+        font-size: 1rem;
+        margin: 0 20px;
+    }
+
+    #hero-banner a {
+        margin: 20px 20px;
+        font-size: 1rem;
+        width: 30%;
     }
 
     /* Information Section */
     #information-section {
         background-color: #F8F4F9;
-        font-size: 25px;
         padding: 20px 50px;
     }
 
-    #information-section h3 {
-        font-size: 35px;
+    #hero-banner h1 {
+        font-size: 2.3rem;
     }
 
     #information-section #button-info {
-        font-size: 28px;
+        font-size: 1.5rem;
+    }
+
+    #information-section a {
+        font-size: 1rem;
     }
 
     /* Buttons */
@@ -335,10 +377,10 @@ hr {
     }
 
     /* Calculator page */
-
     #income,
     #expense {
         display: flex;
+        margin-left: 20px;
     }
 
     .income-row,
@@ -367,29 +409,56 @@ hr {
 
     #total-income,
     #total-expense {
-        justify-content: center;
-        margin: 0 auto 0 auto;
+        margin: 20px auto 0 auto;
     }
 
     .total-income-input input,
     .total-expense-input input {
         width: 40vw;
         margin: 10px 0 0 20px;
-        align-items: flex-end;
-
     }
 
-    #breakdown h4 {
-        font-size: 1.2rem;
-        width: 50%;
+    input,
+    select {
+        font-size: 1rem;
+        font-family: "Roboto Mono", monospace;
     }
-    #breakdown-total {
+
+    /* Breakdown Total */
+    #breakdown h2 {
+        margin-left: 40px;
+    }
+
+    .breakdown-total-input h3 {
+        margin: 10px 20px;
+    }
+
+    /* Chart */
+    #chart {
         display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 95%;
+        margin: 30px 20px;
     }
-    .breakdown-total-input {
-        width: 100%;
-        justify-content: flex-end;
-        margin: 20px 40px 20px 0;
+
+    #pie-chart {
+        width: 70%;
+    }
+
+    /* Legend */
+    .legend {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .legend-square {
+        border: none;
+        background-color: var(--color);
+    }
+
+    .legend-content h4 {
+        font-size: 1.2rem;
     }
 }
 
@@ -401,10 +470,32 @@ hr {
         min-height: 100vh;
     }
 
-    /* Calculator page */
+    /* Hero Banner */
+    #hero-banner p,
+    #hero-banner a {
+        padding: 20px 0;
+    }
 
-    .breakdown-total-input input {
-        width: 70vw;
+    #hero-banner a {
+        margin-bottom: 30px;
+    }
+
+    /* Calculator page */
+    input,
+    select {
+        font-size: 1.5rem;
+        font-family: "Roboto Mono", monospace;
+    }
+
+    /* Breakdown section */
+    #breakdown-total h3 {
+        font-size: 1.3rem;
+    }
+
+    /* Chart */
+    #pie-chart {
+        width: 100%;
+
     }
 }
 
@@ -441,13 +532,23 @@ hr {
     }
 
     /* Calculator page */
+    input,
+    select {
+        font-size: 1.5rem;
+        font-family: "Roboto Mono", monospace;
+    }
 
-    .breakdown-total-input input {
-        width: 75vw;
-        margin-right: 20px;
+    /* Chart */
+    #chart {
+        margin: 20px;
+    }
+
+    #pie-chart {
+        width: 100%;
+        margin-right: 15%;
     }
 }
 
 /* Last thing I was doing
 
-- Look at how to implement a javascript pie chart */
+- */
