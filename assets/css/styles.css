@@ -13,10 +13,6 @@
 html,
 body {
     margin: 0;
-}
-
-body {
-    margin: 0;
     padding: 0;
     font-family: "Roboto Mono", monospace;
 }
@@ -31,6 +27,10 @@ main {
     flex: 1;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 /* Navigation Bar */
 #navbar {
     background-color: #373F51;
@@ -39,7 +39,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
+    width: 100%;
 }
 
 #logo {
@@ -97,7 +97,7 @@ main {
     text-decoration: none;
     color: #8CBA80;
     border-radius: 10px;
-    margin: 0 0 20px 10px;
+    margin-bottom: 20px;
     padding: 10px 10px;
     font-size: 14px;
     cursor: pointer;
@@ -139,8 +139,6 @@ footer {
     background-color: #373F51;
     color: #8CBA80;
     text-align: center;
-    max-width: 100vw;
-    align-content: center;
 }
 
 footer p {
@@ -174,10 +172,6 @@ select {
     margin: 0 auto 5px auto;
     width: 90%;
     box-sizing: border-box;
-}
-
-.income-row {
-    width: 100vw;
 }
 
 .categories-income,
@@ -219,7 +213,7 @@ input[type="number"]::placeholder {
     border: none;
     border-radius: 10px;
     padding: 5px;
-    width: 90vw;
+    width: 90%;
     box-sizing: border-box;
 }
 
@@ -253,7 +247,6 @@ select {
 }
 
 .breakdown-total-input input {
-    display: flex;
     background-color: #8CBA80;
     border: none;
     border-radius: 10px;
@@ -319,39 +312,25 @@ select {
 
     #navbar-links a {
         font-size: 20px;
-        justify-content: space-between;
         padding: 20px;
     }
 
     /* Hero Banner */
     #hero-banner h1 {
         font-size: 2rem;
-        padding: 20px;
     }
 
     #hero-banner p {
         font-size: 1rem;
-        margin: 0 20px;
     }
 
     #hero-banner a {
-        margin: 20px 20px;
         font-size: 1rem;
         width: 30%;
     }
 
     /* Information Section */
-
-    #hero-banner h1 {
-        font-size: 1.5rem;
-    }
-
-    #hero-banner p {
-        font-size: 1rem;
-    }
-
     #information-section {
-        background-color: #F8F4F9;
         padding: 20px;
     }
 
@@ -365,7 +344,7 @@ select {
 
     /* Buttons */
     .button {
-        font-size: 25px;
+        font-size: 1.2rem;
         margin-top: 20px;
     }
 
@@ -378,7 +357,7 @@ select {
     }
 
     footer p {
-        font-size: 25px;
+        font-size: 1.2rem;
     }
 
     /* Calculator page */
@@ -388,21 +367,11 @@ select {
         margin-left: 20px;
     }
 
-    .income-row,
-    .expense-row {
-        width: 100%;
-    }
-
     #income-inputs,
     #expense-inputs {
         display: flex;
         flex-direction: column;
         width: 50%;
-    }
-
-    h3 {
-        width: 50%;
-        height: 40px;
     }
 
     #expense-list input,
@@ -421,12 +390,6 @@ select {
     .total-expense-input input {
         width: 40vw;
         margin: 10px 0 0 20px;
-    }
-
-    input,
-    select {
-        font-size: 1rem;
-        font-family: "Roboto Mono", monospace;
     }
 
     /* Breakdown Total */
@@ -476,11 +439,6 @@ select {
     }
 
     /* Hero Banner */
-    #hero-banner p,
-    #hero-banner a {
-        padding: 20px 0;
-    }
-
     #hero-banner a {
         margin-bottom: 30px;
     }
@@ -489,65 +447,38 @@ select {
     input,
     select {
         font-size: 1.5rem;
-        font-family: "Roboto Mono", monospace;
     }
 
     /* Breakdown section */
     #breakdown-total h3 {
         font-size: 1.3rem;
     }
-
-    /* Chart */
-    #pie-chart {
-        width: 100%;
-
-    }
 }
 
 /* Media query: Large screens (1200px and up) */
 @media screen and (min-width: 1200px) {
 
-    /* Home page */
-    #hero-banner h1 {
-        font-size: 1.8rem;
-    }
-
+    /* Hero Banner */
     #hero-banner p {
         font-size: 1.3rem;
     }
-
-    #information-section {
-        min-height: 100vh;
-    }
-
+    /* Information Section */
     #information-section h2 {
         margin: 0;
         padding: 30px 0;
-        font-size: 1.8rem;
+        font-size: 2rem;
+    }
+
+    #information-section p {
+        font-size: 1.2rem;
     }
 
     #information-section #button-info {
         padding: 50px 0;
     }
 
-    /* Calculator page */
-    input,
-    select {
-        font-size: 1.5rem;
-        font-family: "Roboto Mono", monospace;
-    }
-
     /* Chart */
     #chart {
         margin: 20px;
     }
-
-    #pie-chart {
-        width: 100%;
-        margin-right: 15%;
-    }
 }
-
-/* Last thing I was doing
-
-- */

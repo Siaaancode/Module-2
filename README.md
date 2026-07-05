@@ -9,13 +9,14 @@ Link to deployed site (add link here)
 ## Table of Contents
 1. [Project information](#project-description)
 2. [Strategy](#website-strategy)
-3. [Scope](#website-scope)
-4. [Structure](#website-structure)
-5. [Skeleton](#website-skeleton)
-6. [Surface](#website-surface)
-7. [Technologies used](#technologies-used) 
-8. [Testing](#testing)
-9. [Deployment](#deployment)
+3. [User Stories](#user-stories-user-research)
+4. [Scope](#website-scope)
+5. [Structure](#website-structure)
+6. [Skeleton](#website-skeleton)
+7. [Surface](#website-surface)
+8. [Technologies used](#technologies-used) 
+9. [Testing](#testing)
+10. [Deployment](#deployment)
 
 # Project Description
 
@@ -47,12 +48,47 @@ The main goals of this project:
 
 My main target audience will be general users, as the website will be designed for the inputs to be general life expenses and incomes as apose to business related ones. Given time, I could create a more elaborate option for the users to choose whether they are using this for personal or professional reasons.
 
+## User Stories (User Research)
+
+### Must-have
+
+“As a student, I want to record my expenses and income in one place, so that I can track what money is coming in, and where money is being spent, so I can cut anything I deem pointless purchases. This would allow me to budget better.” Must-have
+
+Feature: Income and expense tracker with calculated totals
+
+“As a person wanting to see how my finances balance, it would be really helpful to have blank input spaces to add my own individual incomes and expenses. This would allow me to put niche names to each section that isn’t a “normal” income or expense.” Must-have
+
+Feature: Additional input slots for incomes and expenses
+
+“As a person who wants to budget better, I want to see specifically where I’m wasting money, so that I can make reasonable cuts to my expenses and save money more responsibly.“ Must-have
+
+Feature: Income and expense inputs categorised and grouped
+
+### Should-have
+
+“As someone trying to save, I want my input data to be saved, so I can access and edit it every month to see if I’m making progress on improving my savings.” Should-have
+
+Feature: Local storage
+
+"As someone who wants to understand their finances better, I want to be able to see my totals presented in a way that visually interesting, like a pie chart." Should-have
+
+Feature: Interesting visuals for the data to be presented
+
+### Could-have
+
+“As a student, I want to receive budgeting advice based on my current spending habits, so that I can see where I may be wasting money and improve my financial literacy.” Could-have
+
+Feature: Spending analysis and budgeting suggestions (Consider a limit on expenses considered “luxury”, ie: if “Takeaways” = luxury & is over x amount, add a message to the total page if over spent, suggesting “cut down on Takeaways”, etc.)
+
+“As a student who’s struggling financially, I want to be able to easily calculate how much to save over a x month period, to guarantee I save enough for the next semester.” Could-have
+
+Feature: Savings goal calculator (Total to save (£100) / x amount of months (10 months) = y amount per month (£10 per month))
+
 ## Research
 
 For this project, I researched a few different web apps that were similar to what I'm trying to create. Through this research, I can begin to understand the key points I'll need to consider when developing my own web app. 
 
 I've noted what was good, what was bad, what I could gain and what I'd improve. From this, I can make informed decisions about the directions I'd like to take with my own project.
-
 
 ## Websites (Adjust)
 
@@ -151,41 +187,7 @@ By identifying and analysing user stories, I was able to define the features tha
 
 ## MVP (minimum viable product)
 
-Below are the user stories created for this project. Each one has been labelled as either a must-have, should-have, or could-have. The must-have requirements are considered essential and non-negotiable, as they are fundamental to the core purpose of the application. The should-have requirements are important features that add significant value and enhance the overall functionality of the system. The could-have requirements are optional features that would improve the application further but are not essential for meeting the main objectives of the project.
-
-## User Stories (User Research)
-
-“As someone trying to save, I want my input data to be saved, so I can access and edit it every month to see if I’m making progress on improving my savings.” Should-have
-
-Feature: Local storage
-
-“As a student, I want to record my expenses and income in one place, so that I can track what money is coming in, and where money is being spent, so I can cut anything I deem pointless purchases. This would allow me to budget better.” Must-have
-
-Feature: Income and expense tracker with calculated totals
-
-“As a person wanting to see how my finances balance, it would be really helpful to have blank input spaces to add my own individual incomes and expenses. This would allow me to put niche names to each section that isn’t a “normal” income or expense.” Must-have
-
-Feature: Additional input slots for incomes and expenses
-
-
-“As a person who wants to budget better, I want to see specifically where I’m wasting money, so that I can make reasonable cuts to my expenses and save money more responsibly.“ Must-have
-
-Feature: Income and expense inputs categorised and grouped
-
-
-“As a student, I want to receive budgeting advice based on my current spending habits, so that I can see where I may be wasting money and improve my financial literacy.” Could-have
-
-Feature: Spending analysis and budgeting suggestions (Consider a limit on expenses considered “luxury”, ie: if “Takeaways” = luxury & is over x amount, add a message to the total page if over spent, suggesting “cut down on Takeaways”, etc.)
-
-
-“As a student who’s struggling financially, I want to be able to easily calculate how much to save over a x month period, to guarantee I save enough for the next semester.” Could-have
-
-Feature: Savings goal calculator (Total to save (£100) / x amount of months (10 months) = y amount per month (£10 per month))
-
-"As someone who wants to understand their finances better, I want to be able to see my totals presented in a way that visually interesting, like a pie chart." Could-have
-
-Feature: Interesting visuals for the data to be presented
-
+Each user story has been labelled as either a must-have, should-have, or could-have. The must-have requirements are considered essential and non-negotiable, as they are fundamental to the core purpose of the application. The should-have requirements are important features that add significant value and enhance the overall functionality of the system. The could-have requirements are optional features that would improve the application further but are not essential for meeting the main objectives of the project.
 
 ## Features
 
@@ -197,21 +199,27 @@ Feature: Interesting visuals for the data to be presented
 
 ### Should-Have
 - Local storage
+- Interesting visuals for the data to be presented (ie, pie chart)
+
+### Could-Have
 - Spending analysis and budgeting suggestions
 - Savings goal calculator
 
-### Could-Have
-- Interesting visuals for the data to be presented (ie, pie chart)
-
 ## How user features support user stories:
 
-The application has been designed to provide a positive and accessible user experience for all users. Through responsive design and accessibility considerations, users will be able to access and use the website effectively across a range of devices and screen sizes. 
+Although web apps responsiveness has not been included in the user story section, it is a fundimental must for all projects. The application has been designed to provide a positive and accessible user experience for all users. Through responsive design and accessibility considerations, users will be able to access and use the website effectively across a range of devices and screen sizes. 
 
 The use of local storage allows users to save their financial data for future use, eliminating the need to repeatedly enter the same information and improving convenience. 
 
-The core feature of the application is its ability to automatically calculate income, expenses, and remaining balance, helping users track their finances more effectively. Additional input fields allow users to customise their financial records, providing greater flexibility and ensuring they are not restricted to predefined categories. 
+The core feature of the application is its ability to automatically calculate income, expenses, and remaining balance, helping users track their finances more effectively. 
 
-Financial information is organised into income and expense categories, making it easier for users to understand and analyse their spending habits. The application also provides personalised suggestions when users are overspending, helping to educate them on areas where they could reduce expenses. 
+Additional input fields allow users to customise their financial records, providing greater flexibility and ensuring they are not restricted to predefined categories. 
+
+Financial information is organised into income and expense categories, making it easier for users to understand and analyse their spending habits. 
+
+The application also provides personalised suggestions when users are overspending, helping to educate them on areas where they could reduce expenses. 
+
+Using engaging visuals, such as a pie chart, to display expense information helps users understand how their income is distributed across different spending categories, making the data easier to interpret. 
 
 Finally, a savings goal calculator provides users with a realistic breakdown of how much they need to save each month to achieve their financial targets.
 
@@ -271,8 +279,6 @@ I chose these colours for my project as they created a modern and professional f
 
 For the typography I've chosen to use GoogleFont' Roboto Mono (https://fonts.google.com/specimen/Roboto+Mono?preview.layout=grid). I felt this was a good font to use, as it provides a professional look to the website. I used monospace as the secondary font, incase it fails to load.
 
-## Images
-
 # Technologies used
 
 - HTML, Structure of the website.
@@ -284,6 +290,7 @@ For the typography I've chosen to use GoogleFont' Roboto Mono (https://fonts.goo
 - DevTools, Inspect and Lighthouse.
 - GoogleFonts, Custom Fonts.
 - localStorage API
+- Chart.js, Pie chart integration
 
 # API options
 
@@ -333,6 +340,10 @@ Essentially, localStorage is persistant, data will remain after refreshing the p
 # Testing
 
 ## W3C Validators (HTML and CSS)
+
+- index.HTML (passed) ![index.HMTL](/assets/images/index.html_W3C_HTML_check.png)
+- calculation-page.HMTL (passed) ![calculation-page.HTML](/assets/images/calculation-page.html_W3C_HTML_check.png)
+- styles.css (passed) ![styles.css](/assets/images/styles.ccs_W3C_CSS_check.png)
 
 ## DevTools
 
@@ -401,6 +412,10 @@ The second issue was the value kept returning 0, this was because I was only cal
 
 
 # Project Evaluation
+
+talk about...
+- not added the feature of spending analysis/ budgeting as it could implement a bias from my end (aka, who am I to suggest what someone should spend their money on, etc.)
+- Not having time to create the savings calculator
 
 ## Final screenshots of finished website
 
