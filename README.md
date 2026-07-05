@@ -407,6 +407,8 @@ The second issue was the value kept returning 0, this was because I was only cal
 
 - incomeTotal() and expenseTotal() didn't update when data inputted was changed, unless page is refreshed: The incomeTotal and expenseTotal functions weren't being called in the eventListener of the saveIncome and saveExpense functions. Simply added the code to call the incomeTotal and expenseTotal, in the eventListener of saveIncome and saveExpense function.
 
+- Lighthouse performance for the calculation-page.HMTL was at 77: To resolve this performace issue, I remove the animation effect of the pie chart as this was too costly to the performace.
+
 
 ### Not Fixed
 

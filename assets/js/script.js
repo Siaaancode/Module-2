@@ -5,7 +5,9 @@ function addInputIncome() {
 
     newRow.classList.add("income-row");
     newRow.innerHTML = `
+    <label for="income-desciption" aria-label="Income description"></label>
     <input class="income-description" type="text" placeholder="e.g. Salary">
+    <label for="amount-number-income"></label>
     <input class="amount-number-income" type="number" placeholder="e.g. £100.00" oninput="incomeTotal()" >
     <select class="categories-income" type="text" name="categories" required>
     <option value="" disabled selected>Categories</option>
@@ -30,7 +32,9 @@ function addInputExpense() {
 
     newRow.classList.add("expense-row");
     newRow.innerHTML = `
+    <label for="expense-desciption" aria-label="Expense description"></label>
     <input class="expense-description" type="text" placeholder="e.g. Rent">
+    <label for="amount-number-expense"></label>
     <input class="amount-number-expense" type="number" placeholder="e.g. £100.00" oninput="expenseTotal()">
     <select class="categories-expense" type="text" name="categories" required>
     <option value="" disabled selected>Categories</option>
@@ -164,12 +168,14 @@ function loadIncome() {
         row.classList.add("income-row");
 
         row.innerHTML = `
+        <label for="income-desciption" aria-label="Income description"></label>
         <input
         class="income-description"
         type="text"
         value="${item.description}"
         >
-        
+
+        <label for="amount-number-income"></label>
         <input
         class="amount-number-income"
         type="number"
@@ -249,12 +255,14 @@ function loadExpense() {
         row.classList.add("expense-row");
 
         row.innerHTML = `
+        <label for="expense-desciption" aria-label="Expense description"></label>
         <input
         class="expense-description"
         type="text"
         value="${item.description}"
         >
         
+        <label for="amount-number-expense"></label>
         <input
         class="amount-number-expense"
         type="number"

@@ -39,7 +39,9 @@
 
                         <div id="income-list">
                             <div class="income-row">
+                                <label for="income-desciption" aria-label="Income description"></label>
                                 <input class="income-description" type="text" placeholder="e.g. Salary">
+                                <label for="amount-number-income"></label>
                                 <input class="amount-number-income" type="number" placeholder="e.g. £100.00"
                                     oninput="incomeTotal()">
 
@@ -54,7 +56,7 @@
                             </div>
                         </div>
 
-                        <button type="button" id="icon-income">
+                        <button type="button" id="icon-income" aria-label="Add income">
                             <i class="fa-solid fa-plus fa-2xl" style="color: #8cba80;"></i></button>
                     </form>
                 </div>
@@ -62,6 +64,7 @@
                 <div id="total-income">
                     <h3>Income Total =</h3>
                     <div class="total-income-input">
+                        <label for="total-income-input" aria-label="Income total"></label>
                         <input id="total-income-input" disabled>
                     </div>
                 </div>
@@ -74,8 +77,10 @@
 
                         <div id="expense-list">
                             <div class="expense-row">
+                                <label for="expense-desciption" aria-label="Expense description"></label>
                                 <input class="expense-description" type="text" placeholder="e.g. Rent">
-                                <input class="amount-number-expense" type="number" placeholder="e.g. £100.00"
+                                <label for="amount-number-expense"></label>
+                                <input class="amount-number-expense" type="number" placeholder="e.g. 100.00"
                                     oninput="expenseTotal()">
 
                                 <select class="categories-expense" name="categories" required>
@@ -92,7 +97,7 @@
                             </div>
                         </div>
 
-                        <button type="button" id="icon-expense">
+                        <button type="button" id="icon-expense" aria-label="Add expense">
                             <i class="fa-solid fa-plus fa-2xl" style="color: #8cba80;"></i></button>
                     </form>
                 </div>
@@ -100,6 +105,7 @@
                 <div id="total-expense">
                     <h3>Expenses Total =</h3>
                     <div class="total-expense-input">
+                        <label for="total-expense-input" aria-label="Expense total"></label>
                         <input id="total-expense-input" disabled>
                     </div>
                 </div>
@@ -111,6 +117,7 @@
                     <h2>Breakdown Total</h2>
                     <div class="breakdown-total-input">
                         <h3>Income - Expenses =</h3>
+                        <label for="breakdown-total-input" aria-label="breadown total"></label>
                         <input id="breakdown-total-input" disabled>
                     </div>
                 </div>

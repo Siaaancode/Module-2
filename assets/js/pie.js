@@ -21,6 +21,7 @@ const myChart = new Chart(ctx, {
         }],
     },
     options: {
+        animation: false,
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
