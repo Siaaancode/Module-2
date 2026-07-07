@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget Birdie | Finance Calculator</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="assets/js/pie.js" defer></script>
 </head>
 
 <body>
@@ -39,13 +38,16 @@
 
                         <div id="income-list">
                             <div class="income-row">
-                                <label for="income-desciption" aria-label="Income description"></label>
-                                <input class="income-description" type="text" placeholder="e.g. Salary">
-                                <label for="amount-number-income"></label>
-                                <input class="amount-number-income" type="number" placeholder="e.g. £100.00"
-                                    oninput="incomeTotal()">
+                                <label for="income-description-1" class="visually-hidden">Income description</label>
+                                <input id="income-description-1" class="income-description" name="income-description"
+                                    type="text" placeholder="e.g. Salary">
+                                <label for="amount-number-income-1" class="visually-hidden">Income amount</label>
+                                <input id="amount-number-income-1" class="amount-number-income" type="number"
+                                    placeholder="e.g. 100.00">
 
-                                <select class="categories-income" name="categories" required>
+                                <label for="categories-income-1" class="visually-hidden">Income categories</label>
+                                <select id="categories-income-1" class="categories-income" name="income-category"
+                                    required>
                                     <option value="" disabled selected>Categories</option>
                                     <option value="Employment">Employment income</option>
                                     <option value="Self-employment">Self-employment</option>
@@ -64,7 +66,7 @@
                 <div id="total-income">
                     <h3>Income Total =</h3>
                     <div class="total-income-input">
-                        <label for="total-income-input" aria-label="Income total"></label>
+                        <label for="total-income-input" class="visually-hidden">Total income</label>
                         <input id="total-income-input" disabled>
                     </div>
                 </div>
@@ -77,13 +79,16 @@
 
                         <div id="expense-list">
                             <div class="expense-row">
-                                <label for="expense-desciption" aria-label="Expense description"></label>
-                                <input class="expense-description" type="text" placeholder="e.g. Rent">
-                                <label for="amount-number-expense"></label>
-                                <input class="amount-number-expense" type="number" placeholder="e.g. 100.00"
-                                    oninput="expenseTotal()">
+                                <label for="expense-description-1" class="visually-hidden">Expense description</label>
+                                <input id="expense-description-1" class="expense-description" name="expense-description"
+                                    type="text" placeholder="e.g. Rent">
+                                <label for="amount-number-expense-1" class="visually-hidden">Expense amount</label>
+                                <input id="amount-number-expense-1" class="amount-number-expense" type="number"
+                                    placeholder="e.g. 100.00">
 
-                                <select class="categories-expense" name="categories" required>
+                                <label for="categories-expense-1" class="visually-hidden">Expense categories</label>
+                                <select id="categories-expense-1" class="categories-expense" name="expense-category"
+                                    required>
                                     <option value="" disabled selected>Categories</option>
                                     <option value="Housing">Rent / Mortgage</option>
                                     <option value="Council tax">Council tax</option>
@@ -105,7 +110,7 @@
                 <div id="total-expense">
                     <h3>Expenses Total =</h3>
                     <div class="total-expense-input">
-                        <label for="total-expense-input" aria-label="Expense total"></label>
+                        <label for="total-expense-input" class="visually-hidden">Total expense</label>
                         <input id="total-expense-input" disabled>
                     </div>
                 </div>
@@ -117,81 +122,81 @@
                     <h2>Breakdown Total</h2>
                     <div class="breakdown-total-input">
                         <h3>Income - Expenses =</h3>
-                        <label for="breakdown-total-input" aria-label="breadown total"></label>
+                        <label for="breakdown-total-input" class="visually-hidden">Breakdown total</label>
                         <input id="breakdown-total-input" disabled>
                     </div>
                 </div>
 
                 <div id="chart">
-                <div class="legend">
+                    <div class="legend">
 
-                    <div class="legend-item">
-                        <div class="legend-square" style="--color: #373F51;"></div>
-                        <div class="legend-content">
-                            <h4>Rent / Mortgage</h4>
+                        <div class="legend-item">
+                            <div class="legend-square" style="--color: #373F51;"></div>
+                            <div class="legend-content">
+                                <h4>Rent / Mortgage</h4>
+                            </div>
+                        </div>
+
+                        <div class="legend-item">
+                            <div class="legend-square" style="--color: #535E79;"></div>
+                            <div class="legend-content">
+                                <h4>Council tax</h4>
+                            </div>
+                        </div>
+
+                        <div class="legend-item">
+                            <div class="legend-square" style="--color: #6D7B9C;"></div>
+                            <div class="legend-content">
+                                <h4>Utilities</h4>
+                            </div>
+                        </div>
+
+                        <div class="legend-item">
+                            <div class="legend-square" style="--color: #8691AC;"></div>
+                            <div class="legend-content">
+                                <h4>Food / Groceries</h4>
+                            </div>
+                        </div>
+
+                        <div class="legend-item">
+                            <div class="legend-square" style="--color: #8CBA80;"></div>
+                            <div class="legend-content">
+                                <h4>Transportation</h4>
+                            </div>
+                        </div>
+
+                        <div class="legend-item">
+                            <div class="legend-square" style="--color: #ABCDA2;"></div>
+                            <div class="legend-content">
+                                <h4>Debt / Loan Payments</h4>
+                            </div>
+                        </div>
+
+                        <div class="legend-item">
+                            <div class="legend-square" style="--color: #C3DBBD;"></div>
+                            <div class="legend-content">
+                                <h4>Entertainment</h4>
+                            </div>
+                        </div>
+
+                        <div class="legend-item">
+                            <div class="legend-square" style="--color: #DBE9D8;"></div>
+                            <div class="legend-content">
+                                <h4>Other</h4>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="legend-item">
-                        <div class="legend-square" style="--color: #535E79;"></div>
-                        <div class="legend-content">
-                            <h4>Council tax</h4>
-                        </div>
-                    </div>
-
-                    <div class="legend-item">
-                        <div class="legend-square" style="--color: #6D7B9C;"></div>
-                        <div class="legend-content">
-                            <h4>Utilities</h4>
-                        </div>
-                    </div>
-
-                    <div class="legend-item">
-                        <div class="legend-square" style="--color: #8691AC;"></div>
-                        <div class="legend-content">
-                            <h4>Food / Groceries</h4>
-                        </div>
-                    </div>
-
-                    <div class="legend-item">
-                        <div class="legend-square" style="--color: #8CBA80;"></div>
-                        <div class="legend-content">
-                            <h4>Transportation</h4>
-                        </div>
-                    </div>
-
-                    <div class="legend-item">
-                        <div class="legend-square" style="--color: #ABCDA2;"></div>
-                        <div class="legend-content">
-                            <h4>Debt / Loan Payments</h4>
-                        </div>
-                    </div>
-
-                    <div class="legend-item">
-                        <div class="legend-square" style="--color: #C3DBBD;"></div>
-                        <div class="legend-content">
-                            <h4>Entertainment</h4>
-                        </div>
-                    </div>
-
-                    <div class="legend-item">
-                        <div class="legend-square" style="--color: #DBE9D8;"></div>
-                        <div class="legend-content">
-                            <h4>Other</h4>
-                        </div>
+                    <div id="pie-chart">
+                        <canvas id="my-chart"></canvas>
                     </div>
                 </div>
+            </section>
 
-                <div id="pie-chart">
-                    <canvas id="my-chart"></canvas>
-                </div>
-    </div>
-    </section>
-
-    </main>
-    <footer>
-        <p>&copy; 2026 Budget Birdie.</p>
-    </footer>
+        </main>
+        <footer>
+            <p>&copy; 2026 Budget Birdie.</p>
+        </footer>
 
     </div>
 
@@ -201,6 +206,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
     <!--Javascript-->
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/pie.js" defer></script>
 
 </body>
 

@@ -1,57 +1,73 @@
 // Adds new input when icon is clicked
+let incomeIndex = 1;
 
 function addInputIncome() {
-    const newRow = document.createElement("div");
+    incomeIndex += 1;
 
+    const descId = `income-description-${incomeIndex}`;
+    const amountId = `income-amount-${incomeIndex}`;
+    const categoryId = `income-category-${incomeIndex}`;
+
+    const newRow = document.createElement("div");
     newRow.classList.add("income-row");
+
     newRow.innerHTML = `
-    <label for="income-desciption" aria-label="Income description"></label>
-    <input class="income-description" type="text" placeholder="e.g. Salary">
-    <label for="amount-number-income"></label>
-    <input class="amount-number-income" type="number" placeholder="e.g. £100.00" oninput="incomeTotal()" >
-    <select class="categories-income" type="text" name="categories" required>
-    <option value="" disabled selected>Categories</option>
-    <option value="Employment">Employment income</option>
-    <option value="Self-employment">Self-employment</option>
-    <option value="Pension">Pension</option>
-    <option value="State benefits">State benefits</option>
-    <option value="Other">Other</option>
-    </select>
+    <label for="${descId}" class="visually-hidden">Income description</label>
+        <input id="${descId}" class="income-description" type="text" placeholder="e.g. Salary">
+        <label for="${amountId}" class="visually-hidden">Income amount</label>
+        <input id="${amountId}" class="amount-number-income" type="number" placeholder="e.g. 100.00"
+            oninput="incomeTotal()">
+
+        <label for="${categoryId}" class="visually-hidden">Income categories</label>
+        <select id="${categoryId}" class="categories-income" name="categories" required>
+            <option value="" disabled selected>Categories</option>
+            <option value="Employment">Employment income</option>
+            <option value="Self-employment">Self-employment</option>
+            <option value="Pension">Pension</option>
+            <option value="State benefits">State benefits</option>
+            <option value="Other">Other</option>
+        </select>
     `;
 
-    const container = document.getElementById("income-list");
-
-    container.appendChild(newRow);
+    document.getElementById("income-list").appendChild(newRow);
 }
 document.getElementById("icon-income").addEventListener("click", addInputIncome);
 
 // Code for expenses
+let expenseIndex = 1;
 
 function addInputExpense() {
-    const newRow = document.createElement("div");
+    expenseIndex += 1;
 
+    const descId = `expense-description-${expenseIndex}`;
+    const amountId = `expense-amount-${expenseIndex}`;
+    const categoryId = `expense-category-${expenseIndex}`;
+
+    const newRow = document.createElement("div");
     newRow.classList.add("expense-row");
+
     newRow.innerHTML = `
-    <label for="expense-desciption" aria-label="Expense description"></label>
-    <input class="expense-description" type="text" placeholder="e.g. Rent">
-    <label for="amount-number-expense"></label>
-    <input class="amount-number-expense" type="number" placeholder="e.g. £100.00" oninput="expenseTotal()">
-    <select class="categories-expense" type="text" name="categories" required>
-    <option value="" disabled selected>Categories</option>
-    <option value="Housing">Rent / Mortgage</option>
-    <option value="Council tax">Council tax</option>
-    <option value="Utilities">Utilities</option>
-    <option value="Food">Food / Groceries</option>
-    <option value="Transportation">Transportation</option>
-    <option value="Financial commitments">Debt / Loan Payments</option>
-    <option value="Entertainment">Entertainment</option>
-    <option value="Other">Other</option>
-    </select>
+    <label for="${descId}" class="visually-hidden">Expense description</label>
+        <input id="${descId}" class="expense-description" type="text" placeholder="e.g. Rent">
+        <label for="${amountId}" class="visually-hidden">Expense amount</label>
+        <input id="${amountId}" class="amount-number-expense" type="number" placeholder="e.g. 100.00"
+            oninput="expenseTotal()">
+
+        <label for="${categoryId}" class="visually-hidden">Expense categories</label>
+        <select id="${categoryId}" class="categories-expense" name="categories" required>
+            <option value="" disabled selected>Categories</option>
+            <option value="Housing">Rent / Mortgage</option>
+            <option value="Council tax">Council tax</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Food">Food / Groceries</option>
+            <option value="Transportation">Transportation</option>
+            <option value="Financial commitments">Debt / Loan Payments</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Other">Other</option>
+        </select>
     `;
 
-    const container = document.getElementById("expense-list");
-
-    container.appendChild(newRow);
+    document.getElementById("expense-list").appendChild(newRow);
 }
 document.getElementById("icon-expense").addEventListener("click", addInputExpense);
 
@@ -108,12 +124,6 @@ function breakdownOfTotals() {
 
 }
 
-// if total is + display message suggest saving calculator
-
-
-// if total is -  suggest expenses to cut
-
-
 // Save income with localStorage functions 
 
 function saveIncome() {
@@ -151,7 +161,6 @@ document.addEventListener("change", (event) => {
 });
 
 // Load income with localStorage functions 
-
 function loadIncome() {
 
     const savedData = localStorage.getItem("incomeData");
@@ -164,25 +173,27 @@ function loadIncome() {
 
     incomes.forEach(item => {
 
+        incomeIndex += 1;
+
+        const descId = `income-description-${incomeIndex}`;
+        const amountId = `income-amount-${incomeIndex}`;
+        const categoryId = `income-category-${incomeIndex}`;
+
         const row = document.createElement("div");
         row.classList.add("income-row");
 
         row.innerHTML = `
-        <label for="income-desciption" aria-label="Income description"></label>
-        <input
-        class="income-description"
-        type="text"
-        value="${item.description}"
-        >
+        <label for="${descId}" class="visually-hidden">Income description</label>
+        <input id="${descId}" class="income-description" type="text" value="${item.description}">
 
-        <label for="amount-number-income"></label>
+        <label for="${amountId}" class="visually-hidden">Income amount</label>
         <input
-        class="amount-number-income"
-        type="number"
-        value="${item.amount}"
+        id="${amountId}" class="amount-number-income"
+        type="number" value="${item.amount}"
         >
         
-        <select class="categories-income" name="categories" required>
+        <label for="${categoryId}" class="visually-hidden">Income categories</label>
+        <select id="${categoryId}" class="categories-income" name="categories" required>
             <option value="" disabled selected>Categories</option>
             <option value="Employment" ${item.category === "Employment" ? "selected" : ""}>Employment income</option>
             <option value="Self-employment" ${item.category === "Self-employment" ? "selected" : ""}>Self-employment</option>
@@ -194,10 +205,10 @@ function loadIncome() {
         incomeList.appendChild(row);
     });
 }
-document.addEventListener("DOMContentLoaded", loadIncome);
-
-loadIncome();
-incomeTotal();
+document.addEventListener("DOMContentLoaded", () => {
+    loadIncome();
+    incomeTotal();
+});
 
 
 // Save expense with localStorage functions 
@@ -251,25 +262,26 @@ function loadExpense() {
 
     expenses.forEach(item => {
 
+        expenseIndex += 1;
+
+        const descId = `income-description-${expenseIndex}`;
+        const amountId = `income-amount-${expenseIndex}`;
+        const categoryId = `income-category-${expenseIndex}`;
+
         const row = document.createElement("div");
         row.classList.add("expense-row");
 
         row.innerHTML = `
-        <label for="expense-desciption" aria-label="Expense description"></label>
-        <input
-        class="expense-description"
-        type="text"
-        value="${item.description}"
+        <label for="${descId}" class="visually-hidden">Expense description</label>
+        <input id="${descId}" class="expense-description" type="text" value="${item.description}"
         >
         
-        <label for="amount-number-expense"></label>
-        <input
-        class="amount-number-expense"
-        type="number"
-        value="${item.amount}"
+        <label for="${amountId}" class="visually-hidden">Expense amount</label>
+        <input id="${amountId}" class="amount-number-expense" type="number" value="${item.amount}"
         >
         
-        <select class="categories-expense" name="categories" required>
+        <label for="${categoryId}" class="visually-hidden">Expense categories</label>
+        <select id="${categoryId}" class="categories-expense" name="categories" required>
             <option value="" disabled selected>Categories</option>
             <option value="Housing" ${item.category === "Housing" ? "selected" : ""}>Rent / Mortgage</option>
             <option value="Council tax" ${item.category === "Council tax" ? "selected" : ""}>Council tax</option>
@@ -283,13 +295,8 @@ function loadExpense() {
 
         expenseList.appendChild(row);
     });
-    incomeTotal();
-    expenseTotal();
-    updateChart();
 }
 document.addEventListener("DOMContentLoaded", () => {
-    loadIncome();
     loadExpense();
-
-
+    expenseTotal();
 });

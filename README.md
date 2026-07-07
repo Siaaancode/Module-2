@@ -342,12 +342,24 @@ Essentially, localStorage is persistant, data will remain after refreshing the p
 ## W3C Validators (HTML and CSS)
 
 - index.HTML (passed) ![index.HMTL](/assets/images/index.html_W3C_HTML_check.png)
-- calculation-page.HMTL (passed) ![calculation-page.HTML](/assets/images/calculation-page.html_W3C_HTML_check.png)
+- calculation-page.HTML (passed) ![calculation-page.HTML](/assets/images/calculation-page.html_W3C_HTML_check.png)
 - styles.css (passed) ![styles.css](/assets/images/styles.ccs_W3C_CSS_check.png)
 
 ## DevTools
 
 ## Lighthouse
+
+- index.HTML (passed) ![index.HTML](/assets/images/index.html_lighthouse_pass.png)
+
+- calculation-page (passed) ![calculation-page.HTML](/assets/images/calculation-page.html_lighthouse_pass.png)
+
+## JSLint - errors by function
+
+### addInputIncome()
+
+### addInputExpense()
+
+
 
 ## GitHub Pages
 
@@ -355,9 +367,10 @@ Essentially, localStorage is persistant, data will remain after refreshing the p
 
 ## Final checks
 
-W3C HTML validator - ...
-W3C CSS validator - ...
-DevTools Lighthouse - ...
+W3C HTML validator - Passed
+W3C CSS validator - Passed
+DevTools Lighthouse - Passed
+JSLint
 Github Pages - ... 
 
 ## Testing evaluation
@@ -409,6 +422,8 @@ The second issue was the value kept returning 0, this was because I was only cal
 
 - Lighthouse performance for the calculation-page.HMTL was at 77: To resolve this performace issue, I remove the animation effect of the pie chart as this was too costly to the performace.
 
+- Duplicate form field id's: My former javascript code simply duplicated my original HTML input fields, which contained id's that ended up being reused, which flagged issues on lighthouse. But I couldn't remove the id's on my HMTL as they were needed for the labels tags. To resolve this, I asked ChatGPT how I could resolve this in Javascript to create new id's in the new inputs. It suggested creating the initial input row in Javascript and have them load on the initial loading of the page, then having code that links to the add button to add inputs where it would generate new inputs with different ids, eg: inital input #income-description-1, #income-description-2, etc.
+
 
 ### Not Fixed
 
@@ -432,3 +447,47 @@ talk about...
 ## Content
 ## Media 
 ## Code
+
+### ChatGPT
+- Used ChatGPT to hide label tags - 
+Fix (modern, Lighthouse-safe version)
+
+```
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+```
+
+- Fixed duplicate ids issues when new inputs generated
+
+Added suggested code (adjusted for both addInputIncome(), 
+addInputExpense(), loadIncome() and loadExpense()):
+
+```
+let incomeIndex = 1;
+
+incomeIndex += 1;
+
+const descId = `income-description-${incomeIndex}`;
+const amountId = `income-amount-${incomeIndex}`;
+const categoryId = `income-category-${incomeIndex}`;
+
+<label for="${descId}" ... >
+<input id="${descId}"... value="${item.description}">
+
+<label for="${amountId}" ... >
+<input id="${amountId}" ... value="${item.amount}">
+
+<label for="${categoryId}" ... >
+<select id="${categoryId}" ... >
+```
+
+
