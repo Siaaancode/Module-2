@@ -2,9 +2,13 @@
 
 This project is my final submission for the Module 2 unit of my Web Development course at South Staffordshire College.
 
-Link to deployed site (add link here)
+Links to GitHub profile and site: 
 
-(Image of home page here)
+([GitHub profile page](https://github.com/Siaaancode/Module-2)) ([Budget Birdie app](https://siaaancode.github.io/Module-2/))
+
+![Home-page image](/assets/images/home-page_image.png)
+
+![Calculation-page image](/assets/images/calculation-page_image.png)
 
 ## Table of Contents
 1. [Project information](#project-description)
@@ -90,7 +94,7 @@ For this project, I researched a few different web apps that were similar to wha
 
 I've noted what was good, what was bad, what I could gain and what I'd improve. From this, I can make informed decisions about the directions I'd like to take with my own project.
 
-## Websites (Adjust)
+## Websites
 
 ### Website 1 - Money Helper
 https://www.moneyhelper.org.uk/en/everyday-money/budgeting/budget-planner
@@ -251,18 +255,12 @@ By limiting the number of pages and reducing unnecessary complexity, users will 
 ## Home page
 
 ### Navbar and hero banner
-### Our Team section
-### Testimonials
-### Contact information
+### How to use section
+### Calculator page
 
-## Services page
-## Booking page
-
-### Form
 ## Responsiveness
 
 # Website Surface
-
 ## Design Choice
 
 ## Colour Palette
@@ -291,6 +289,17 @@ For the typography I've chosen to use GoogleFont' Roboto Mono (https://fonts.goo
 - GoogleFonts, Custom Fonts.
 - localStorage API
 - Chart.js, Pie chart integration
+
+## Jest
+
+### Red, Green, Refactor
+
+This method is the cycle of Test-Driven Developement (TDD). For the major part of my project, I used Behaviour-Driven Development (BDD). Red resembles code that does not work, Green code works and Refactor essentially cleans up the code, making it easier to manage and read.
+
+By using the BDD method I have bypassed the Red stage to Green. So to Refactor my code I have:
+
+.....
+
 
 # API options
 
@@ -347,18 +356,594 @@ Essentially, localStorage is persistant, data will remain after refreshing the p
 
 ## DevTools
 
-## Lighthouse
+### Lighthouse
 
 - index.HTML (passed) ![index.HTML](/assets/images/index.html_lighthouse_pass.png)
 
 - calculation-page (passed) ![calculation-page.HTML](/assets/images/calculation-page.html_lighthouse_pass.png)
 
-## JSLint - errors by function
+## JSLint (https://www.jslint.com/branch-v2020.11.6/index.html)- errors by function
+(Selected options - Assume... a browser and Tolerate... long lines + for statement)
 
-### addInputIncome()
+## script.js file
 
-### addInputExpense()
+### addInputIncome() - No errors 
+![addInputIncome()](/assets/images/JSLint_addInputIncome_function.png)
 
+### addInputExpense() - No errors
+![addInputExpense()](/assets/images/JSLint_addInputExpense_function.png)
+
+### incomeTotal() - 1 error
+![incomeTotal()](/assets/images/JSLint_incomeTotal_function.png)
+
+JSLint failed this code:
+
+    for (let i = 0; i < incomes.length; i++) {
+        total += Number(incomes[i].value) || 0;
+    }
+
+So I change it to:
+
+    let total = 0;
+    let i;
+
+    for (i = 0; i < incomes.length; i+=1) {
+        total += Number(incomes[i].value) || 0;
+    }
+
+![incomeTotal()_Pass](/assets/images/JSLint_incomeTotal_function_pass.png)
+
+The warning is only because I'm currently checking one function at a time and the error function is not being checked. A final screenshot of all functions being checked and passing will be available at the end of this section.
+
+### expenseTotal() - 1 error
+![expenseTotal()](/assets/images/JSLint_expenseTotal_function.png)
+
+JSLint failed this code:
+
+    let total = 0;
+
+    for (let i = 0; i < expenses.length; i++) {
+        total += Number(expenses[i].value) || 0;
+    }
+
+So I change it to:
+
+
+    let total = 0;
+    let i;
+
+    for (i = 0; i < expenses.length; i+=1) {
+        total += Number(expenses[i].value) || 0;
+    }
+![expenseTotal()_Pass](/assets/images/JSLint_expenseTotal_function_pass.png)
+
+The warning is only because I'm currently checking one function at a time and the error function is not being checked. A final screenshot of all functions being checked and passing will be available at the end of this section.
+
+### breakdownOfTotals() - No errors
+![breakdownOfTotals()](/assets/images/JSLint_breakdownOfTotals_function.png)
+
+### saveIncome() - 1 error
+![saveIncome()](/assets/images/JSLint_saveIncome_function.png)
+
+JSLint failed this code:
+
+    rows.forEach(row => {
+
+So I change it to:
+
+    rows.forEach(function (row) {
+
+![saveIncome()](/assets/images/JSLint_saveIncome_function_pass.png)
+
+### loadIncome() - 3 errors
+![loadIncome()](/assets/images/JSLint_loadIncome_function.png)
+
+JSLint failed this code:
+
+    if (!saveData) return;
+
+So I changed it to:
+    
+    if (!savedData) {
+    return;
+    }
+![loadIncome()2](/assets/images/JSLint_loadIncome_function_2.png)
+
+JSLint failed this code:
+
+    incomes.forEach(item => {
+    incomeIndex += 1;
+
+So I changed it to:
+
+    incomes.forEach(function (item) {
+    let incomeIndex = 1;
+
+![loadIncome()3](/assets/images/JSLint_loadIncome_function_3.png)
+
+JSLint failed this code:
+
+    <option value="" disabled selected>Categories</option>
+            <option value="Employment" ${item.category === "Employment" ? "selected" : ""}>Employment income</option>
+            <option value="Self-employment" ${item.category === "Self-employment" ? "selected" : ""}>Self-employment</option>
+            <option value="Pension" ${item.category === "Pension" ? "selected" : ""}>Pension</option>
+            <option value="State benefits" ${item.category === "State benefits" ? "selected" : ""}>State benefits</option>
+            <option value="Other" ${item.category === "Other" ? "selected" : ""}>Other</option>
+
+            document.addEventListener("DOMContentLoaded", () => {
+
+So I changed it to:
+
+    <option value="" disabled selected>Categories</option>
+            <option value="Employment" ${(item.category === "Employment" ? "selected" : "")}>Employment income</option>
+            <option value="Self-employment" ${(item.category === "Self-employment" ? "selected" : "")}>Self-employment</option>
+            <option value="Pension" ${(item.category === "Pension" ? "selected" : "")}>Pension</option>
+            <option value="State benefits" ${(item.category === "State benefits" ? "selected" : "")}>State benefits</option>
+            <option value="Other" ${(item.category === "Other" ? "selected" : "")}>Other</option>
+        </select>`;
+
+        document.addEventListener("DOMContentLoaded", function  () {
+
+![loadIncome()4](/assets/images/JSLint_loadIncome_function_4.png)
+
+The warning is only because I'm currently checking one function at a time and the error function is not being checked. A final screenshot of all functions being checked and passing will be available at the end of this section.
+
+### saveExpense() - 1 error
+![saveExpense()](/assets/images/JSLint_saveExpense_function.png)
+
+JSLint failed this code:
+
+    rows.forEach(row => {
+
+So I change it to:
+
+    rows.forEach(function (row) {
+
+![saveExpense()](/assets/images/JSLint_saveExpense_function_pass.png)
+
+### loadExpense() - 3 errors
+
+![loadExpense()](/assets/images/JSLint_loadExpense_function.png)
+
+JSLint failed this code: 
+
+    if (!saveData) return;
+
+So I change it to:
+
+    if (!savedData) {
+    return;
+    }
+
+![loadExpense()2](/assets/images/JSLint_loadExpense_function_2.png)
+
+JSLint failed this code:
+
+    expenses.forEach(item => {
+    expenseIndex += 1;
+
+So I change it to:
+
+    expenses.forEach(function (item) {
+    let expenseIndex = 1;
+
+![loadExpense()3](/assets/images/JSLint_loadExpense_function_3.png)
+
+JSLint failed this code:
+
+    <option value="" disabled selected>Categories</option>
+            <option value="Housing" ${item.category === "Housing" ? "selected" : ""}>Rent / Mortgage</option>
+            <option value="Council tax" ${item.category === "Council tax" ? "selected" : ""}>Council tax</option>
+            <option value="Utilities" ${item.category === "Utilities" ? "selected" : ""}>Utilities</option>
+            <option value="Food" ${item.category === "Food" ? "selected" : ""}>Food / Groceries</option>
+            <option value="Transportation" ${item.category === "Transportation" ? "selected" : ""}>Transportation</option>
+            <option value="Financial commitments" ${item.category === "Financial commitments" ? "selected" : ""}>Debt / Loan Payments</option>
+            <option value="Entertainment" ${item.category === "Entertainment" ? "selected" : ""}>Entertainment</option>
+            <option value="Other" ${item.category === "Other" ? "selected" : ""}>Other</option>
+            
+            document.addEventListener("DOMContentLoaded", () => {
+
+So I change it to:
+
+    <option value="" disabled selected>Categories</option>
+            <option value="Housing" ${(item.category === "Housing" ? "selected" : "")}>Rent / Mortgage</option>
+            <option value="Council tax" ${(item.category === "Council tax" ? "selected" : "")}>Council tax</option>
+            <option value="Utilities" ${(item.category === "Utilities" ? "selected" : "")}>Utilities</option>
+            <option value="Food" ${(item.category === "Food" ? "selected" : "")}>Food / Groceries</option>
+            <option value="Transportation" ${(item.category === "Transportation" ? "selected" : "")}>Transportation</option>
+            <option value="Financial commitments" ${(item.category === "Financial commitments" ? "selected" : "")}>Debt / Loan Payments</option>
+            <option value="Entertainment" ${(item.category === "Entertainment" ? "selected" : "")}>Entertainment</option>
+            <option value="Other" ${(item.category === "Other" ? "selected" : "")}>Other</option>
+
+            document.addEventListener("DOMContentLoaded", function () {
+
+![loadExpense()4](/assets/images/JSLint_loadExpense_function_4.png)
+
+The warning is only because I'm currently checking one function at a time and the error function is not being checked. A final screenshot of all functions being checked and passing will be available at the end of this section.
+
+### All functions
+
+![All functions](/assets/images/JSLint_all_functions.png)
+
+JSLint failed this code:
+
+    function breakdownOfTotals() {
+
+    const incomeInput = document.getElementById("total-income-input");
+    const expenseInput = document.getElementById("total-expense-input");
+    const finalBreakdownTotal = document.getElementById("breakdown-total-input");
+
+    const total = Number(incomeInput.value) - Number(expenseInput.value);
+
+    finalBreakdownTotal.value = total;
+    }
+
+So I changed it by moving it above the incomeTotal() and expenseTotal() functions. JSLint saw this function as out of scope, but by moving it, JSLint accepted it.
+
+![All functions](/assets/images/JSLint_all_functions_2.png)
+
+The last error is regarding the updateChart() function that is not in that particular javascript file. So I've moved the updateChart and getExpenseCategoryTotals() function inbetween the expenseTotal() and saveIncome() functions, to avoid any 'out of scope' errors.
+
+![All functions](/assets/images/JSLint_all_functions_3.png)
+
+JSLint failed this code:
+
+    expenses.forEach(item => {
+
+So I changed it to:
+
+    expenses.forEach(function (row) {
+
+I also moved all the Chart javascript from the chart.js file to the script.js file. Before, the chart wasn't working with the code in the script.js file but now it magically does.
+
+    const ctx = document.getElementById("my-chart");
+
+    const myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+            label: ['Total'],
+            backgroundColor: [
+                '#373F51',
+                '#535E79',
+                '#6D7B9C',
+                '#8691AC',
+                '#8CBA80',
+                '#ABCDA2',
+                '#C3DBBD',
+                '#DBE9D8'
+            ],
+            data: [1, 1, 1, 1, 1, 1, 1, 1],
+            borderWidth: 5,
+        }],
+    },
+    options: {
+        animation: false,
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                labels: {
+                    font: {
+                        size: 14,
+                        family: 'Roboto Mono, monospace',
+                    },
+                },
+            },
+        },
+    },
+    });
+
+    function getExpenseCategoryTotals() {
+
+    const expenses = document.querySelectorAll(".expense-row");
+
+    const totals = {
+        "Housing": 0,
+        "Council tax": 0,
+        "Utilities": 0,
+        "Food": 0,
+        "Transportation": 0,
+        "Financial commitments": 0,
+        "Entertainment": 0,
+        "Other": 0
+    };
+
+    expenses.forEach(function (row) {
+
+        const amount = Number(row.querySelector(".amount-number-expense").value) || 0;
+        const category = row.querySelector(".categories-expense").value;
+
+        if (totals[category] !== undefined) {
+            totals[category] += amount;
+        }
+    });
+
+    return totals;
+    }
+
+    function updateChart() {
+
+    const totals = getExpenseCategoryTotals();
+
+    myChart.data.datasets[0].data = [
+        totals["Housing"],
+        totals["Council tax"],
+        totals["Utilities"],
+        totals["Food"],
+        totals["Transportation"],
+        totals["Financial commitments"],
+        totals["Entertainment"],
+        totals["Other"]
+    ];
+
+    myChart.update();
+    }
+
+    document.addEventListener("input", (event) => {
+    if (event.target.matches(".amount-number-expense")) {
+        expenseTotal();
+        updateChart();
+    }
+    });
+
+    document.addEventListener("change", (event) => {
+    if (event.target.matches(".categories-expense")) {
+        saveExpense();
+        expenseTotal();
+        updateChart();
+    }
+    });
+
+Because I moved it over to the main script.js file, it's now pointing out a bunch of errors as well.
+
+![All functions](/assets/images/JSLint_all_functions_4.png)
+
+JSLint failed this code:
+
+    const myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+            label: ['Total'],
+            backgroundColor: [
+                '#373F51',
+                '#535E79',
+                '#6D7B9C',
+                '#8691AC',
+                '#8CBA80',
+                '#ABCDA2',
+                '#C3DBBD',
+                '#DBE9D8'
+            ],
+            data: [1, 1, 1, 1, 1, 1, 1, 1],
+            borderWidth: 5,
+        }],
+    },
+    options: {
+        animation: false,
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                labels: {
+                    font: {
+                        size: 14,
+                        family: 'Roboto Mono, monospace',
+                    },
+                },
+            },
+        },
+    },
+    });
+
+So I changed it to:
+
+    const myChart = new Chart(ctx, {
+    type: "doughnut",
+    data: {
+        datasets: [{
+            label: ["Total"],
+            backgroundColor: [
+                "#373F51",
+                "#535E79",
+                "#6D7B9C",
+                "#8691AC",
+                "#8CBA80",
+                "#ABCDA2",
+                "#C3DBBD",
+                "#DBE9D8"
+            ],
+            data: [1, 1, 1, 1, 1, 1, 1, 1],
+            borderWidth: 5
+    }]
+    },
+    options: {
+        animation: false,
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                labels: {
+                    font: {
+                        size: 14,
+                        family: "Roboto Mono, monospace"
+    }
+                }
+            }
+        }
+    }
+    });
+
+![All functions](/assets/images/JSLint_all_functions_5.png)
+
+JSLint failed this code:
+
+    const myChart = new Chart(ctx, {
+
+So I change it by adding "/*global document, localStorage, Chart*/" at the beginning of the script.
+
+JSLint failed this code:
+
+    myChart.data.datasets[0].data = [
+        totals["Housing"],
+        totals["Council tax"],
+        totals["Utilities"],
+        totals["Food"],
+        totals["Transportation"],
+        totals["Financial commitments"],
+        totals["Entertainment"],
+        totals["Other"]
+    ];
+
+So I changed it to:
+
+    myChart.data.datasets[0].data = [
+        totals.Housing,
+        totals.CouncilTax,
+        totals.Utilities,
+        totals.Food,
+        totals.Transportation,
+        totals.FinancialCommitments,
+        totals.Entertainment,
+        totals.Other
+    ];
+
+JSLint failed this code:
+
+    document.addEventListener("input", (event) => {
+
+    document.addEventListener("change", (event) => {
+
+So I change it to:
+
+    document.addEventListener("input", function (event) {
+
+    document.addEventListener("change", function (event) {
+
+![All functions](/assets/images/JSLint_all_functions_6.png)
+
+JSLint failed this code:
+
+    const myChart = new Chart(ctx, {
+    type: "doughnut",
+    data: {
+        datasets: [{
+            label: ["Total"],
+            backgroundColor: [
+                "#373F51",
+                "#535E79",
+                "#6D7B9C",
+                "#8691AC",
+                "#8CBA80",
+                "#ABCDA2",
+                "#C3DBBD",
+                "#DBE9D8"
+            ],
+            data: [1, 1, 1, 1, 1, 1, 1, 1],
+            borderWidth: 5,
+        }]
+    },
+
+So I changed it by removing the ,:
+    
+    borderWidth: 5
+
+![All functions](/assets/images/JSLint_all_functions_7.png)
+
+JSLint failed this code:
+
+    family: "Roboto Mono, monospace",
+                    },
+                },
+            },
+        },
+    },
+    });
+
+So I changed it by removing the ,'s
+
+    family: "Roboto Mono, monospace"
+                    }
+                }
+            }
+        }
+    }
+    });
+
+![All functions](/assets/images/JSLint_all_functions_8.png)
+
+JSLint failed this code:
+
+    expenses.forEach(row => {
+
+So I changed it to:
+
+    expenses.forEach (function (row) {
+
+![All functions](/assets/images/JSLint_all_functions_9.png)
+
+JSLint failed the code because it didn't like that I wasn't calling saveExpense before the Chart functions. So I moved the saveExpense function before the Chart functions.
+
+![All functions](/assets/images/JSLint_all_functions_10.png)
+
+JSLint failed this code because of the space between forEach and (function:
+
+    expenses.forEach (function (row) {
+
+So I removed the space:
+
+    expenses.forEach(function (row) {
+
+JSLint failed this code:
+
+    <option value="Employment" ${(item.category === "Employment" ? "selected" : "")}>Employment income</option>
+            <option value="Self-employment" ${(item.category === "Self-employment" ? "selected" : "")}>Self-employment</option>
+            <option value="Pension" ${(item.category === "Pension" ? "selected" : "")}>Pension</option>
+            <option value="State benefits" ${(item.category === "State benefits" ? "selected" : "")}>State benefits</option>
+            <option value="Other" ${(item.category === "Other" ? "selected" : "")}>Other</option>
+
+So I changed it to:
+
+    <option value="Employment" ${(
+            item.category === "Employment"
+            ? "selected"
+            : ""
+        )}>Employment income</option>
+            <option value="Self-employment" ${(
+            item.category === "Self-employment"
+            ? "selected"
+            : ""
+        )}>Self-employment</option>
+            <option value="Pension" ${(
+            item.category === "Pension"
+            ? "selected"
+            : ""
+        )}>Pension</option>
+            <option value="State benefits" ${(
+            item.category === "State benefits"
+            ? "selected"
+            : ""
+        )}>State benefits</option>
+            <option value="Other" ${(
+            item.category === "Other"
+            ? "selected"
+            : ""
+        )}>Other</option>
+
+I also changed this for the expenses one as well.
+
+JSLint failed this code:
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+So I change it to:
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+### All functions passed JSLint
+
+![All function](/assets/images/JSLint_all_functions_11_pass.png)
 
 
 ## GitHub Pages
@@ -395,7 +980,6 @@ Github Pages - ...
 - Ensure the Source is set to 'Deploy from a branch' and Branch is set to 'main' and '/(root)'
 - Once completed, a link at the top of that page will become available. Simply click it, and it will open a new tab of the deployed site. (https://github.com/Siaaancode/Module-2)
 
-
 ## Bugs Discovered
 
 ### Fixed
@@ -423,7 +1007,6 @@ The second issue was the value kept returning 0, this was because I was only cal
 - Lighthouse performance for the calculation-page.HMTL was at 77: To resolve this performace issue, I remove the animation effect of the pie chart as this was too costly to the performace.
 
 - Duplicate form field id's: My former javascript code simply duplicated my original HTML input fields, which contained id's that ended up being reused, which flagged issues on lighthouse. But I couldn't remove the id's on my HMTL as they were needed for the labels tags. To resolve this, I asked ChatGPT how I could resolve this in Javascript to create new id's in the new inputs. It suggested creating the initial input row in Javascript and have them load on the initial loading of the page, then having code that links to the add button to add inputs where it would generate new inputs with different ids, eg: inital input #income-description-1, #income-description-2, etc.
-
 
 ### Not Fixed
 

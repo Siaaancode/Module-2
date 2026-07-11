@@ -1,4 +1,5 @@
-// Adds new input when icon is clicked
+/*global document, localStorage, Chart*/
+// Adds new income input when icon is clicked
 let incomeIndex = 1;
 
 function addInputIncome() {
@@ -57,11 +58,11 @@ function addInputExpense() {
         <select id="${categoryId}" class="categories-expense" name="categories" required>
             <option value="" disabled selected>Categories</option>
             <option value="Housing">Rent / Mortgage</option>
-            <option value="Council tax">Council tax</option>
+            <option value="CouncilTax">Council tax</option>
             <option value="Utilities">Utilities</option>
             <option value="Food">Food / Groceries</option>
             <option value="Transportation">Transportation</option>
-            <option value="Financial commitments">Debt / Loan Payments</option>
+            <option value="FinancialCommitments">Debt / Loan Payments</option>
             <option value="Entertainment">Entertainment</option>
             <option value="Other">Other</option>
         </select>
@@ -71,17 +72,28 @@ function addInputExpense() {
 }
 document.getElementById("icon-expense").addEventListener("click", addInputExpense);
 
+// Calculates the total of both income and expenses
+function breakdownOfTotals() {
+
+    const incomeInput = document.getElementById("total-income-input");
+    const expenseInput = document.getElementById("total-expense-input");
+    const finalBreakdownTotal = document.getElementById("breakdown-total-input");
+
+    const total = Number(incomeInput.value) - Number(expenseInput.value);
+
+    finalBreakdownTotal.value = total;
+}
 
 // Calculates the total of income
-
 function incomeTotal() {
 
     const incomes = document.getElementsByClassName("amount-number-income");
     const totalIncomeInput = document.getElementById("total-income-input");
 
     let total = 0;
+    let i;
 
-    for (let i = 0; i < incomes.length; i++) {
+    for (i = 0; i < incomes.length; i += 1) {
         total += Number(incomes[i].value) || 0;
     }
 
@@ -91,15 +103,15 @@ function incomeTotal() {
 
 
 // Calculates the total of expenses
-
 function expenseTotal() {
 
     const expenses = document.getElementsByClassName("amount-number-expense");
     const totalExpenseInput = document.getElementById("total-expense-input");
 
     let total = 0;
+    let i;
 
-    for (let i = 0; i < expenses.length; i++) {
+    for (i = 0; i < expenses.length; i += 1) {
         total += Number(expenses[i].value) || 0;
     }
 
@@ -107,31 +119,153 @@ function expenseTotal() {
     breakdownOfTotals();
 }
 
+// Save expense with localStorage functions
+function saveExpense() {
 
-// Calculates the total of both income and expenses
+    const rows = document.querySelectorAll(".expense-row");
+    const expenses = [];
 
-function breakdownOfTotals() {
+    rows.forEach(function (row) {
 
-    const incomeInput = document.getElementById("total-income-input");
-    const expenseInput = document.getElementById("total-expense-input");
-    const finalBreakdownTotal = document.getElementById("breakdown-total-input");
+        expenses.push({
+            description: row.querySelector(".expense-description").value,
+            amount: Number(row.querySelector(".amount-number-expense").value),
+            category: row.querySelector(".categories-expense").value
+        });
+    });
 
-    const total =
-        Number(incomeInput.value) -
-        Number(expenseInput.value);
-
-    finalBreakdownTotal.value = total;
-
+    localStorage.setItem("expenseData", JSON.stringify(expenses));
 }
 
-// Save income with localStorage functions 
+//Expense input added, updates
+document.addEventListener("input", function (event) {
+    if (
+        event.target.matches(".expense-description") ||
+        event.target.matches(".amount-number-expense")
+    ) {
+        saveExpense();
+        expenseTotal();
+    }
+});
+//Change to expense input, updates
+document.addEventListener("change", function (event) {
+    if (event.target.matches(".categories-expense")) {
+        saveExpense();
+        expenseTotal();
+    }
+});
 
+//Pie Chart
+const ctx = document.getElementById("my-chart");
+
+const myChart = new Chart(ctx, {
+    type: "doughnut",
+    data: {
+        datasets: [{
+            label: ["Total"],
+            backgroundColor: [
+                "#373F51",
+                "#535E79",
+                "#6D7B9C",
+                "#8691AC",
+                "#8CBA80",
+                "#ABCDA2",
+                "#C3DBBD",
+                "#DBE9D8"
+            ],
+            data: [1, 1, 1, 1, 1, 1, 1, 1],
+            borderWidth: 5
+        }]
+    },
+    options: {
+        animation: false,
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                labels: {
+                    font: {
+                        size: 14,
+                        family: "Roboto Mono, monospace"
+                    }
+                }
+            }
+        }
+    }
+});
+
+//Collects categories information
+function getExpenseCategoryTotals() {
+
+    const expenses = document.querySelectorAll(".expense-row");
+
+    const totals = {
+        "Housing": 0,
+        "CouncilTax": 0,
+        "Utilities": 0,
+        "Food": 0,
+        "Transportation": 0,
+        "FinancialCommitments": 0,
+        "Entertainment": 0,
+        "Other": 0
+    };
+
+    expenses.forEach(function (row) {
+
+        const amount = Number(row.querySelector(".amount-number-expense").value) || 0;
+        const category = row.querySelector(".categories-expense").value;
+
+        if (totals[category] !== undefined) {
+            totals[category] += amount;
+        }
+    });
+
+    return totals;
+}
+
+// Update chart
+function updateChart() {
+
+    const totals = getExpenseCategoryTotals();
+
+    myChart.data.datasets[0].data = [
+        totals.Housing,
+        totals.CouncilTax,
+        totals.Utilities,
+        totals.Food,
+        totals.Transportation,
+        totals.FinancialCommitments,
+        totals.Entertainment,
+        totals.Other
+    ];
+
+    myChart.update();
+}
+
+//Input added, updates
+document.addEventListener("input", function (event) {
+    if (event.target.matches(".amount-number-expense")) {
+        expenseTotal();
+        updateChart();
+    }
+});
+
+//Change to input, updates
+document.addEventListener("change", function (event) {
+    if (event.target.matches(".categories-expense")) {
+        saveExpense();
+        expenseTotal();
+        updateChart();
+    }
+});
+
+// Save income with localStorage functions
 function saveIncome() {
 
     const rows = document.querySelectorAll(".income-row");
     const incomes = [];
 
-    rows.forEach(row => {
+    rows.forEach(function (row) {
 
         incomes.push({
             description: row.querySelector(".income-description").value,
@@ -143,7 +277,8 @@ function saveIncome() {
     localStorage.setItem("incomeData", JSON.stringify(incomes));
 }
 
-document.addEventListener("input", (event) => {
+//Income input added, updates
+document.addEventListener("input", function (event) {
     if (
         event.target.matches(".income-description") ||
         event.target.matches(".amount-number-income")
@@ -152,26 +287,28 @@ document.addEventListener("input", (event) => {
         incomeTotal();
     }
 });
-
-document.addEventListener("change", (event) => {
+//Change to income input, updates
+document.addEventListener("change", function (event) {
     if (event.target.matches(".categories-income")) {
         saveIncome();
         incomeTotal();
     }
 });
 
-// Load income with localStorage functions 
+// Load income with localStorage functions
 function loadIncome() {
 
     const savedData = localStorage.getItem("incomeData");
-    if (!savedData) return;
+    if (!savedData) {
+        return;
+    }
 
     const incomes = JSON.parse(savedData);
 
     const incomeList = document.getElementById("income-list");
     incomeList.innerHTML = "";
 
-    incomes.forEach(item => {
+    incomes.forEach(function (item) {
 
         incomeIndex += 1;
 
@@ -191,82 +328,66 @@ function loadIncome() {
         id="${amountId}" class="amount-number-income"
         type="number" value="${item.amount}"
         >
-        
+
         <label for="${categoryId}" class="visually-hidden">Income categories</label>
         <select id="${categoryId}" class="categories-income" name="categories" required>
             <option value="" disabled selected>Categories</option>
-            <option value="Employment" ${item.category === "Employment" ? "selected" : ""}>Employment income</option>
-            <option value="Self-employment" ${item.category === "Self-employment" ? "selected" : ""}>Self-employment</option>
-            <option value="Pension" ${item.category === "Pension" ? "selected" : ""}>Pension</option>
-            <option value="State benefits" ${item.category === "State benefits" ? "selected" : ""}>State benefits</option>
-            <option value="Other" ${item.category === "Other" ? "selected" : ""}>Other</option>
+            <option value="Employment" ${(
+            item.category === "Employment"
+            ? "selected"
+            : ""
+        )}>Employment income</option>
+            <option value="Self-employment" ${(
+            item.category === "Self-employment"
+            ? "selected"
+            : ""
+        )}>Self-employment</option>
+            <option value="Pension" ${(
+            item.category === "Pension"
+            ? "selected"
+            : ""
+        )}>Pension</option>
+            <option value="State benefits" ${(
+            item.category === "State benefits"
+            ? "selected"
+            : ""
+        )}>State benefits</option>
+            <option value="Other" ${(
+            item.category === "Other"
+            ? "selected"
+            : ""
+        )}>Other</option>
+
         </select>`;
 
         incomeList.appendChild(row);
     });
 }
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
     loadIncome();
     incomeTotal();
 });
 
-
-// Save expense with localStorage functions 
-
-function saveExpense() {
-
-    const rows = document.querySelectorAll(".expense-row");
-    const expenses = [];
-
-    rows.forEach(row => {
-
-        expenses.push({
-            description: row.querySelector(".expense-description").value,
-            amount: Number(row.querySelector(".amount-number-expense").value),
-            category: row.querySelector(".categories-expense").value
-        });
-    });
-
-    localStorage.setItem("expenseData", JSON.stringify(expenses));
-}
-
-document.addEventListener("input", (event) => {
-    if (
-        event.target.matches(".expense-description") ||
-        event.target.matches(".amount-number-expense")
-    ) {
-        saveExpense();
-        expenseTotal();
-    }
-});
-
-document.addEventListener("change", (event) => {
-    if (event.target.matches(".categories-expense")) {
-        saveExpense();
-        expenseTotal();
-    }
-});
-
-
-// Load expense with localStorage functions 
-
+// Load expense with localStorage functions
 function loadExpense() {
 
     const savedData = localStorage.getItem("expenseData");
-    if (!savedData) return;
+    if (!savedData) {
+        return;
+    }
 
     const expenses = JSON.parse(savedData);
 
     const expenseList = document.getElementById("expense-list");
     expenseList.innerHTML = "";
 
-    expenses.forEach(item => {
+    expenses.forEach(function (item) {
 
         expenseIndex += 1;
 
-        const descId = `income-description-${expenseIndex}`;
-        const amountId = `income-amount-${expenseIndex}`;
-        const categoryId = `income-category-${expenseIndex}`;
+        const descId = `expense-description-${expenseIndex}`;
+        const amountId = `expense-amount-${expenseIndex}`;
+        const categoryId = `expense-category-${expenseIndex}`;
 
         const row = document.createElement("div");
         row.classList.add("expense-row");
@@ -275,28 +396,61 @@ function loadExpense() {
         <label for="${descId}" class="visually-hidden">Expense description</label>
         <input id="${descId}" class="expense-description" type="text" value="${item.description}"
         >
-        
+
         <label for="${amountId}" class="visually-hidden">Expense amount</label>
         <input id="${amountId}" class="amount-number-expense" type="number" value="${item.amount}"
         >
-        
+
         <label for="${categoryId}" class="visually-hidden">Expense categories</label>
         <select id="${categoryId}" class="categories-expense" name="categories" required>
             <option value="" disabled selected>Categories</option>
-            <option value="Housing" ${item.category === "Housing" ? "selected" : ""}>Rent / Mortgage</option>
-            <option value="Council tax" ${item.category === "Council tax" ? "selected" : ""}>Council tax</option>
-            <option value="Utilities" ${item.category === "Utilities" ? "selected" : ""}>Utilities</option>
-            <option value="Food" ${item.category === "Food" ? "selected" : ""}>Food / Groceries</option>
-            <option value="Transportation" ${item.category === "Transportation" ? "selected" : ""}>Transportation</option>
-            <option value="Financial commitments" ${item.category === "Financial commitments" ? "selected" : ""}>Debt / Loan Payments</option>
-            <option value="Entertainment" ${item.category === "Entertainment" ? "selected" : ""}>Entertainment</option>
-            <option value="Other" ${item.category === "Other" ? "selected" : ""}>Other</option>
+            <option value="Housing" ${(
+            item.category === "Housing"
+            ? "selected"
+            : ""
+        )}>Rent / Mortgage</option>
+            <option value="CouncilTax" ${(
+            item.category === "CouncilTax"
+            ? "selected"
+            : ""
+        )}>Council tax</option>
+            <option value="Utilities" ${(
+            item.category === "Utilities"
+            ? "selected"
+            : ""
+        )}>Utilities</option>
+            <option value="Food" ${(
+            item.category === "Food"
+            ? "selected"
+            : ""
+        )}>Food / Groceries</option>
+            <option value="Transportation" ${(
+            item.category === "Transportation"
+            ? "selected"
+            : ""
+        )}>Transportation</option>
+            <option value="FinancialCommitments" ${(
+            item.category === "FinancialCommitments"
+            ? "selected"
+            : ""
+        )}>Debt / Loan Payments</option>
+            <option value="Entertainment" ${(
+            item.category === "Entertainment"
+            ? "selected"
+            : ""
+        )}>Entertainment</option>
+            <option value="Other" ${(
+            item.category === "Other"
+            ? "selected"
+            : ""
+        )}>Other</option>
         </select>`;
 
         expenseList.appendChild(row);
     });
 }
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
     loadExpense();
     expenseTotal();
+    updateChart();
 });
