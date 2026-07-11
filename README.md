@@ -34,15 +34,14 @@ This app is being designed primarily for business owners, students, and individu
 
 By using JavaScript to implement logic, the app will automatically calculate the user's financial information based on their numeric inputs. Depending on whether the calculated balance is positive or negative, the application will determine the most appropriate course of action. If the balance is positive, the app will generate a realistic savings plan with achievable goals. If the balance is negative, the app will identify areas of spending that could be reduced and provide budgeting recommendations to help improve the user's financial situation.
 
-## Project Goals (Adjust)
+## Project Goals
 The main goals of this project:
  
- 1. Build a fully functional web app that records and stores incomes and expenses, automatically calculates the balances and provides budgeting or savings recommendations based on the total. 
+ 1. Build a fully functional web app that allows users to record, manage and store their incomes and expenses, while also automatically calculating the balances.
 
- 2. Effectively use JavaScript to implement the logic required to perform the financial calculations within the application.
+ 2. Effectively use JavaScript to implement the logic required to handle the data processing, financial calculations, and updates within the application, ensuring that users receive accurate summeries and insights.
  
- 3. Create a simple to use web app, that focuses on a minimal design and clean aesthetics.
-
+ 3. Design an intuitive and accessible user interface focusing on simplicity, clean aesthetics and ease of use. Making it a super simple apllication for all to use.
 
 ## Target Audience
 
@@ -172,7 +171,6 @@ https://www.starlingbank.com/current-account/tools/budget-planner/
 
 - I can’t think of anything I’d improve, overall a very good website
 
-
 ## Research Outcome
 
 Through this research, I was able to build an understanding of what elements and features would be needed to best meet the needs of the users.
@@ -239,28 +237,120 @@ By limiting the number of pages and reducing unnecessary complexity, users will 
 
 ## User Journey
 
-### Navbar
-### Hero Banner
-### Call-to-action buttons
-### Contact information (footer)
-### Website sections
+When users first visit the homepage, they are presented with a navigation bar that provides quick access to all sections of the application. Below this, the hero banner introduces the application with a brief description and encourages users to begin managing their finances.
 
+Users can either click the "How to Use" button or scroll down to access a dedicated section explaining how to use the application effectively. This guidance is intended to help new users understand the application's features before they begin. Once they are ready, they can select any of the available call-to-action buttons to navigate to the calculation page.
+
+On the calculation page, users can immediately begin entering their financial information by providing a description, numerical amount, and category for each income or expense.
+
+As data is entered, the application automatically performs the necessary calculations and updates the financial summary in real time. Separate totals are calculated for income and expenses, while a final balance is displayed by subtracting the total expenses from the total income. This provides users with an instant overview of their current financial position.
+
+At the bottom of the page, users are presented with a doughnut chart that visually represents their expense data. The chart automatically updates as expenses are added, allowing users to easily compare spending across different categories and gain a clearer understanding of where their money is being spent.
 
 # Website Skeleton
 
-## Page layout
-## Interface elements
-## Navigation
 ## Wireframes
-## Home page
 
-### Navbar and hero banner
-### How to use section
-### Calculator page
+
+
+
+
+
+
+
+## Page layout
+
+### Homepage
+
+#### Navigation bar
+![Navbar](/assets/images/navigation_bar.png)
+
+This is the navigation bar that I have created for this project. I've kept it very simple with limited links, and the relevent colour palette and fonts to match the overall aesthetic of the website.
+
+The links include 3 < a > tags:
+- 1 home button (Budget Birdie)
+- 1 instructions section (How to use)
+- 1 link to the calculation page (Get started)
+
+#### Hero Banner
+![Hero banner](/assets/images/home-page_hero-banner.png)
+
+The hero banner consists of a simple welcome message, and description of what users can expect to get from this application. As well as a call-to-action button, allowing another avenue for users to get to the main functionailty of the page.
+
+#### How to use section
+![How to use section](/assets/images/home-page_how_to_section.png)
+
+I created the “How to Use” section as a support feature for users who may need additional guidance when navigating the application. This provides a clear explanation of the app’s functionality and helps ensure users can confidently understand and use its features.
+
+#### Call-to-action buttons
+![Call-to-action button](/assets/images/call-to-action_button.png)
+
+My web application has three call-to-action buttons: one within the navigation bar, one on the homepage hero-banner and one on the "How to use" section. 
+
+I chose to provide multiple access points to the calculation page to improve usability and create a more intuitive user experience, allowing users to navigate to the main functionality from different areas of the website.
+
+#### Footer
+![Footer](/assets/images/footer_image.png)
+
+The footer didn't need to hold any relevent information, so I kept it simple with just the web apps name, year it was created and a copyright logo.
+
+
+### Calculation page
+
+#### Income input fields
+ 
+![Income inputs](/assets/images/income-input_image.png)
+
+- Description
+- Numeric amount
+- Categories
+
+#### Expense input fields
+
+![Expense inputs](/assets/images/expenses-input_image.png)
+
+- Description
+- Numeric amount
+- Categories
+
+#### Additional input buttons
+
+![Additional inputs button](/assets/images/additional-input_image.png)
+
+- Additional input buttons
+
+#### Income total
+
+![Income total](/assets/images/income-total_image.png)
+
+- Total input section
+
+#### Expense total
+
+![Expense total](/assets/images/expense-total_image.png)
+
+- Total input section
+
+#### Breakdown section
+
+![Income - expenses total](/assets/images/breakdown-total_image.png)
+
+![Legend](/assets/images/legend_image.png)
+
+![Doughnut chart](/assets/images/doughnut-chart_image.png)
+
+
+
+
+## Interface elements
 
 ## Responsiveness
 
+- Built with accessibility as a priority
+- Both pages achieve 100 on accessibility on lighthouse
+
 # Website Surface
+
 ## Design Choice
 
 ## Colour Palette
@@ -296,7 +386,7 @@ For the typography I've chosen to use GoogleFont' Roboto Mono (https://fonts.goo
 
 This method is the cycle of Test-Driven Developement (TDD). For the major part of my project, I used Behaviour-Driven Development (BDD). Red resembles code that does not work, Green code works and Refactor essentially cleans up the code, making it easier to manage and read.
 
-By using the BDD method I have bypassed the Red stage to Green. So to Refactor my code I have:
+For this project I am using the BDD method. From using this method, I have bypassed the Red stage to Green. So if I was to Refactor my code I could:
 
 .....
 
@@ -350,19 +440,24 @@ Essentially, localStorage is persistant, data will remain after refreshing the p
 
 ## W3C Validators (HTML and CSS)
 
-- index.HTML (passed) ![index.HMTL](/assets/images/index.html_W3C_HTML_check.png)
-- calculation-page.HTML (passed) ![calculation-page.HTML](/assets/images/calculation-page.html_W3C_HTML_check.png)
-- styles.css (passed) ![styles.css](/assets/images/styles.ccs_W3C_CSS_check.png)
+### index.HTML (passed) 
+![index.HMTL](/assets/images/index.html_W3C_HTML_check.png)
+### calculation-page.HTML (passed) 
+![calculation-page.HTML](/assets/images/calculation-page.html_W3C_HTML_check.png)
+### styles.css (passed) 
+![styles.css](/assets/images/styles.ccs_W3C_CSS_check.png)
 
 ## DevTools
 
 ### Lighthouse
 
-- index.HTML (passed) ![index.HTML](/assets/images/index.html_lighthouse_pass.png)
+#### index.HTML (passed) 
+![index.HTML](/assets/images/index.html_lighthouse_pass.png)
 
-- calculation-page (passed) ![calculation-page.HTML](/assets/images/calculation-page.html_lighthouse_pass.png)
+#### calculation-page (passed) 
+![calculation-page.HTML](/assets/images/calculation-page.html_lighthouse_pass.png)
 
-## JSLint (https://www.jslint.com/branch-v2020.11.6/index.html)- errors by function
+## JSLint (https://www.jslint.com/branch-v2020.11.6/index.html) - errors by function
 (Selected options - Assume... a browser and Tolerate... long lines + for statement)
 
 ## script.js file
@@ -562,6 +657,8 @@ So I change it to:
 The warning is only because I'm currently checking one function at a time and the error function is not being checked. A final screenshot of all functions being checked and passing will be available at the end of this section.
 
 ### All functions
+
+This was done after testing each function individually, to ensure no additional errors were missed.
 
 ![All functions](/assets/images/JSLint_all_functions.png)
 
@@ -1054,23 +1151,20 @@ Fix (modern, Lighthouse-safe version)
 Added suggested code (adjusted for both addInputIncome(), 
 addInputExpense(), loadIncome() and loadExpense()):
 
-```
-let incomeIndex = 1;
 
-incomeIndex += 1;
+    let incomeIndex = 1;
 
-const descId = `income-description-${incomeIndex}`;
-const amountId = `income-amount-${incomeIndex}`;
-const categoryId = `income-category-${incomeIndex}`;
+    incomeIndex += 1;
 
-<label for="${descId}" ... >
-<input id="${descId}"... value="${item.description}">
+    const descId = `income-description-${incomeIndex}`;
+    const amountId = `income-amount-${incomeIndex}`;
+    const categoryId = `income-category-${incomeIndex}`;
 
-<label for="${amountId}" ... >
-<input id="${amountId}" ... value="${item.amount}">
+    <label for="${descId}" ... >
+    <input id="${descId}"... value="${item.description}">
 
-<label for="${categoryId}" ... >
-<select id="${categoryId}" ... >
-```
+    <label for="${amountId}" ... >
+    <input id="${amountId}" ... value="${item.amount}">
 
-
+    <label for="${categoryId}" ... >
+    <select id="${categoryId}" ... >
