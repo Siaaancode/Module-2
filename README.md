@@ -318,50 +318,51 @@ The footer didn't need to hold any relevent information, so I kept it simple wit
 
 ### Calculation page
 
-#### Income input fields
+The calculation page essential consists of 3 section:
+
+1. Hero banner
+2. Incomes and expenses input fields section
+3. Breakdown section
+
+#### Hero Banner
+
+![Hero banner](/assets/images/calculation-page_hero-banner.png)
+
+The hero banner welcomes users to the calculation page with an encouraging introduction and reminds them that the more financial information they enter, the more accurate and detailed their financial breakdown will be.
+
+#### Input fields
  
 ![Income inputs](/assets/images/income-input_image.png)
-
-- Description
-- Numeric amount
-- Categories
-
-#### Expense input fields
-
 ![Expense inputs](/assets/images/expenses-input_image.png)
 
-- Description
-- Numeric amount
-- Categories
+These sections allow users to freely enter and manage their financial information. Each entry includes a description field, an amount (£) field, and a category selector, enabling users to provide context and accurately classify each income or expense.
 
-#### Additional input buttons
+##### Additional input buttons
 
 ![Additional inputs button](/assets/images/additional-input_image.png)
 
-- Additional input buttons
+This button allows users to add as many additional input fields as required. The page initially displays a single input row to keep the interface clean and uncluttered, ensuring users are only presented with additional fields when they need them.
 
-#### Income total
+##### Income and expense total
 
 ![Income total](/assets/images/income-total_image.png)
-
-- Total input section
-
-#### Expense total
-
 ![Expense total](/assets/images/expense-total_image.png)
 
-- Total input section
+These sections display the automatically calculated totals for both income and expenses. Providing these running totals allows users to monitor their financial information as they enter it, giving them a clear overview of their total income and expenditure before viewing their remaining balance.
 
 #### Breakdown section
 
 ![Income - expenses total](/assets/images/breakdown-total_image.png)
 
+The breakdown total section displays the automatically calculated remaining balance after expenses have been deducted from total income. This provides users with a clear and easy-to-understand overview of their current financial position.
+
 ![Legend](/assets/images/legend_image.png)
+
+The legend was designed to help users easily identify the different sections of the doughnut chart. It uses colours that align with the website’s colour palette, alongside clear labels that correspond to each expense category, improving readability and making the data easier to interpret.
 
 ![Doughnut chart](/assets/images/doughnut-chart_image.png)
 
-
-
+The doughnut chart was added as a key feature to provide users with a visual representation of their expenses in an engaging and easy-to-understand format. Each section of the chart represents a different expense category and dynamically updates to display only categories that contain entered data, ensuring the visualisation remains relevant and accurate.
 
 ## Interface elements
 
