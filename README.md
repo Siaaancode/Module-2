@@ -251,12 +251,33 @@ At the bottom of the page, users are presented with a doughnut chart that visual
 
 ## Wireframes
 
+These wireframes were created during the planning stages of my project, to establish a basic idea of the layout and generate ideas for the functions to include. They helped to visualise the placement of key information and features, as well as plans to keep an organised and clean interface. 
+
+### Home page
+
+The homepage was always going to be the easiest to maintain as the plan was to keep it simple, with a minimal layout to not take focus from the key features on the calculation page and avoid overwhelming users.
+
+The navigation bar was designed with minimal links for easy, non-complicated navigation across the web application.
+
+The hero banner was for a simple welcome and introduction of the application.
+
+The "How to use" section was designed to provide a simple explanation for users to understand how to use the application.
+
+Mulitple call-to-action buttons were added to improve navigation for users by giving them different ways to access the calculation page from any point on the home page.
+
+![Navbar and hero banner](/assets/images/wireframes_home-page_navbar_and_hero-banner.png)
+![How to use section](/assets/images/wireframes_home-page_how-to-section.png)
 
 
+### Calculation page
 
+The calculation page was where the wireframes plan changed the most. As the project was developing, new features were added and removed, that shifted the layout and purpose of the application. For example, in the wireframe image below, there was going to be a feature that allowed users to imput how frequently they received or paid a particular input.
 
+The initial design of this page was going to be too simple, that I felt it wasn't going to meet the needs of users. By only simply have input fields for data and not having a section for the data to be calculated and presented to users, would have made for a bad user experience.
 
+In the calculation page wireframe, I designed the layout for users to instantly see the areas they'd need to interact with. This would make it easier for users to understand what is needed from them and how the application works.
 
+![Inputs](/assets/images/wireframes_calculation-page_inputs.png)
 
 ## Page layout
 
