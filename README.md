@@ -24,15 +24,15 @@ Links to GitHub profile and site:
 
 # Project Description
 
-This app is being created to help users manage their finances more effectively through budgeting and saving. Based on a user's remaining income after expenses, the application will generate either a personalised budgeting plan or a savings plan with realistic goals and achievable outcomes. The app aims to provide a simple and organised way for users to track their financial situation, develop better financial habits, and make informed financial decisions.
+This web application has been developed to help users manage and better understand their personal finances. By entering details of their income and expenses, users can view automatically calculated totals alongside a clear breakdown of their financial information. The application provides a simple, intuitive, and organised way to monitor spending and income, enabling users to gain greater insight into their financial situation, develop healthier financial habits, and make more informed financial decisions.
 
 # Website Strategy
 
-The strategy for this project is to create a user-friendly, easy to use budgeting and savings web application that will help users achieve their financial goals. 
+The strategy for this project is to develop a user-friendly and intuitive financial management web application that enables users to better understand and monitor their personal finances. The application is primarily aimed at students and individuals who want to improve their financial management skills by providing a clear overview of their income and expenses.
 
-This app is being designed primarily for business owners, students, and individuals looking to improve their financial management. It will help users gain a clearer understanding of their finances by presenting information on income, expenses, and savings in a simple and easy-to-understand format. By providing personalised budgeting and savings guidance, the app aims to help users make more informed financial decisions and achieving their financial goals.
+Financial information is presented in a simple, organised, and easy-to-understand format, allowing users to quickly assess their financial position. By making key financial data more accessible, the application encourages users to develop better budgeting habits, make informed financial decisions, and work towards achieving their financial goals.
 
-By using JavaScript to implement logic, the app will automatically calculate the user's financial information based on their numeric inputs. Depending on whether the calculated balance is positive or negative, the application will determine the most appropriate course of action. If the balance is positive, the app will generate a realistic savings plan with achievable goals. If the balance is negative, the app will identify areas of spending that could be reduced and provide budgeting recommendations to help improve the user's financial situation.
+JavaScript is used to implement the application's core functionality, automatically processing user input to calculate income and expense totals in real time. This provides users with immediate feedback as they enter or update their financial information, creating a responsive and interactive user experience while reducing the likelihood of manual calculation errors.
 
 ## Project Goals
 The main goals of this project:
@@ -45,9 +45,8 @@ The main goals of this project:
 
 ## Target Audience
 
-1. Business owners tracking business finances
-2. General users looking to improve their budgeting and saving habits
-3. Students managing limited budgets
+1. General users looking to improve their budgeting and saving habits
+2. Students managing limited budgets
 
 My main target audience will be general users, as the website will be designed for the inputs to be general life expenses and incomes as apose to business related ones. Given time, I could create a more elaborate option for the users to choose whether they are using this for personal or professional reasons.
 
@@ -219,21 +218,17 @@ Additional input fields allow users to customise their financial records, provid
 
 Financial information is organised into income and expense categories, making it easier for users to understand and analyse their spending habits. 
 
-The application also provides personalised suggestions when users are overspending, helping to educate them on areas where they could reduce expenses. 
-
 Using engaging visuals, such as a pie chart, to display expense information helps users understand how their income is distributed across different spending categories, making the data easier to interpret. 
-
-Finally, a savings goal calculator provides users with a realistic breakdown of how much they need to save each month to achieve their financial targets.
 
 # Website Structure
 
 The website will be structured to provide a clear and intuitive user experience. 
 
-The homepage will introduce the purpose of the application and provide users with access to the main budgeting and savings tools. Users will be able to navigate to a financial input section where they can enter their income and expenses. Once the information has been submitted, JavaScript will automatically calculate totals and display a financial summary, including the user's remaining balance. Depending on the results, the application will present either budgeting recommendations or a personalised savings plan. 
+The homepage will introduce the purpose of the application and provide users with a helpful "How to use" guide, as well as having call-to-action buttons. From there, users will be able to navigate to a financial inputs sections, where they can enter their income and expenses data. Once the information has been submitted, JavaScript will automatically calculate totals and display a financial summary, including the user's remaining balance and a helpful doughnut chart to visualise their expenditures. 
 
-A dedicated savings calculator section will allow users to set savings goals and determine how much they need to save each month to achieve them. The website will use a responsive layout to ensure all content remains accessible and easy to use across mobile, tablet, and desktop devices. Navigation and page elements will be kept simple and intuitive, as the website is focused on a small number of core features. 
+The website will use a responsive layout to ensure all content remains accessible and easy to use across mobile, tablet, and desktop devices. Navigation and page elements will be kept simple and intuitive, as the website is focused on a small number of core features. 
 
-By limiting the number of pages and reducing unnecessary complexity, users will be able to navigate the application more easily and remain focused on its primary purpose: managing their finances and achieving their budgeting or savings goals. This streamlined approach will improve usability, reduce confusion, and create a more efficient user experience.
+By limiting the number of pages and reducing unnecessary complexity, users will be able to navigate the application more easily and remain focused on its primary purpose: managing their finances. This streamlined approach will improve usability, reduce confusion, and create a more efficient user experience.
 
 ## User Journey
 
@@ -273,7 +268,7 @@ Mulitple call-to-action buttons were added to improve navigation for users by gi
 
 The calculation page was where the wireframes plan changed the most. As the project was developing, new features were added and removed, that shifted the layout and purpose of the application. For example, in the wireframe image below, there was going to be a feature that allowed users to imput how frequently they received or paid a particular input.
 
-The initial design of this page was going to be too simple, that I felt it wasn't going to meet the needs of users. By only simply have input fields for data and not having a section for the data to be calculated and presented to users, would have made for a bad user experience.
+The initial design of this page was going to be too simple, that I felt it wasn't going to meet the needs of users. By only simply having input fields for data and not having a section for the data to be calculated and presented to users, would have made for a bad user experience.
 
 In the calculation page wireframe, I designed the layout for users to instantly see the areas they'd need to interact with. This would make it easier for users to understand what is needed from them and how the application works.
 
@@ -410,7 +405,7 @@ Jest is a Javascript testing framework, used to test developers code to verify t
 
 ### Principles of Automated Testing and Manual Testing
 
-Both methods of testing have their pro's and con's, but ultimately ensure the code is reliable, functional and user-friendly
+Both methods of testing have their advantages and disadvantages, but ultimately ensured the code is reliable, functional and user-friendly.
 
 #### Manual Testing
 
@@ -455,9 +450,7 @@ Both methods of testing have their pro's and con's, but ultimately ensure the co
 
 This method is the cycle of Test-Driven Developement (TDD). Red resembles code that does not work, Green code works and Refactor essentially cleans up the code, making it easier to manage and read.
 
-For my project, I used Behaviour-Driven Development (BDD). From using this method, I have bypassed the Red stage to Green. 
-
-If I was to Refactor my code I would focus on improving maintainable, reusable and align with best practices:
+For my project, I used Behaviour-Driven Development (BDD). From using this method, I have bypassed the Red stage to Green. If I was to Refactor my code, I would focus on improving maintainable, reusable and align with best practices:
 
 #### addInputIncome() and addInputExpense()
 
@@ -465,11 +458,9 @@ If I was to Refactor my code I would focus on improving maintainable, reusable a
 
 #### saveIncome() and saveExpense()
 
-1. Combine event listeners - By combining the event listeners and adding an additional function for a handler, I could reduce duplicated code.
+1. Combine event listeners - By combining the event listeners and adding an additional function as a handler, I could reduce duplicated code.
 
-2. Create a reusable update function - saveIncome(), saveExpense(), incomeTotal() and expenseTotal() are repeated multiple times through out my code. By creating a reusable function, if I need to add another action at a later date, I would only need to change it in one place, not multiple places.
-
-3. Use .map() instead of .forEach() - .map() is designed for transforming arrays and is more concise and communicates the intention better than the forEach().
+2. Create a reusable update function - saveIncome(), saveExpense(), incomeTotal() and expenseTotal() are repeated multiple times through out my code. By creating a reusable function, if I need to add another action at a later date, I would only need to change it in one place, not multiple places like my current code needs.
 
 #### loadIncome() and loadExpense()
 
