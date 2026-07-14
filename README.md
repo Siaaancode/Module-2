@@ -279,16 +279,16 @@ In the calculation page wireframe, I designed the layout for users to instantly 
 
 ![Inputs](/assets/images/wireframes_calculation-page_inputs.png)
 
-## Page layout
+## Page layout and Interface elements
 
 ### Homepage
 
 #### Navigation bar
 ![Navbar](/assets/images/navigation_bar.png)
 
-This is the navigation bar that I have created for this project. I've kept it very simple with limited links, and the relevent colour palette and fonts to match the overall aesthetic of the website.
+I've kept the navigation bar very simple with a limited number of links, and use of the relevent colour palette and fonts to match the overall aesthetic of the website. Having the navigation bar positioned at the top follows the established web design conventions, meaning users instinctively know where to find it. This improves usability by making navigation more intuitive and enhancing the overall accessibility of the website.
 
-The links include 3 < a > tags:
+The navbar links include 3 < a > tags:
 - 1 home button (Budget Birdie)
 - 1 instructions section (How to use)
 - 1 link to the calculation page (Get started)
@@ -298,23 +298,22 @@ The links include 3 < a > tags:
 
 The hero banner consists of a simple welcome message, and description of what users can expect to get from this application. As well as a call-to-action button, allowing another avenue for users to get to the main functionailty of the page.
 
+#### Call-to-action buttons
+![Call-to-action button](/assets/images/call-to-action_button.png)
+
+My web application has three call-to-action buttons: one within the navigation bar, one on the homepage hero-banner and one at the bottom of the "How to use" section. 
+
+I chose to provide multiple access points to the calculation page to improve usability and create a more intuitive user experience, allowing users to navigate to the main functionality from different areas of the website.
+
 #### How to use section
 ![How to use section](/assets/images/home-page_how_to_section.png)
 
 I created the “How to Use” section as a support feature for users who may need additional guidance when navigating the application. This provides a clear explanation of the app’s functionality and helps ensure users can confidently understand and use its features.
 
-#### Call-to-action buttons
-![Call-to-action button](/assets/images/call-to-action_button.png)
-
-My web application has three call-to-action buttons: one within the navigation bar, one on the homepage hero-banner and one on the "How to use" section. 
-
-I chose to provide multiple access points to the calculation page to improve usability and create a more intuitive user experience, allowing users to navigate to the main functionality from different areas of the website.
-
 #### Footer
 ![Footer](/assets/images/footer_image.png)
 
-The footer didn't need to hold any relevent information, so I kept it simple with just the web apps name, year it was created and a copyright logo.
-
+The footer didn't need to hold any relevent information, so I kept it simple with just the web applications name, year it was created and a copyright logo.
 
 ### Calculation page
 
@@ -328,7 +327,7 @@ The calculation page essential consists of 3 section:
 
 ![Hero banner](/assets/images/calculation-page_hero-banner.png)
 
-The hero banner welcomes users to the calculation page with an encouraging introduction and reminds them that the more financial information they enter, the more accurate and detailed their financial breakdown will be.
+The hero banner welcomes users to the calculation page with an encouraging introduction and a reminder to them, that the more financial information they enter, the more accurate and detailed their financial breakdown will be.
 
 #### Input fields
  
@@ -362,18 +361,18 @@ The legend was designed to help users easily identify the different sections of 
 
 ![Doughnut chart](/assets/images/doughnut-chart_image.png)
 
-The doughnut chart was added as a key feature to provide users with a visual representation of their expenses in an engaging and easy-to-understand format. Each section of the chart represents a different expense category and dynamically updates to display only categories that contain entered data, ensuring the visualisation remains relevant and accurate.
-
-## Interface elements
+The doughnut chart was added as a feature to provide users with a visual representation of their expenses in an engaging and easy-to-understand format. Each section of the chart represents a different expense category and dynamically updates to display only categories that contain entered data, ensuring the visualisation remains relevant and accurate.
 
 ## Responsiveness
 
-- Built with accessibility as a priority
-- Both pages achieve 100 on accessibility on lighthouse
+Responsive design is an essential industry standard, ensuring that users have a consistent experience across all device sizes. This web application was developed with accessibility as a key priority, following a mobile-first approach. The layout and interface were designed for smaller screens initially, before being progressively enhanced and adapted for larger devices.
+
+Both pages of the application achieve a Lighthouse accessibility score of 100, demonstrating a strong commitment to inclusive design and adherence to recognised web accessibility best practices.
 
 # Website Surface
-
 ## Design Choice
+
+The design choices made throughout this project were intended to create a clean, modern, and professional aesthetic that aligns with the purpose of the web application. A consistent colour palette, typography, and spacing system were used to establish a strong visual identity while maintaining readability and ease of use. The interface was designed to minimise unnecessary visual clutter, allowing users to focus on the application's core functionality.
 
 ## Colour Palette
 
@@ -397,21 +396,90 @@ For the typography I've chosen to use GoogleFont' Roboto Mono (https://fonts.goo
 - Git, version control.
 - GitHub, Code hosting and project management.
 - W3C, Markup and CSS validator.
+- JSLint, Javascript validator.
 - DevTools, Inspect and Lighthouse.
+- WebAIM, Colour contrast checker.
+- Favic-o-matic, Favicon generator.
 - GoogleFonts, Custom Fonts.
 - localStorage API
 - Chart.js, Pie chart integration
 
 ## Jest
 
+Jest is a Javascript testing framework, used to test developers code to verify the code behaves as expected. I did not use Jest for the project as the Behaviour-driven development menthod was manageable for the scale of my project.
+
+### Principles of Automated Testing and Manual Testing
+
+Both methods of testing have their pro's and con's, but ultimately ensure the code is reliable, functional and user-friendly
+
+#### Manual Testing
+
+1. Human observation - Developers use their own judgement to identify bugs and unexpected behaviour.
+2. Exploratory testing - Investigate the apllication freely to discover issues that scripted test may have missed.
+3. User-focused - Testing the application from the perspective of the user, including the accessibility and how easy the application is to use and navigate.
+4. Flexible - Test can be adapted as new issues appear.
+
+##### Advantages
+
+- Good for testing user experience and interface design.
+- Good for exploratory testing.
+- Good for identify visual or usability problems that automated testing misses.
+
+##### Disadvantages
+
+- Time consuming and repetitive.
+- Human errors are more likely.
+- Consistantly repeating on bigger projects.
+
+#### Automated Testing
+
+1. Repeatability - Can be ran consistantly, mulitple times.
+2. Speed - Tests are executes much faster than manual testing.
+3. Reliability - Gives consistant results, eliminating human error.
+4. Regression testing - Ensures current functionality still works after code changes.
+5. Continuous testing - Can be added into workflows, so tests run whenever code is updated.
+
+##### Advantages
+
+- Fast.
+- No repetitve manual work.
+- Perfect for regression, unit and integration testing.
+- Improves code quality.
+
+##### Disadvantages
+
+- Time consuming to write and maintain.
+- Cannot understand user experience or usability.
+
 ### Red, Green, Refactor
 
-This method is the cycle of Test-Driven Developement (TDD). For the major part of my project, I used Behaviour-Driven Development (BDD). Red resembles code that does not work, Green code works and Refactor essentially cleans up the code, making it easier to manage and read.
+This method is the cycle of Test-Driven Developement (TDD). Red resembles code that does not work, Green code works and Refactor essentially cleans up the code, making it easier to manage and read.
 
-For this project I am using the BDD method. From using this method, I have bypassed the Red stage to Green. So if I was to Refactor my code I could:
+For my project, I used Behaviour-Driven Development (BDD). From using this method, I have bypassed the Red stage to Green. 
 
-.....
+If I was to Refactor my code I would focus on improving maintainable, reusable and align with best practices:
 
+#### addInputIncome() and addInputExpense()
+
+1. Use HTML < template > element - This would allow me to define the structure of the additional income/expense rows within my HTML, then clone it with Javascript whenever a new row is required. This would keep my HTML and Javascript separate and avoid large innerHTML strings, as well as being easier to maintain and better for accessibility.
+
+#### saveIncome() and saveExpense()
+
+1. Combine event listeners - By combining the event listeners and adding an additional function for a handler, I could reduce duplicated code.
+
+2. Create a reusable update function - saveIncome(), saveExpense(), incomeTotal() and expenseTotal() are repeated multiple times through out my code. By creating a reusable function, if I need to add another action at a later date, I would only need to change it in one place, not multiple places.
+
+3. Use .map() instead of .forEach() - .map() is designed for transforming arrays and is more concise and communicates the intention better than the forEach().
+
+#### loadIncome() and loadExpense()
+
+1. Duplicated HTML structure - The income/expense row HTML is repeated from the addInputIncome() and addInputExpense() functions, meaning if I was to change one, I'd have to change others as well, making it a tedious task to change.
+
+2. Large innerHTML template - My current function is responsible for creating the entire UI structure, which makes the function harder to read and maintain.
+
+3. Too many responsibilities - My current code puts a lot of responsibility in these functions, including: retrieving local storage data, parses JSON, clears the UI, creates DOM elements, generates IDs, handling category selection and adding new rows. This could be fixed by separating the responsibilities into different functions, which would follow the single responsibility principle, making each function easier to understand, maintain and test.
+
+Overall, by applying the DRY (don't repeat yourself) and SRP (single responsibility principle) principles my code would be cleaner, more maintainable and easier to understand and test.
 
 # API options
 
@@ -459,7 +527,6 @@ Essentially, localStorage is persistant, data will remain after refreshing the p
 - Youtube video that helped me understand how to incorporate it (https://www.youtube.com/watch?v=Cb_fbi0JCJ8)
 
 # Testing
-
 ## W3C Validators (HTML and CSS)
 
 ### index.HTML (passed) 
@@ -470,7 +537,6 @@ Essentially, localStorage is persistant, data will remain after refreshing the p
 ![styles.css](/assets/images/styles.ccs_W3C_CSS_check.png)
 
 ## DevTools
-
 ### Lighthouse
 
 #### index.HTML (passed) 
@@ -1064,22 +1130,22 @@ So I change it to:
 
 ![All function](/assets/images/JSLint_all_functions_11_pass.png)
 
-
-## GitHub Pages
-
 ## Testing User Stories
+
+
+
 
 ## Final checks
 
 W3C HTML validator - Passed
 W3C CSS validator - Passed
 DevTools Lighthouse - Passed
-JSLint
-Github Pages - ... 
+JSLint - Passed
+Github Pages - Passed
 
 ## Testing evaluation
 
-# Deployment
+# Deployment - GitHub Pages
 
 ## How to run this project locally
 
