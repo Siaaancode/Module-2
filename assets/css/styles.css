@@ -295,11 +295,18 @@ select {
 }
 
 /*Font Awesome Icon*/
-#icon-income,
-#icon-expense {
+.icons {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+
+#plus-income,
+#plus-expense,
+#minus-income,
+#minus-expense {
     border: none;
     background-color: transparent;
-    margin-left: 5%;
 }
 
 /* Hidden labels (ChatGPT code) */

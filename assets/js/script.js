@@ -32,7 +32,20 @@ function addInputIncome() {
 
     document.getElementById("income-list").appendChild(newRow);
 }
-document.getElementById("icon-income").addEventListener("click", addInputIncome);
+document.getElementById("plus-income").addEventListener("click", addInputIncome);
+
+// Remove last income input field
+function removeInputIncome() {
+    const incomeList = document.getElementById("income-list");
+    const rows = incomeList.querySelectorAll(".income-row");
+
+    if (rows.length > 1) {
+        incomeList.removeChild(rows[rows.length - 1]);
+        incomeIndex--;
+        incomeTotal();
+    }
+}
+document.getElementById("minus-income").addEventListener("click", removeInputIncome);
 
 // Code for expenses
 let expenseIndex = 1;
@@ -70,7 +83,21 @@ function addInputExpense() {
 
     document.getElementById("expense-list").appendChild(newRow);
 }
-document.getElementById("icon-expense").addEventListener("click", addInputExpense);
+document.getElementById("plus-expense").addEventListener("click", addInputExpense);
+
+// Remove last expense input field
+function removeInputExpense() {
+    const expenseList = document.getElementById("expense-list");
+    const rows = expenseList.querySelectorAll(".expense-row");
+
+    if (rows.length > 1) {
+        expenseList.removeChild(rows[rows.length - 1]);
+        expenseIndex--;
+        expenseTotal();
+    }
+}
+document.getElementById("minus-expense").addEventListener("click", removeInputExpense);
+
 
 // Calculates the total of both income and expenses
 function breakdownOfTotals() {
