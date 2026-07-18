@@ -1121,6 +1121,10 @@ So I change it to:
 
 ![All function](/assets/images/JSLint_all_functions_11_pass.png)
 
+### JSLint check after adding "Remove input buttons"
+
+![All function](/assets/images/JSLint_all_functions_12.png)
+
 ## Testing User Stories
 
 

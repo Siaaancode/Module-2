@@ -28,24 +28,25 @@ function addInputIncome() {
             <option value="State benefits">State benefits</option>
             <option value="Other">Other</option>
         </select>
-    `;
+
+        <div class="remove-icons">
+        <button type="button" class="remove-income" aria-label="Remove income input">
+            <i class="fa-solid fa-x fa-2xl"></i></button>
+            </div>
+        `;
+
+    const removeButton = newRow.querySelector(".remove-income");
+
+    removeButton.addEventListener("click", function () {
+        newRow.remove();
+        incomeIndex-= 1;
+        saveIncome();
+        incomeTotal();
+    });
 
     document.getElementById("income-list").appendChild(newRow);
 }
-document.getElementById("plus-income").addEventListener("click", addInputIncome);
-
-// Remove last income input field
-function removeInputIncome() {
-    const incomeList = document.getElementById("income-list");
-    const rows = incomeList.querySelectorAll(".income-row");
-
-    if (rows.length > 1) {
-        incomeList.removeChild(rows[rows.length - 1]);
-        incomeIndex--;
-        incomeTotal();
-    }
-}
-document.getElementById("minus-income").addEventListener("click", removeInputIncome);
+document.querySelector(".add-income").addEventListener("click", addInputIncome);
 
 // Code for expenses
 let expenseIndex = 1;
@@ -79,25 +80,25 @@ function addInputExpense() {
             <option value="Entertainment">Entertainment</option>
             <option value="Other">Other</option>
         </select>
-    `;
+
+        <div class="remove-icons">
+            <button type="button" class="remove-expense" aria-label="Remove expense input">
+            <i class="fa-solid fa-x fa-2xl"></i></button>
+        </div>
+        `;
+
+    const removeButton = newRow.querySelector(".remove-expense");
+
+    removeButton.addEventListener("click", function () {
+        newRow.remove();
+        expenseIndex-= 1;
+        saveExpense();
+        expenseTotal();
+    });
 
     document.getElementById("expense-list").appendChild(newRow);
 }
-document.getElementById("plus-expense").addEventListener("click", addInputExpense);
-
-// Remove last expense input field
-function removeInputExpense() {
-    const expenseList = document.getElementById("expense-list");
-    const rows = expenseList.querySelectorAll(".expense-row");
-
-    if (rows.length > 1) {
-        expenseList.removeChild(rows[rows.length - 1]);
-        expenseIndex--;
-        expenseTotal();
-    }
-}
-document.getElementById("minus-expense").addEventListener("click", removeInputExpense);
-
+document.querySelector(".add-expense").addEventListener("click", addInputExpense);
 
 // Calculates the total of both income and expenses
 function breakdownOfTotals() {
@@ -128,7 +129,6 @@ function incomeTotal() {
     breakdownOfTotals();
 }
 
-
 // Calculates the total of expenses
 function expenseTotal() {
 
@@ -145,6 +145,42 @@ function expenseTotal() {
     totalExpenseInput.value = total;
     breakdownOfTotals();
 }
+
+// Save income with localStorage functions
+function saveIncome() {
+
+    const rows = document.querySelectorAll(".income-row");
+    const incomes = [];
+
+    rows.forEach(function (row) {
+
+        incomes.push({
+            description: row.querySelector(".income-description").value,
+            amount: Number(row.querySelector(".amount-number-income").value),
+            category: row.querySelector(".categories-income").value
+        });
+    });
+
+    localStorage.setItem("incomeData", JSON.stringify(incomes));
+}
+
+//Income input added, updates
+document.addEventListener("input", function (event) {
+    if (
+        event.target.matches(".income-description") ||
+        event.target.matches(".amount-number-income")
+    ) {
+        saveIncome();
+        incomeTotal();
+    }
+});
+//Change to income input, updates
+document.addEventListener("change", function (event) {
+    if (event.target.matches(".categories-income")) {
+        saveIncome();
+        incomeTotal();
+    }
+});
 
 // Save expense with localStorage functions
 function saveExpense() {
@@ -286,42 +322,6 @@ document.addEventListener("change", function (event) {
     }
 });
 
-// Save income with localStorage functions
-function saveIncome() {
-
-    const rows = document.querySelectorAll(".income-row");
-    const incomes = [];
-
-    rows.forEach(function (row) {
-
-        incomes.push({
-            description: row.querySelector(".income-description").value,
-            amount: Number(row.querySelector(".amount-number-income").value),
-            category: row.querySelector(".categories-income").value
-        });
-    });
-
-    localStorage.setItem("incomeData", JSON.stringify(incomes));
-}
-
-//Income input added, updates
-document.addEventListener("input", function (event) {
-    if (
-        event.target.matches(".income-description") ||
-        event.target.matches(".amount-number-income")
-    ) {
-        saveIncome();
-        incomeTotal();
-    }
-});
-//Change to income input, updates
-document.addEventListener("change", function (event) {
-    if (event.target.matches(".categories-income")) {
-        saveIncome();
-        incomeTotal();
-    }
-});
-
 // Load income with localStorage functions
 function loadIncome() {
 
@@ -360,32 +360,44 @@ function loadIncome() {
         <select id="${categoryId}" class="categories-income" name="categories" required>
             <option value="" disabled selected>Categories</option>
             <option value="Employment" ${(
-            item.category === "Employment"
-            ? "selected"
-            : ""
-        )}>Employment income</option>
+                item.category === "Employment"
+                    ? "selected"
+                    : ""
+            )}>Employment income</option>
             <option value="Self-employment" ${(
-            item.category === "Self-employment"
-            ? "selected"
-            : ""
-        )}>Self-employment</option>
+                item.category === "Self-employment"
+                    ? "selected"
+                    : ""
+            )}>Self-employment</option>
             <option value="Pension" ${(
-            item.category === "Pension"
-            ? "selected"
-            : ""
-        )}>Pension</option>
+                item.category === "Pension"
+                    ? "selected"
+                    : ""
+            )}>Pension</option>
             <option value="State benefits" ${(
-            item.category === "State benefits"
-            ? "selected"
-            : ""
-        )}>State benefits</option>
+                item.category === "State benefits"
+                    ? "selected"
+                    : ""
+            )}>State benefits</option>
             <option value="Other" ${(
-            item.category === "Other"
-            ? "selected"
-            : ""
-        )}>Other</option>
+                item.category === "Other"
+                    ? "selected"
+                    : ""
+            )}>Other</option>
+            </select>
 
-        </select>`;
+            <div class="remove-icons">
+                <button type="button" class="remove-income" aria-label="Remove income input">
+                <i class="fa-solid fa-x fa-2xl"></i></button>
+            </div>
+            `;
+
+        row.querySelector(".remove-income").addEventListener("click", function () {
+            row.remove();
+            incomeIndex--;
+            saveIncome();
+            incomeTotal();
+        });
 
         incomeList.appendChild(row);
     });
@@ -432,46 +444,58 @@ function loadExpense() {
         <select id="${categoryId}" class="categories-expense" name="categories" required>
             <option value="" disabled selected>Categories</option>
             <option value="Housing" ${(
-            item.category === "Housing"
-            ? "selected"
-            : ""
-        )}>Rent / Mortgage</option>
+                item.category === "Housing"
+                    ? "selected"
+                    : ""
+            )}>Rent / Mortgage</option>
             <option value="CouncilTax" ${(
-            item.category === "CouncilTax"
-            ? "selected"
-            : ""
-        )}>Council tax</option>
+                item.category === "CouncilTax"
+                    ? "selected"
+                    : ""
+            )}>Council tax</option>
             <option value="Utilities" ${(
-            item.category === "Utilities"
-            ? "selected"
-            : ""
-        )}>Utilities</option>
+                item.category === "Utilities"
+                    ? "selected"
+                    : ""
+            )}>Utilities</option>
             <option value="Food" ${(
-            item.category === "Food"
-            ? "selected"
-            : ""
-        )}>Food / Groceries</option>
+                item.category === "Food"
+                    ? "selected"
+                    : ""
+            )}>Food / Groceries</option>
             <option value="Transportation" ${(
-            item.category === "Transportation"
-            ? "selected"
-            : ""
-        )}>Transportation</option>
+                item.category === "Transportation"
+                    ? "selected"
+                    : ""
+            )}>Transportation</option>
             <option value="FinancialCommitments" ${(
-            item.category === "FinancialCommitments"
-            ? "selected"
-            : ""
-        )}>Debt / Loan Payments</option>
+                item.category === "FinancialCommitments"
+                    ? "selected"
+                    : ""
+            )}>Debt / Loan Payments</option>
             <option value="Entertainment" ${(
-            item.category === "Entertainment"
-            ? "selected"
-            : ""
-        )}>Entertainment</option>
+                item.category === "Entertainment"
+                    ? "selected"
+                    : ""
+            )}>Entertainment</option>
             <option value="Other" ${(
-            item.category === "Other"
-            ? "selected"
-            : ""
-        )}>Other</option>
-        </select>`;
+                item.category === "Other"
+                    ? "selected"
+                    : ""
+            )}>Other</option>
+        </select>
+
+        <div class="remove-icons">
+            <button type="button" class="remove-expense" aria-label="Remove expense input">
+            <i class="fa-solid fa-x fa-2xl"></i></button>
+        </div>`;
+
+        row.querySelector(".remove-expense").addEventListener("click", function () {
+            row.remove();
+            expenseIndex--;
+            saveExpense();
+            expenseTotal();
+        });
 
         expenseList.appendChild(row);
     });

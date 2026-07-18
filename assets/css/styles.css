@@ -187,6 +187,15 @@ input[type="number"]::placeholder {
     color: #373F51;
 }
 
+.income-row,
+.expense-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
 #total-income,
 #total-expense {
     display: flex;
@@ -295,18 +304,35 @@ select {
 }
 
 /*Font Awesome Icon*/
-.icons {
+.add-icons {
     display: flex;
-    justify-content: space-between;
-    margin: 0 20px;
+    align-self: flex-start;
+    margin-left: 20px;
 }
 
-#plus-income,
-#plus-expense,
-#minus-income,
-#minus-expense {
+.remove-icons {
+    display: flex;
+    align-self: flex-end;
+    margin-right: 20px;
+}
+
+.add-income,
+.add-expense {
     border: none;
     background-color: transparent;
+    color:#8CBA80;
+    cursor: pointer;
+}
+
+.remove-income,
+.remove-expense {
+    border: none;
+    background-color: transparent;
+    color:#8CBA80;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
 }
 
 /* Hidden labels (ChatGPT code) */
@@ -403,6 +429,12 @@ select {
     select {
         width: 100%;
         margin-left: 20px;
+    }
+
+    .icons {
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start
     }
 
     #total-income,
