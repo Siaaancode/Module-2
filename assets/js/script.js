@@ -157,7 +157,6 @@ function addInputIncome() {
 
     removeButton.addEventListener("click", function () {
         newRow.remove();
-        incomeIndex -= 1;
         saveIncome();
         incomeTotal();
     });
@@ -209,7 +208,6 @@ function addInputExpense() {
 
     removeButton.addEventListener("click", function () {
         newRow.remove();
-        expenseIndex -= 1;
         saveExpense();
         expenseTotal();
     });
@@ -394,7 +392,6 @@ function loadIncome() {
 
         row.querySelector(".remove-income").addEventListener("click", function () {
             row.remove();
-            incomeIndex -= 1;
             saveIncome();
             incomeTotal();
         });
@@ -492,7 +489,6 @@ function loadExpense() {
 
         row.querySelector(".remove-expense").addEventListener("click", function () {
             row.remove();
-            expenseIndex -= 1;
             saveExpense();
             expenseTotal();
         });
