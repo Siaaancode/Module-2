@@ -210,6 +210,7 @@ function addInputExpense() {
         newRow.remove();
         saveExpense();
         expenseTotal();
+        updateChart();
     });
 
     document.getElementById("expense-list").appendChild(newRow);
@@ -491,6 +492,7 @@ function loadExpense() {
             row.remove();
             saveExpense();
             expenseTotal();
+            updateChart();
         });
 
         expenseList.appendChild(row);
