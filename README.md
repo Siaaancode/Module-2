@@ -1124,6 +1124,9 @@ So I change it to:
 ### JSLint check after adding "Remove input buttons"
 
 ![All function](/assets/images/JSLint_all_functions_12.png)
+![All functions](/assets/images/JSLint_all_functions_13_passed.png)
+
+These errors were mainly missing spaces weird gaps (expected code at column 9, not 13, etc.)
 
 ## Testing User Stories
 
@@ -1200,8 +1203,42 @@ talk about...
 ## Final screenshots of finished website
 
 ### Mobile and screen sizes (under 768px)
-### Laptops and larger (992px and up)
-### Desktop and larger (1200px and up)
+
+#### Home page
+![Home page](/assets/images/final_screenshots_home-page_1_mobile.png)
+![Home page](/assets/images/final_screenshots_home-page_2_mobile.png)
+
+#### Calculation page
+![Calculation page](/assets/images/final_screenshots_calculation-page_1_mobile.png)
+![Calculation page](/assets/images/final_screenshots_calculation-page_2_mobile.png)
+![Calculation page](/assets/images/final_screenshots_calculation-page_3_mobile.png)
+
+### Tablets and larger (992px and up)
+
+#### Home page
+![Home page](/assets/images/final_screenshots_home-page_1_tablet.png)
+
+#### Calculation page
+![Calculation page](/assets/images/final_screenshots_calculation-page_1_tablet.png)
+![Calculation page](/assets/images/final_screenshots_calculation-page_2_tablet.png)
+
+### Desktop (Up to 1200px)
+
+#### Home page
+![Home page](/assets/images/final_screenshots_home-page_1_laptops.png)
+
+#### Calculation page
+![Calculation page](/assets/images/final_screenshots_calculation-page_1_laptops.png)
+![Calcuation page](/assets/images/final_screenshots_calculation-page_2_laptops.png)
+
+### Larger Desktop (1200px and up)
+
+#### Home page
+![Home page](/assets/images/final_screenshots_home-page_1_larger_laptops.png)
+
+#### Calculation page
+![Calculation page](/assets/images/final_screenshots_calculation-page_1_larger_laptops.png)
+![Calculation page](/assets/images/final_screenshots_calculation-page_2_larger_laptops.png)
 
 ## Further improvements that could be made
 

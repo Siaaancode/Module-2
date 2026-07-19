@@ -1,105 +1,4 @@
-/*global document, localStorage, Chart*/
-// Adds new income input when icon is clicked
-let incomeIndex = 1;
-
-function addInputIncome() {
-    incomeIndex += 1;
-
-    const descId = `income-description-${incomeIndex}`;
-    const amountId = `income-amount-${incomeIndex}`;
-    const categoryId = `income-category-${incomeIndex}`;
-
-    const newRow = document.createElement("div");
-    newRow.classList.add("income-row");
-
-    newRow.innerHTML = `
-    <label for="${descId}" class="visually-hidden">Income description</label>
-        <input id="${descId}" class="income-description" type="text" placeholder="e.g. Salary">
-        <label for="${amountId}" class="visually-hidden">Income amount</label>
-        <input id="${amountId}" class="amount-number-income" type="number" placeholder="e.g. 100.00"
-            oninput="incomeTotal()">
-
-        <label for="${categoryId}" class="visually-hidden">Income categories</label>
-        <select id="${categoryId}" class="categories-income" name="categories" required>
-            <option value="" disabled selected>Categories</option>
-            <option value="Employment">Employment income</option>
-            <option value="Self-employment">Self-employment</option>
-            <option value="Pension">Pension</option>
-            <option value="State benefits">State benefits</option>
-            <option value="Other">Other</option>
-        </select>
-
-        <div class="remove-icons">
-        <button type="button" class="remove-income" aria-label="Remove income input">
-            <i class="fa-solid fa-x fa-2xl"></i></button>
-            </div>
-        `;
-
-    const removeButton = newRow.querySelector(".remove-income");
-
-    removeButton.addEventListener("click", function () {
-        newRow.remove();
-        incomeIndex-= 1;
-        saveIncome();
-        incomeTotal();
-    });
-
-    document.getElementById("income-list").appendChild(newRow);
-}
-document.querySelector(".add-income").addEventListener("click", addInputIncome);
-
-// Code for expenses
-let expenseIndex = 1;
-
-function addInputExpense() {
-    expenseIndex += 1;
-
-    const descId = `expense-description-${expenseIndex}`;
-    const amountId = `expense-amount-${expenseIndex}`;
-    const categoryId = `expense-category-${expenseIndex}`;
-
-    const newRow = document.createElement("div");
-    newRow.classList.add("expense-row");
-
-    newRow.innerHTML = `
-    <label for="${descId}" class="visually-hidden">Expense description</label>
-        <input id="${descId}" class="expense-description" type="text" placeholder="e.g. Rent">
-        <label for="${amountId}" class="visually-hidden">Expense amount</label>
-        <input id="${amountId}" class="amount-number-expense" type="number" placeholder="e.g. 100.00"
-            oninput="expenseTotal()">
-
-        <label for="${categoryId}" class="visually-hidden">Expense categories</label>
-        <select id="${categoryId}" class="categories-expense" name="categories" required>
-            <option value="" disabled selected>Categories</option>
-            <option value="Housing">Rent / Mortgage</option>
-            <option value="CouncilTax">Council tax</option>
-            <option value="Utilities">Utilities</option>
-            <option value="Food">Food / Groceries</option>
-            <option value="Transportation">Transportation</option>
-            <option value="FinancialCommitments">Debt / Loan Payments</option>
-            <option value="Entertainment">Entertainment</option>
-            <option value="Other">Other</option>
-        </select>
-
-        <div class="remove-icons">
-            <button type="button" class="remove-expense" aria-label="Remove expense input">
-            <i class="fa-solid fa-x fa-2xl"></i></button>
-        </div>
-        `;
-
-    const removeButton = newRow.querySelector(".remove-expense");
-
-    removeButton.addEventListener("click", function () {
-        newRow.remove();
-        expenseIndex-= 1;
-        saveExpense();
-        expenseTotal();
-    });
-
-    document.getElementById("expense-list").appendChild(newRow);
-}
-document.querySelector(".add-expense").addEventListener("click", addInputExpense);
-
+/*global document, localStorage, global Chart*/
 // Calculates the total of both income and expenses
 function breakdownOfTotals() {
 
@@ -217,6 +116,107 @@ document.addEventListener("change", function (event) {
         expenseTotal();
     }
 });
+
+// Adds new income input when icon is clicked
+let incomeIndex = 1;
+
+function addInputIncome() {
+    incomeIndex += 1;
+
+    const descId = `income-description-${incomeIndex}`;
+    const amountId = `income-amount-${incomeIndex}`;
+    const categoryId = `income-category-${incomeIndex}`;
+
+    const newRow = document.createElement("div");
+    newRow.classList.add("income-row");
+
+    newRow.innerHTML = `
+    <label for="${descId}" class="visually-hidden">Income description</label>
+        <input id="${descId}" class="income-description" type="text" placeholder="e.g. Salary">
+        <label for="${amountId}" class="visually-hidden">Income amount</label>
+        <input id="${amountId}" class="amount-number-income" type="number" placeholder="e.g. 100.00"
+            oninput="incomeTotal()">
+
+        <label for="${categoryId}" class="visually-hidden">Income categories</label>
+        <select id="${categoryId}" class="categories-income" name="categories" required>
+            <option value="" disabled selected>Categories</option>
+            <option value="Employment">Employment income</option>
+            <option value="Self-employment">Self-employment</option>
+            <option value="Pension">Pension</option>
+            <option value="State benefits">State benefits</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <div class="remove-icons">
+        <button type="button" class="remove-income" aria-label="Remove income input">
+            <i class="fa-solid fa-x fa-2xl"></i></button>
+            </div>
+        `;
+
+    const removeButton = newRow.querySelector(".remove-income");
+
+    removeButton.addEventListener("click", function () {
+        newRow.remove();
+        incomeIndex -= 1;
+        saveIncome();
+        incomeTotal();
+    });
+
+    document.getElementById("income-list").appendChild(newRow);
+}
+document.querySelector(".add-income").addEventListener("click", addInputIncome);
+
+// Code for expenses
+let expenseIndex = 1;
+
+function addInputExpense() {
+    expenseIndex += 1;
+
+    const descId = `expense-description-${expenseIndex}`;
+    const amountId = `expense-amount-${expenseIndex}`;
+    const categoryId = `expense-category-${expenseIndex}`;
+
+    const newRow = document.createElement("div");
+    newRow.classList.add("expense-row");
+
+    newRow.innerHTML = `
+    <label for="${descId}" class="visually-hidden">Expense description</label>
+        <input id="${descId}" class="expense-description" type="text" placeholder="e.g. Rent">
+        <label for="${amountId}" class="visually-hidden">Expense amount</label>
+        <input id="${amountId}" class="amount-number-expense" type="number" placeholder="e.g. 100.00"
+            oninput="expenseTotal()">
+
+        <label for="${categoryId}" class="visually-hidden">Expense categories</label>
+        <select id="${categoryId}" class="categories-expense" name="categories" required>
+            <option value="" disabled selected>Categories</option>
+            <option value="Housing">Rent / Mortgage</option>
+            <option value="CouncilTax">Council tax</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Food">Food / Groceries</option>
+            <option value="Transportation">Transportation</option>
+            <option value="FinancialCommitments">Debt / Loan Payments</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <div class="remove-icons">
+            <button type="button" class="remove-expense" aria-label="Remove expense input">
+            <i class="fa-solid fa-x fa-2xl"></i></button>
+        </div>
+        `;
+
+    const removeButton = newRow.querySelector(".remove-expense");
+
+    removeButton.addEventListener("click", function () {
+        newRow.remove();
+        expenseIndex -= 1;
+        saveExpense();
+        expenseTotal();
+    });
+
+    document.getElementById("expense-list").appendChild(newRow);
+}
+document.querySelector(".add-expense").addEventListener("click", addInputExpense);
 
 //Pie Chart
 const ctx = document.getElementById("my-chart");
@@ -360,30 +360,30 @@ function loadIncome() {
         <select id="${categoryId}" class="categories-income" name="categories" required>
             <option value="" disabled selected>Categories</option>
             <option value="Employment" ${(
-                item.category === "Employment"
-                    ? "selected"
-                    : ""
-            )}>Employment income</option>
+            item.category === "Employment"
+            ? "selected"
+            : ""
+        )}>Employment income</option>
             <option value="Self-employment" ${(
-                item.category === "Self-employment"
-                    ? "selected"
-                    : ""
-            )}>Self-employment</option>
+            item.category === "Self-employment"
+            ? "selected"
+            : ""
+        )}>Self-employment</option>
             <option value="Pension" ${(
-                item.category === "Pension"
-                    ? "selected"
-                    : ""
-            )}>Pension</option>
+            item.category === "Pension"
+            ? "selected"
+            : ""
+        )}>Pension</option>
             <option value="State benefits" ${(
-                item.category === "State benefits"
-                    ? "selected"
-                    : ""
-            )}>State benefits</option>
+            item.category === "State benefits"
+            ? "selected"
+            : ""
+        )}>State benefits</option>
             <option value="Other" ${(
-                item.category === "Other"
-                    ? "selected"
-                    : ""
-            )}>Other</option>
+            item.category === "Other"
+            ? "selected"
+            : ""
+        )}>Other</option>
             </select>
 
             <div class="remove-icons">
@@ -394,7 +394,7 @@ function loadIncome() {
 
         row.querySelector(".remove-income").addEventListener("click", function () {
             row.remove();
-            incomeIndex--;
+            incomeIndex -= 1;
             saveIncome();
             incomeTotal();
         });
@@ -444,45 +444,45 @@ function loadExpense() {
         <select id="${categoryId}" class="categories-expense" name="categories" required>
             <option value="" disabled selected>Categories</option>
             <option value="Housing" ${(
-                item.category === "Housing"
-                    ? "selected"
-                    : ""
-            )}>Rent / Mortgage</option>
+            item.category === "Housing"
+            ? "selected"
+            : ""
+        )}>Rent / Mortgage</option>
             <option value="CouncilTax" ${(
-                item.category === "CouncilTax"
-                    ? "selected"
-                    : ""
-            )}>Council tax</option>
+            item.category === "CouncilTax"
+            ? "selected"
+            : ""
+        )}>Council tax</option>
             <option value="Utilities" ${(
-                item.category === "Utilities"
-                    ? "selected"
-                    : ""
-            )}>Utilities</option>
+            item.category === "Utilities"
+            ? "selected"
+            : ""
+        )}>Utilities</option>
             <option value="Food" ${(
-                item.category === "Food"
-                    ? "selected"
-                    : ""
-            )}>Food / Groceries</option>
+            item.category === "Food"
+            ? "selected"
+            : ""
+        )}>Food / Groceries</option>
             <option value="Transportation" ${(
-                item.category === "Transportation"
-                    ? "selected"
-                    : ""
-            )}>Transportation</option>
+            item.category === "Transportation"
+            ? "selected"
+            : ""
+        )}>Transportation</option>
             <option value="FinancialCommitments" ${(
-                item.category === "FinancialCommitments"
-                    ? "selected"
-                    : ""
-            )}>Debt / Loan Payments</option>
+            item.category === "FinancialCommitments"
+            ? "selected"
+            : ""
+        )}>Debt / Loan Payments</option>
             <option value="Entertainment" ${(
-                item.category === "Entertainment"
-                    ? "selected"
-                    : ""
-            )}>Entertainment</option>
+            item.category === "Entertainment"
+            ? "selected"
+            : ""
+        )}>Entertainment</option>
             <option value="Other" ${(
-                item.category === "Other"
-                    ? "selected"
-                    : ""
-            )}>Other</option>
+            item.category === "Other"
+            ? "selected"
+            : ""
+        )}>Other</option>
         </select>
 
         <div class="remove-icons">
@@ -492,7 +492,7 @@ function loadExpense() {
 
         row.querySelector(".remove-expense").addEventListener("click", function () {
             row.remove();
-            expenseIndex--;
+            expenseIndex -= 1;
             saveExpense();
             expenseTotal();
         });

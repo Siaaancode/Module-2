@@ -304,12 +304,15 @@ select {
 }
 
 /*Font Awesome Icon*/
-.add-icons {
+.icons {
     display: flex;
     align-self: flex-start;
     margin-left: 20px;
 }
 
+.add-icons {
+    margin: 0 0 10px 20px;
+}
 .remove-icons {
     display: flex;
     align-self: flex-end;
@@ -431,10 +434,9 @@ select {
         margin-left: 20px;
     }
 
-    .icons {
-        display: flex;
-        flex-direction: column;
-        justify-content:flex-start
+    .remove-income,
+    .remove-expense {
+        margin-left: 100%;
     }
 
     #total-income,
