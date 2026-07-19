@@ -1193,6 +1193,7 @@ The second issue was the value kept returning 0, this was because I was only cal
 
 ### Not Fixed
 
+- Delete button appears under first input field when page is refreshed. I decided not to fix this bug, as I don't really see it as an issue at the moment. If I was to fix it, I'd try to remove it, as I wouldn't want the users to intentionally remove the original input field.
 
 # Project Evaluation
 
@@ -1203,7 +1204,6 @@ talk about...
 ## Final screenshots of finished website
 
 ### Mobile and screen sizes (under 768px)
-
 #### Home page
 ![Home page](/assets/images/final_screenshots_home-page_1_mobile.png)
 ![Home page](/assets/images/final_screenshots_home-page_2_mobile.png)
@@ -1214,7 +1214,6 @@ talk about...
 ![Calculation page](/assets/images/final_screenshots_calculation-page_3_mobile.png)
 
 ### Tablets and larger (992px and up)
-
 #### Home page
 ![Home page](/assets/images/final_screenshots_home-page_1_tablet.png)
 
@@ -1223,7 +1222,6 @@ talk about...
 ![Calculation page](/assets/images/final_screenshots_calculation-page_2_tablet.png)
 
 ### Desktop (Up to 1200px)
-
 #### Home page
 ![Home page](/assets/images/final_screenshots_home-page_1_laptops.png)
 
@@ -1232,7 +1230,6 @@ talk about...
 ![Calcuation page](/assets/images/final_screenshots_calculation-page_2_laptops.png)
 
 ### Larger Desktop (1200px and up)
-
 #### Home page
 ![Home page](/assets/images/final_screenshots_home-page_1_larger_laptops.png)
 
