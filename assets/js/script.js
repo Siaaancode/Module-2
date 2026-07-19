@@ -235,7 +235,7 @@ const myChart = new Chart(ctx, {
                 "#C3DBBD",
                 "#DBE9D8"
             ],
-            data: [1, 1, 1, 1, 1, 1, 1, 1],
+            data: [],
             borderWidth: 5
         }]
     },
