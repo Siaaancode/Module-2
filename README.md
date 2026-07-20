@@ -1179,6 +1179,7 @@ The testing demonstrated that users were able to freely add and remove input fie
 
  4. “As a person who wants to budget better, I want to see specifically where I’m wasting money, so that I can make reasonable cuts to my expenses and save money more responsibly.“ Feature: Income and expense inputs categorised and grouped
 
+
 ### Tested Scenario - Expected Result
 
 - Select the category, category saves on page.
