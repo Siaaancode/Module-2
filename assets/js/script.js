@@ -133,9 +133,8 @@ function addInputIncome() {
     newRow.innerHTML = `
     <label for="${descId}" class="visually-hidden">Income description</label>
         <input id="${descId}" class="income-description" type="text" placeholder="e.g. Salary">
-        <label for="${amountId}" class="visually-hidden">Income amount</label>
-        <input id="${amountId}" class="amount-number-income" type="number" placeholder="e.g. 100.00"
-            oninput="incomeTotal()">
+        <label for="${amountId}" class="visually-hidden">Income amount required</label>
+        <input id="${amountId}" class="amount-number-income" type="number" placeholder="e.g. 100.00" min="0" step="0.01" required>
 
         <label for="${categoryId}" class="visually-hidden">Income categories</label>
         <select id="${categoryId}" class="categories-income" name="categories" required>
@@ -180,10 +179,9 @@ function addInputExpense() {
 
     newRow.innerHTML = `
     <label for="${descId}" class="visually-hidden">Expense description</label>
-        <input id="${descId}" class="expense-description" type="text" placeholder="e.g. Rent">
+        <input id="${descId}" class="expense-description" type="text" placeholder="e.g. Rent" required>
         <label for="${amountId}" class="visually-hidden">Expense amount</label>
-        <input id="${amountId}" class="amount-number-expense" type="number" placeholder="e.g. 100.00"
-            oninput="expenseTotal()">
+        <input id="${amountId}" class="amount-number-expense" type="number" placeholder="e.g. 100.00" min="0" step="0.01" required>
 
         <label for="${categoryId}" class="visually-hidden">Expense categories</label>
         <select id="${categoryId}" class="categories-expense" name="categories" required>
@@ -347,13 +345,13 @@ function loadIncome() {
 
         row.innerHTML = `
         <label for="${descId}" class="visually-hidden">Income description</label>
-        <input id="${descId}" class="income-description" type="text" value="${item.description}">
+        <input id="${descId}" class="income-description" type="text" value="${item.description}" required>
 
         <label for="${amountId}" class="visually-hidden">Income amount</label>
         <input
         id="${amountId}" class="amount-number-income"
         type="number" value="${item.amount}"
-        >
+        min="0" step="0.01" required>
 
         <label for="${categoryId}" class="visually-hidden">Income categories</label>
         <select id="${categoryId}" class="categories-income" name="categories" required>
@@ -432,11 +430,11 @@ function loadExpense() {
         row.innerHTML = `
         <label for="${descId}" class="visually-hidden">Expense description</label>
         <input id="${descId}" class="expense-description" type="text" value="${item.description}"
-        >
+        required >
 
         <label for="${amountId}" class="visually-hidden">Expense amount</label>
         <input id="${amountId}" class="amount-number-expense" type="number" value="${item.amount}"
-        >
+        min="0" step="0.01" required>
 
         <label for="${categoryId}" class="visually-hidden">Expense categories</label>
         <select id="${categoryId}" class="categories-expense" name="categories" required>
