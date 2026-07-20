@@ -1,0 +1,560 @@
+/*Global Styles*/
+
+/*Colour Palette:
+#373F51 - Charcoal Blue
+#8CBA80 - Muted Olive
+#F8F4F9 - Ghost White
+*/
+
+/* GoogleFont - Custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* Global Styles */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Mono", monospace;
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+#navbar {
+    background-color: #373F51;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#logo {
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    color: #8CBA80;
+    text-decoration: none;
+}
+
+#navbar-links {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar-links a {
+    padding-right: 20px;
+    list-style-type: none;
+    text-decoration: none;
+    color: #8CBA80;
+    font-size: 12px;
+}
+
+/* Hero Banner */
+#hero-banner {
+    background-color: #8CBA80;
+    color: #373F51;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#hero-banner h1 {
+    margin: 0;
+    padding: 20px;
+}
+
+#hero-banner p {
+    margin: 5px 20px;
+}
+
+#hero-banner a {
+    margin: 20px 20px;
+    text-align: center;
+}
+
+/* Button */
+.button {
+    background-color: #373F51;
+    text-decoration: none;
+    color: #8CBA80;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Information Section */
+#information-section {
+    background-color: #F8F4F9;
+    font-size: 14px;
+    color: #373F51;
+    margin: 0;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+#information-section h2 {
+    margin: 0;
+    font-size: 25px;
+    padding: 20px 0;
+}
+
+#button-info {
+    font-size: 18px;
+    margin: 20px 0 10px 0;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#information-section .button {
+    margin: 0 0 10px 0;
+    align-self: center;
+    padding: 10px 50px;
+}
+
+/* Footer */
+footer {
+    background-color: #373F51;
+    color: #8CBA80;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Calculator page */
+#introduction {
+    background-color: #8CBA80;
+    color: #373F51;
+    padding: 20px;
+}
+
+#introduction h1 {
+    margin: 0;
+}
+
+#income-inputs h2,
+#expense-inputs h2 {
+    margin-left: 20px;
+}
+
+#expense-list input,
+#income-list input,
+select {
+    display: block;
+    background-color: #8CBA80;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0 auto 5px auto;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+.categories-income,
+.categories-expense {
+    margin-bottom: 20px;
+    color: #373F51
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+    color: #373F51;
+}
+
+.income-row,
+.expense-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+#total-income,
+#total-expense {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+#total-income h3,
+#total-expense h3 {
+    margin: 10px 0 0 20px;
+    width: 30%;
+    height: 30px;
+    white-space: nowrap;
+
+}
+
+.total-expense-input,
+.total-income-input {
+    display: flex;
+    justify-content: center;
+}
+
+.total-expense-input input,
+.total-income-input input {
+    background-color: #8CBA80;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+hr {
+    width: 90%;
+}
+
+input,
+select {
+    font-size: 1rem;
+    font-family: "Roboto Mono", monospace;
+}
+
+/* Breakdown section */
+#breakdown h2 {
+    margin: 0;
+    margin-left: 20px;
+}
+
+.breakdown-total-input h3 {
+    align-self: flex-start;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.breakdown-total-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.breakdown-total-input input {
+    background-color: #8CBA80;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    width: 90vw;
+    box-sizing: border-box;
+}
+
+#breakdown-total-input {
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Legend */
+.legend {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 20px;
+}
+
+.legend-square {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: var(--color);
+    flex-shrink: 0;
+}
+
+.legend-content h4 {
+    margin: 0;
+    font-size: 12px;
+}
+
+#pie-chart {
+    margin-bottom: 30px;
+}
+
+/*Font Awesome Icon*/
+.icons {
+    display: flex;
+    align-self: flex-start;
+    margin-left: 20px;
+}
+
+.add-icons {
+    margin: 0 0 10px 20px;
+}
+.remove-icons {
+    display: flex;
+    align-self: flex-end;
+    margin-right: 20px;
+}
+
+.add-income,
+.add-expense {
+    border: none;
+    background-color: transparent;
+    color:#8CBA80;
+    cursor: pointer;
+}
+
+.remove-income,
+.remove-expense {
+    border: none;
+    background-color: transparent;
+    color:#8CBA80;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+/* Hidden labels (ChatGPT code) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Error page */
+#error-page {
+    color: #373F51;
+    background-color: #8CBA80;
+    margin: 0 20px;
+    text-align: center;
+}
+
+#error-page h1 {
+    font-size: 3rem;
+}
+
+#error-page p {
+    font-size: 1.5rem;
+}
+
+#bird-image {
+    width: 300px;
+}
+
+/*Media Queries*/
+
+/*Media query: Tablets and larger (768px and up)*/
+@media screen and (min-width: 768px) {
+
+    /* Home page */
+    #logo {
+        font-size: 20px;
+    }
+
+    #navbar-links a {
+        font-size: 20px;
+        padding: 20px;
+    }
+
+    /* Hero Banner */
+    #hero-banner h1 {
+        font-size: 2rem;
+    }
+
+    #hero-banner p {
+        font-size: 1rem;
+    }
+
+    #hero-banner a {
+        font-size: 1rem;
+        width: 30%;
+    }
+
+    /* Information Section */
+    #information-section {
+        padding: 20px;
+        flex: 1;
+    }
+
+    #information-section #button-info {
+        font-size: 1.3rem;
+    }
+
+    #information-section a {
+        font-size: 1rem;
+    }
+
+    /* Buttons */
+    .button {
+        font-size: 1.2rem;
+        margin-top: 20px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer p {
+        font-size: 1.2rem;
+    }
+
+    /* Calculator page */
+    #income,
+    #expense {
+        display: flex;
+        margin-left: 20px;
+    }
+
+    #income-inputs,
+    #expense-inputs {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+
+    #expense-list input,
+    #income-list input,
+    select {
+        width: 100%;
+        margin-left: 20px;
+    }
+
+    .remove-income,
+    .remove-expense {
+        margin-left: 100%;
+    }
+
+    #total-income,
+    #total-expense {
+        margin: 20px auto 0 auto;
+    }
+
+    .total-income-input input,
+    .total-expense-input input {
+        width: 40vw;
+        margin: 10px 0 0 20px;
+    }
+
+    /* Breakdown Total */
+    #breakdown h2 {
+        margin-left: 40px;
+    }
+
+    .breakdown-total-input h3 {
+        margin: 10px 20px;
+    }
+
+    /* Chart */
+    #chart {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 95%;
+        margin: 30px 20px;
+    }
+
+    #pie-chart {
+        width: 70%;
+    }
+
+    /* Legend */
+    .legend {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .legend-square {
+        border: none;
+        background-color: var(--color);
+    }
+
+    .legend-content h4 {
+        font-size: 1.2rem;
+    }
+}
+
+/*Media query: Laptops and larger (992px and up)*/
+@media screen and (min-width: 992px) {
+
+    /* Home page */
+    #information-section {
+        min-height: 100vh;
+    }
+
+    /* Hero Banner */
+    #hero-banner a {
+        margin-bottom: 30px;
+    }
+
+    /* Calculator page */
+    input,
+    select {
+        font-size: 1.5rem;
+    }
+
+    /* Breakdown section */
+    #breakdown-total h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Media query: Large screens (1200px and up) */
+@media screen and (min-width: 1200px) {
+
+    /* Hero Banner */
+    #hero-banner p {
+        font-size: 1.3rem;
+    }
+    /* Information Section */
+    #information-section h2 {
+        margin: 0;
+        padding: 30px 0;
+        font-size: 2rem;
+    }
+
+    #information-section p {
+        font-size: 1.2rem;
+    }
+
+    #information-section #button-info {
+        padding: 50px 0;
+    }
+
+    /* Chart */
+    #chart {
+        margin: 20px;
+    }
+}
