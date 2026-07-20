@@ -1175,34 +1175,40 @@ The testing demonstrated that users were able to successfully enter their own de
 
 ### Actual Result
 
-The testing demonstrated that users were able to freely add and remove input fields using the provided buttons. The feature supports an unlimited number of input fields, allowing users flexibility when entering data. However, adding a large number of inputs may impact page performance due to the increased amount of content being processed and displayed.
+The testing demonstrated that users were able to freely add and remove input fields using the provided buttons. The feature supports an unlimited number of input fields, allowing users flexibility when entering data. However, adding a large number of inputs may impact page performance due to the increased amount of content being processed and displayed. The only thing that happened unexpectedly, was an additional delete button appearing under the original input field section after a page reload.
 
  4. “As a person who wants to budget better, I want to see specifically where I’m wasting money, so that I can make reasonable cuts to my expenses and save money more responsibly.“ Feature: Income and expense inputs categorised and grouped
 
-
 ### Tested Scenario - Expected Result
 
-- Select the category, category saves on page.
+- Select the category, category saves on page in the input field.
 - Category selected in expense transfers to the chart data.
 
 ### Actual Result
 
-
-
+The testing demonstrated that users are able to successfully select the appropriate category that best represents their expense descriptions. It also confirmed that the selected expense categories are accurately processed and correctly displayed within both the doughnut chart and its accompanying legend, ensuring that users can clearly visualise their spending breakdown.
 
  5. “As someone trying to save, I want my input data to be saved, so I can access and edit it every month to see if I’m making progress on improving my savings.” Feature: Local storage
 
 ### Tested Scenario - Expected Result
 
+- User inputs data into input fields, refreshes / closes web browser tab / restarts computer, data loads back.
+
 ### Actual Result
+
+The testing demonstrated that after reloading the web page, all previously entered data was successfully saved and automatically restored without requiring any additional user actions. This confirms that the data persistence functionality works as intended, allowing users to continue managing their finances without losing their recorded information.
 
  6. "As someone who wants to understand their finances better, I want to be able to see my totals presented in a way that visually interesting, like a pie chart." Feature: Interesting visuals for the data to be presented
 
 ### Tested Scenario - Expected Result
 
+- User inputs expenses data, scrolls to bottom of page to breakdown section.
+- The doughnut chart automatically updates and displays the entered expense data information.
+- The expense data is correctly grouped according to the selected categories.
+
 ### Actual Result
 
-
+The testing demonstrated that expense categories are accurately represented within the doughnut chart and correctly correspond to the colours displayed in the legend. The chart successfully divides the data based on the values entered, providing users with a clear visual breakdown of their spending.
 
 ## Testing evaluation
 ## Final checks
