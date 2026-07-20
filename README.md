@@ -1186,6 +1186,9 @@ The testing demonstrated that users were able to freely add and remove input fie
 
 ### Actual Result
 
+
+
+
  5. “As someone trying to save, I want my input data to be saved, so I can access and edit it every month to see if I’m making progress on improving my savings.” Feature: Local storage
 
 ### Tested Scenario - Expected Result
