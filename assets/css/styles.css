@@ -202,6 +202,16 @@ input[type="number"]::placeholder {
     margin: 0;
 }
 
+.empty-message {
+    display: none;
+    font-style: italic;
+    margin: 10px 20px;
+}
+
+.empty-message.visible {
+    display: block;
+}
+
 #total-income h3,
 #total-expense h3 {
     margin: 10px 0 0 20px;

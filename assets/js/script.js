@@ -16,15 +16,30 @@ function incomeTotal() {
 
     const incomes = document.getElementsByClassName("amount-number-income");
     const totalIncomeInput = document.getElementById("total-income-input");
+    const emptyMessage = document.getElementById("income-empty-message");
 
     let total = 0;
+    let validIncomeExists = false;
     let i;
 
     for (i = 0; i < incomes.length; i += 1) {
-        total += Number(incomes[i].value) || 0;
+
+        const amount = Number(incomes[i].value);
+
+        if (!Number.isNaN(amount) && amount > 0) {
+            total += amount;
+            validIncomeExists = true;
+        }
     }
 
-    totalIncomeInput.value = total;
+    totalIncomeInput.value = total.toFixed(2);
+
+    if (!validIncomeExists) {
+        emptyMessage.classList.add("visible");
+    } else {
+        emptyMessage.classList.remove("visible");
+    }
+
     breakdownOfTotals();
 }
 
@@ -33,15 +48,30 @@ function expenseTotal() {
 
     const expenses = document.getElementsByClassName("amount-number-expense");
     const totalExpenseInput = document.getElementById("total-expense-input");
+    const emptyMessage = document.getElementById("expense-empty-message");
 
     let total = 0;
+    let validExpenseExists = false;
     let i;
 
     for (i = 0; i < expenses.length; i += 1) {
-        total += Number(expenses[i].value) || 0;
+
+        const amount = Number(expenses[i].value);
+
+        if (!Number.isNaN(amount) && amount > 0) {
+            total += amount;
+            validExpenseExists = true;
+        }
     }
 
-    totalExpenseInput.value = total;
+    totalExpenseInput.value = total.toFixed(2);
+
+    if (!validExpenseExists) {
+        emptyMessage.classList.add("visible");
+    } else {
+        emptyMessage.classList.remove("visible");
+    }
+
     breakdownOfTotals();
 }
 

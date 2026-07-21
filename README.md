@@ -1343,7 +1343,7 @@ Here is a list of further improvements I would make with extra knowledge and tim
 ## Code
 ### ChatGPT
 - Used ChatGPT to hide label tags - 
-Fix (modern, Lighthouse-safe version)
+Fix (modern, Lighthouse-safe version):
 
 ```
 .visually-hidden {
