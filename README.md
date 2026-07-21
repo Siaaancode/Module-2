@@ -1220,6 +1220,20 @@ JSLint - Passed
 Github Pages - Passed
 Manual testing - Passed
 
+## Test Checklist:
+### User Journey: Adding income and expenses
+
+- Open the application and navigate to the calculation page.
+- Add an income entry with a description, amount and category.
+- Confirm the income total updates correctly.
+- Add an expense entry with a description, amount and category.
+- Confirm the expense total updates correctly.
+- Check that the remaining balance is calculated correctly.
+- Confirm the expense chart updates to show the correct categories.
+- Refresh the page and confirm income and expense data is retained.
+- Remove an input row and confirm is it deleted successfully.
+- Leave an input field empty and confirm validation prevents invalid data.
+
 # Deployment - GitHub Pages
 
 ## How to run this project locally
