@@ -150,10 +150,10 @@ function saveIncome() {
         if (validateIncomeRow(row)) {
 
             incomes.push({
-            description: row.querySelector(".income-description").value,
-            amount: Number(row.querySelector(".amount-number-income").value),
-            category: row.querySelector(".categories-income").value
-        });
+                description: row.querySelector(".income-description").value,
+                amount: Number(row.querySelector(".amount-number-income").value),
+                category: row.querySelector(".categories-income").value
+            });
         } else {
             valid = false;
         }
@@ -163,7 +163,11 @@ function saveIncome() {
         return;
     }
 
-    localStorage.setItem("incomeData", JSON.stringify(incomes));
+    try {
+        localStorage.setItem("incomeData", JSON.stringify(incomes));
+    } catch (error) {
+        console.error("Unable to save income data:", error);
+    }
 }
 
 //Income input added, updates
@@ -197,20 +201,24 @@ function saveExpense() {
         if (validateExpenseRow(row)) {
 
             expenses.push({
-            description: row.querySelector(".expense-description").value,
-            amount: Number(row.querySelector(".amount-number-expense").value),
-            category: row.querySelector(".categories-expense").value
-        });
+                description: row.querySelector(".expense-description").value,
+                amount: Number(row.querySelector(".amount-number-expense").value),
+                category: row.querySelector(".categories-expense").value
+            });
         } else {
             valid = false;
-        }   
+        }
     });
 
     if (!valid) {
         return;
     }
 
-    localStorage.setItem("expenseData", JSON.stringify(expenses));
+    try {
+        localStorage.setItem("expenseData", JSON.stringify(expenses));
+    } catch (error) {
+        console.error("Unable to save expense data:", error);
+    }
 }
 
 //Expense input added, updates
@@ -372,12 +380,25 @@ function getExpenseCategoryTotals() {
 // Load income with localStorage functions
 function loadIncome() {
 
-    const savedData = localStorage.getItem("incomeData");
-    if (!savedData) {
+    let incomes = [];
+
+    try {
+
+        const savedData = localStorage.getItem("incomeData");
+
+        if (!savedData) {
+            return;
+        }
+    incomes = JSON.parse(savedData);
+
+    if (!Array.isArray(incomes)) {
+            return;
+        }
+
+    } catch (error) {
+        console.error("Unable to load income data:", error);
         return;
     }
-
-    const incomes = JSON.parse(savedData);
 
     const incomeList = document.getElementById("income-list");
     incomeList.innerHTML = "";
@@ -407,30 +428,30 @@ function loadIncome() {
         <select id="${categoryId}" class="categories-income" name="categories" required>
             <option value="" disabled selected>Categories</option>
             <option value="Employment" ${(
-            item.category === "Employment"
-            ? "selected"
-            : ""
-        )}>Employment income</option>
+                item.category === "Employment"
+                    ? "selected"
+                    : ""
+            )}>Employment income</option>
             <option value="Self-employment" ${(
-            item.category === "Self-employment"
-            ? "selected"
-            : ""
-        )}>Self-employment</option>
+                item.category === "Self-employment"
+                    ? "selected"
+                    : ""
+            )}>Self-employment</option>
             <option value="Pension" ${(
-            item.category === "Pension"
-            ? "selected"
-            : ""
-        )}>Pension</option>
+                item.category === "Pension"
+                    ? "selected"
+                    : ""
+            )}>Pension</option>
             <option value="State benefits" ${(
-            item.category === "State benefits"
-            ? "selected"
-            : ""
-        )}>State benefits</option>
+                item.category === "State benefits"
+                    ? "selected"
+                    : ""
+            )}>State benefits</option>
             <option value="Other" ${(
-            item.category === "Other"
-            ? "selected"
-            : ""
-        )}>Other</option>
+                item.category === "Other"
+                    ? "selected"
+                    : ""
+            )}>Other</option>
             </select>
 
             <div class="input-error" role="alert"></div>
@@ -454,12 +475,25 @@ function loadIncome() {
 // Load expense with localStorage functions
 function loadExpense() {
 
+    let expenses = [];
+
+    try {
+
     const savedData = localStorage.getItem("expenseData");
     if (!savedData) {
         return;
     }
 
-    const expenses = JSON.parse(savedData);
+    expenses = JSON.parse(savedData);
+
+    if (!Array.isArray(expenses)) {
+            return;
+        }
+
+    } catch (error) {
+        console.error("Unable to load expense data:", error);
+        return;
+    }
 
     const expenseList = document.getElementById("expense-list");
     expenseList.innerHTML = "";
@@ -488,45 +522,45 @@ function loadExpense() {
         <select id="${categoryId}" class="categories-expense" name="categories" required>
             <option value="" disabled selected>Categories</option>
             <option value="Housing" ${(
-            item.category === "Housing"
-            ? "selected"
-            : ""
-        )}>Rent / Mortgage</option>
+                item.category === "Housing"
+                    ? "selected"
+                    : ""
+            )}>Rent / Mortgage</option>
             <option value="CouncilTax" ${(
-            item.category === "CouncilTax"
-            ? "selected"
-            : ""
-        )}>Council tax</option>
+                item.category === "CouncilTax"
+                    ? "selected"
+                    : ""
+            )}>Council tax</option>
             <option value="Utilities" ${(
-            item.category === "Utilities"
-            ? "selected"
-            : ""
-        )}>Utilities</option>
+                item.category === "Utilities"
+                    ? "selected"
+                    : ""
+            )}>Utilities</option>
             <option value="Food" ${(
-            item.category === "Food"
-            ? "selected"
-            : ""
-        )}>Food / Groceries</option>
+                item.category === "Food"
+                    ? "selected"
+                    : ""
+            )}>Food / Groceries</option>
             <option value="Transportation" ${(
-            item.category === "Transportation"
-            ? "selected"
-            : ""
-        )}>Transportation</option>
+                item.category === "Transportation"
+                    ? "selected"
+                    : ""
+            )}>Transportation</option>
             <option value="FinancialCommitments" ${(
-            item.category === "FinancialCommitments"
-            ? "selected"
-            : ""
-        )}>Debt / Loan Payments</option>
+                item.category === "FinancialCommitments"
+                    ? "selected"
+                    : ""
+            )}>Debt / Loan Payments</option>
             <option value="Entertainment" ${(
-            item.category === "Entertainment"
-            ? "selected"
-            : ""
-        )}>Entertainment</option>
+                item.category === "Entertainment"
+                    ? "selected"
+                    : ""
+            )}>Entertainment</option>
             <option value="Other" ${(
-            item.category === "Other"
-            ? "selected"
-            : ""
-        )}>Other</option>
+                item.category === "Other"
+                    ? "selected"
+                    : ""
+            )}>Other</option>
         </select>
 
         <div class="input-error" role="alert"></div>

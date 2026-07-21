@@ -1441,3 +1441,38 @@ I added this code as my previous code didn't have any indicator for the users to
         errorMessage.classList.remove("visible");
         return true;
         }
+
+- Harden localStorage/JSON.parse handling with try/catch fallback behaviour
+
+My previous code did not have a defense for these breaking, which could cause my application to crash. So I used this code to avoid this happening.
+
+The code below has been used to improve the saveIncome() and saveExpense() functions:
+
+    try {
+        localStorage.setItem("incomeData", JSON.stringify(incomes));
+    } catch (error) {
+        console.error("Unable to save income data:", error);
+    }
+
+The code below has been used to harden the loadIncome() and loadExpense() functions:
+
+    let incomes = [];
+
+    try {
+
+    ......
+
+    if (!Array.isArray(incomes)) {
+        return;
+    }
+
+    } catch (error) {
+        console.error("Unable to load income data:", error);
+        return;
+    }
+
+What this does now:
+- No saved data -> do nothing
+- Invalid JSON -> ignores it
+- Wrong format -> ignores it
+- Valid data -> load normally
