@@ -1,4 +1,58 @@
 /*global document, localStorage, global Chart*/
+/* Validation for income row */
+function validateIncomeRow(row) {
+
+    const description = row.querySelector(".income-description");
+    const amount = row.querySelector(".amount-number-income");
+    const category = row.querySelector(".categories-income");
+    const errorMessage = row.querySelector(".input-error");
+
+    errorMessage.textContent = "";
+
+    if (description.value.trim() === "") {
+        errorMessage.textContent = "Please enter an income description.";
+    } else if (amount.value === "" || Number(amount.value) <= 0) {
+        errorMessage.textContent = "Please enter a valid amount.";
+    } else if (category.value === "") {
+        errorMessage.textContent = "Please select an income category.";
+    }
+
+    if (errorMessage.textContent !== "") {
+        errorMessage.classList.add("visible");
+        return false;
+    }
+
+    errorMessage.classList.remove("visible");
+    return true;
+}
+
+/* Validation for expense row */
+function validateExpenseRow(row) {
+
+    const description = row.querySelector(".expense-description");
+    const amount = row.querySelector(".amount-number-expense");
+    const category = row.querySelector(".categories-expense");
+    const errorMessage = row.querySelector(".input-error");
+
+    errorMessage.textContent = "";
+
+    if (description.value.trim() === "") {
+        errorMessage.textContent = "Please enter an expense description.";
+    } else if (amount.value === "" || Number(amount.value) <= 0) {
+        errorMessage.textContent = "Please enter a valid amount.";
+    } else if (category.value === "") {
+        errorMessage.textContent = "Please select an expense category.";
+    }
+
+    if (errorMessage.textContent !== "") {
+        errorMessage.classList.add("visible");
+        return false;
+    }
+
+    errorMessage.classList.remove("visible");
+    return true;
+}
+
 // Calculates the total of both income and expenses
 function breakdownOfTotals() {
 
@@ -81,14 +135,25 @@ function saveIncome() {
     const rows = document.querySelectorAll(".income-row");
     const incomes = [];
 
+    let valid = true;
+
     rows.forEach(function (row) {
 
-        incomes.push({
+        if (validateIncomeRow(row)) {
+
+            incomes.push({
             description: row.querySelector(".income-description").value,
             amount: Number(row.querySelector(".amount-number-income").value),
             category: row.querySelector(".categories-income").value
         });
+        } else {
+            valid = false;
+        }
     });
+
+    if (!valid) {
+        return;
+    }
 
     localStorage.setItem("incomeData", JSON.stringify(incomes));
 }
@@ -117,14 +182,25 @@ function saveExpense() {
     const rows = document.querySelectorAll(".expense-row");
     const expenses = [];
 
+    let valid = true;
+
     rows.forEach(function (row) {
 
-        expenses.push({
+        if (validateExpenseRow(row)) {
+
+            expenses.push({
             description: row.querySelector(".expense-description").value,
             amount: Number(row.querySelector(".amount-number-expense").value),
             category: row.querySelector(".categories-expense").value
         });
+        } else {
+            valid = false;
+        }   
     });
+
+    if (!valid) {
+        return;
+    }
 
     localStorage.setItem("expenseData", JSON.stringify(expenses));
 }

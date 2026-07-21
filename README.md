@@ -1395,3 +1395,49 @@ addInputExpense(), loadIncome() and loadExpense()):
 
     <label for="${categoryId}" ... >
     <select id="${categoryId}" ... >
+
+- Add input validation and visible error message for empty or invalid rows
+
+I added this code as my previous code didn't have any indicator for the users to see that a input was missing data. ChatGPT suggested using this code:
+
+//HTML (calculation-page error message)
+        
+        <div class="input-error" role="alert"></div>
+
+//Javascript (saveIncome() and saveExpense())
+        
+        let valid = true;
+        if (validateExpenseRow(row)) {
+        } else {
+            valid = false;
+        }
+        if (!valid) {
+        return;
+        }
+
+// Javascript (new functions to validate each row)
+        function validateIncomeRow(row) {
+
+        const description = row.querySelector(".income-description");
+        const amount = row.querySelector(".amount-number-income");
+        const category = row.querySelector(".categories-income");
+        const errorMessage = row.querySelector(".input-error");
+
+        errorMessage.textContent = "";
+
+        if (description.value.trim() === "") {
+            errorMessage.textContent = "Please enter an income description.";
+        } else if (amount.value === "" || Number(amount.value) <= 0) {
+            errorMessage.textContent = "Please enter a valid amount.";
+        } else if (category.value === "") {
+            errorMessage.textContent = "Please select an income category.";
+        }
+
+        if (errorMessage.textContent !== "") {
+            errorMessage.classList.add("visible");
+            return false;
+        }
+
+        errorMessage.classList.remove("visible");
+        return true;
+        }

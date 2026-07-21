@@ -212,6 +212,16 @@ input[type="number"]::placeholder {
     display: block;
 }
 
+.input-error {
+    display: none;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.input-error.visible {
+    display: block;
+}
+
 #total-income h3,
 #total-expense h3 {
     margin: 10px 0 0 20px;
