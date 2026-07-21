@@ -389,9 +389,9 @@ function loadIncome() {
         if (!savedData) {
             return;
         }
-    incomes = JSON.parse(savedData);
+        incomes = JSON.parse(savedData);
 
-    if (!Array.isArray(incomes)) {
+        if (!Array.isArray(incomes)) {
             return;
         }
 
@@ -428,30 +428,30 @@ function loadIncome() {
         <select id="${categoryId}" class="categories-income" name="categories" required>
             <option value="" disabled selected>Categories</option>
             <option value="Employment" ${(
-                item.category === "Employment"
-                    ? "selected"
-                    : ""
-            )}>Employment income</option>
+            item.category === "Employment"
+            ? "selected"
+            : ""
+        )}>Employment income</option>
             <option value="Self-employment" ${(
-                item.category === "Self-employment"
-                    ? "selected"
-                    : ""
-            )}>Self-employment</option>
+            item.category === "Self-employment"
+            ? "selected"
+            : ""
+        )}>Self-employment</option>
             <option value="Pension" ${(
-                item.category === "Pension"
-                    ? "selected"
-                    : ""
-            )}>Pension</option>
+            item.category === "Pension"
+            ? "selected"
+            : ""
+        )}>Pension</option>
             <option value="State benefits" ${(
-                item.category === "State benefits"
-                    ? "selected"
-                    : ""
-            )}>State benefits</option>
+            item.category === "State benefits"
+            ? "selected"
+            : ""
+        )}>State benefits</option>
             <option value="Other" ${(
-                item.category === "Other"
-                    ? "selected"
-                    : ""
-            )}>Other</option>
+            item.category === "Other"
+            ? "selected"
+            : ""
+        )}>Other</option>
             </select>
 
             <div class="input-error" role="alert"></div>
@@ -479,14 +479,14 @@ function loadExpense() {
 
     try {
 
-    const savedData = localStorage.getItem("expenseData");
-    if (!savedData) {
-        return;
-    }
+        const savedData = localStorage.getItem("expenseData");
+        if (!savedData) {
+            return;
+        }
 
-    expenses = JSON.parse(savedData);
+        expenses = JSON.parse(savedData);
 
-    if (!Array.isArray(expenses)) {
+        if (!Array.isArray(expenses)) {
             return;
         }
 
@@ -522,45 +522,45 @@ function loadExpense() {
         <select id="${categoryId}" class="categories-expense" name="categories" required>
             <option value="" disabled selected>Categories</option>
             <option value="Housing" ${(
-                item.category === "Housing"
-                    ? "selected"
-                    : ""
-            )}>Rent / Mortgage</option>
+            item.category === "Housing"
+            ? "selected"
+            : ""
+        )}>Rent / Mortgage</option>
             <option value="CouncilTax" ${(
-                item.category === "CouncilTax"
-                    ? "selected"
-                    : ""
-            )}>Council tax</option>
+            item.category === "CouncilTax"
+            ? "selected"
+            : ""
+        )}>Council tax</option>
             <option value="Utilities" ${(
-                item.category === "Utilities"
-                    ? "selected"
-                    : ""
-            )}>Utilities</option>
+            item.category === "Utilities"
+            ? "selected"
+            : ""
+        )}>Utilities</option>
             <option value="Food" ${(
-                item.category === "Food"
-                    ? "selected"
-                    : ""
-            )}>Food / Groceries</option>
+            item.category === "Food"
+            ? "selected"
+            : ""
+        )}>Food / Groceries</option>
             <option value="Transportation" ${(
-                item.category === "Transportation"
-                    ? "selected"
-                    : ""
-            )}>Transportation</option>
+            item.category === "Transportation"
+            ? "selected"
+            : ""
+        )}>Transportation</option>
             <option value="FinancialCommitments" ${(
-                item.category === "FinancialCommitments"
-                    ? "selected"
-                    : ""
-            )}>Debt / Loan Payments</option>
+            item.category === "FinancialCommitments"
+            ? "selected"
+            : ""
+        )}>Debt / Loan Payments</option>
             <option value="Entertainment" ${(
-                item.category === "Entertainment"
-                    ? "selected"
-                    : ""
-            )}>Entertainment</option>
+            item.category === "Entertainment"
+            ? "selected"
+            : ""
+        )}>Entertainment</option>
             <option value="Other" ${(
-                item.category === "Other"
-                    ? "selected"
-                    : ""
-            )}>Other</option>
+            item.category === "Other"
+            ? "selected"
+            : ""
+        )}>Other</option>
         </select>
 
         <div class="input-error" role="alert"></div>

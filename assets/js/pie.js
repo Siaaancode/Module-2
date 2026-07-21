@@ -7,39 +7,39 @@ function createChart() {
     const ctx = document.getElementById("my-chart");
 
     expenseChart = new Chart(ctx, {
-        type: "doughnut",
         data: {
-            labels: [
-                "Housing",
-                "Council Tax",
-                "Utilities",
-                "Food",
-                "Transportation",
-                "Financial Commitments",
-                "Entertainment",
-                "Other"
-            ],
             datasets: [{
-                label: "Expenses",
                 backgroundColor: [
-                "#373F51",
-                "#535E79",
-                "#6D7B9C",
-                "#8691AC",
-                "#8CBA80",
-                "#ABCDA2",
-                "#C3DBBD",
-                "#DBE9D8"
-            ],
-                data: [],
-                borderWidth: 5
-            }]
+                    "#373F51",
+        "#535E79",
+        "#6D7B9C",
+        "#8691AC",
+        "#8CBA80",
+        "#ABCDA2",
+        "#C3DBBD",
+        "#DBE9D8"
+                ],
+    borderWidth: 5,
+    data: [],
+    label: "Expenses"
+            }],
+    labels: [
+                "Housing",
+        "Council Tax",
+        "Utilities",
+        "Food",
+        "Transportation",
+        "Financial Commitments",
+        "Entertainment",
+        "Other"
+            ]
         },
         options: {
             animation: false,
-            responsive: true,
-            maintainAspectRatio: false
-        }
+            maintainAspectRatio: false,
+            responsive: true
+        },
+        type: "doughnut"
     });
 }
 

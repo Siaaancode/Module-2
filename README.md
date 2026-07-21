@@ -1138,6 +1138,10 @@ So I change it to:
 
 These errors were mainly missing spaces weird gaps (expected code at column 9, not 13, etc.)
 
+![All functions](/assets/images/JSLint_all_functions_13_pass.png)
+
+Above is this latest version of JSLint, tested after making a bunch of changes to the code to harden the localStorage, cleanly separate the chart code, replaced external CDN dependancy, etc.
+
 ## Testing User Stories
 
  1. “As a student, I want to record my expenses and income in one place, so that I can track what money is coming in, and where money is being spent, so I can cut anything I deem pointless purchases. This would allow me to budget better.” Feature: Income and expense tracker with calculated totals
