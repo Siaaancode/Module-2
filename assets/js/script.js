@@ -1,4 +1,4 @@
-/*global document, localStorage, global Chart*/
+/*global document, localStorage*/
 /* Validation for income row */
 function validateIncomeRow(row) {
 
@@ -6,6 +6,10 @@ function validateIncomeRow(row) {
     const amount = row.querySelector(".amount-number-income");
     const category = row.querySelector(".categories-income");
     const errorMessage = row.querySelector(".input-error");
+
+    if (!errorMessage) {
+        return false;
+    }
 
     errorMessage.textContent = "";
 
@@ -33,6 +37,10 @@ function validateExpenseRow(row) {
     const amount = row.querySelector(".amount-number-expense");
     const category = row.querySelector(".categories-expense");
     const errorMessage = row.querySelector(".input-error");
+
+    if (!errorMessage) {
+        return false;
+    }
 
     errorMessage.textContent = "";
 
@@ -207,20 +215,27 @@ function saveExpense() {
 
 //Expense input added, updates
 document.addEventListener("input", function (event) {
+
     if (
         event.target.matches(".expense-description") ||
         event.target.matches(".amount-number-expense")
     ) {
         saveExpense();
         expenseTotal();
+        updateChart(getExpenseCategoryTotals());
     }
+
 });
+
 //Change to expense input, updates
 document.addEventListener("change", function (event) {
+
     if (event.target.matches(".categories-expense")) {
         saveExpense();
         expenseTotal();
+        updateChart(getExpenseCategoryTotals());
     }
+
 });
 
 // Adds new income input when icon is clicked
@@ -251,6 +266,8 @@ function addInputIncome() {
             <option value="State benefits">State benefits</option>
             <option value="Other">Other</option>
         </select>
+
+        <div class="input-error" role="alert"></div>
 
         <div class="remove-icons">
         <button type="button" class="remove-income" aria-label="Remove income input">
@@ -302,6 +319,8 @@ function addInputExpense() {
             <option value="Other">Other</option>
         </select>
 
+        <div class="input-error" role="alert"></div>
+
         <div class="remove-icons">
             <button type="button" class="remove-expense" aria-label="Remove expense input">
             <i class="fa-solid fa-x fa-2xl"></i></button>
@@ -314,51 +333,12 @@ function addInputExpense() {
         newRow.remove();
         saveExpense();
         expenseTotal();
-        updateChart();
+        updateChart(getExpenseCategoryTotals());
     });
 
     document.getElementById("expense-list").appendChild(newRow);
 }
 document.querySelector(".add-expense").addEventListener("click", addInputExpense);
-
-//Pie Chart
-const ctx = document.getElementById("my-chart");
-
-const myChart = new Chart(ctx, {
-    type: "doughnut",
-    data: {
-        datasets: [{
-            label: ["Total"],
-            backgroundColor: [
-                "#373F51",
-                "#535E79",
-                "#6D7B9C",
-                "#8691AC",
-                "#8CBA80",
-                "#ABCDA2",
-                "#C3DBBD",
-                "#DBE9D8"
-            ],
-            data: [],
-            borderWidth: 5
-        }]
-    },
-    options: {
-        animation: false,
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                labels: {
-                    font: {
-                        size: 14,
-                        family: "Roboto Mono, monospace"
-                    }
-                }
-            }
-        }
-    }
-});
 
 //Collects categories information
 function getExpenseCategoryTotals() {
@@ -388,42 +368,6 @@ function getExpenseCategoryTotals() {
 
     return totals;
 }
-
-// Update chart
-function updateChart() {
-
-    const totals = getExpenseCategoryTotals();
-
-    myChart.data.datasets[0].data = [
-        totals.Housing,
-        totals.CouncilTax,
-        totals.Utilities,
-        totals.Food,
-        totals.Transportation,
-        totals.FinancialCommitments,
-        totals.Entertainment,
-        totals.Other
-    ];
-
-    myChart.update();
-}
-
-//Input added, updates
-document.addEventListener("input", function (event) {
-    if (event.target.matches(".amount-number-expense")) {
-        expenseTotal();
-        updateChart();
-    }
-});
-
-//Change to input, updates
-document.addEventListener("change", function (event) {
-    if (event.target.matches(".categories-expense")) {
-        saveExpense();
-        expenseTotal();
-        updateChart();
-    }
-});
 
 // Load income with localStorage functions
 function loadIncome() {
@@ -489,6 +433,8 @@ function loadIncome() {
         )}>Other</option>
             </select>
 
+            <div class="input-error" role="alert"></div>
+
             <div class="remove-icons">
                 <button type="button" class="remove-income" aria-label="Remove income input">
                 <i class="fa-solid fa-x fa-2xl"></i></button>
@@ -504,10 +450,6 @@ function loadIncome() {
         incomeList.appendChild(row);
     });
 }
-document.addEventListener("DOMContentLoaded", function () {
-    loadIncome();
-    incomeTotal();
-});
 
 // Load expense with localStorage functions
 function loadExpense() {
@@ -587,6 +529,8 @@ function loadExpense() {
         )}>Other</option>
         </select>
 
+        <div class="input-error" role="alert"></div>
+
         <div class="remove-icons">
             <button type="button" class="remove-expense" aria-label="Remove expense input">
             <i class="fa-solid fa-x fa-2xl"></i></button>
@@ -596,14 +540,22 @@ function loadExpense() {
             row.remove();
             saveExpense();
             expenseTotal();
-            updateChart();
+            updateChart(getExpenseCategoryTotals());
         });
 
         expenseList.appendChild(row);
     });
 }
 document.addEventListener("DOMContentLoaded", function () {
+
+    createChart();
+
+    loadIncome();
     loadExpense();
+
+    incomeTotal();
     expenseTotal();
-    updateChart();
+
+    updateChart(getExpenseCategoryTotals());
+
 });
