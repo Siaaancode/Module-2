@@ -23,16 +23,6 @@ function createChart() {
     data: [],
     label: "Expenses"
             }],
-    labels: [
-                "Housing",
-        "Council Tax",
-        "Utilities",
-        "Food",
-        "Transportation",
-        "Financial Commitments",
-        "Entertainment",
-        "Other"
-            ]
         },
         options: {
             animation: false,

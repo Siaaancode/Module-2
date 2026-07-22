@@ -1,13 +1,12 @@
 /*Global Styles*/
+/* GoogleFont - Custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 /*Colour Palette:
 #373F51 - Charcoal Blue
 #8CBA80 - Muted Olive
 #F8F4F9 - Ghost White
 */
-
-/* GoogleFont - Custom fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 /* Global Styles */
 html,
@@ -323,12 +322,6 @@ select {
 }
 
 /*Font Awesome Icon*/
-.icons {
-    display: flex;
-    align-self: flex-start;
-    margin-left: 20px;
-}
-
 .add-icons {
     margin: 0 0 10px 20px;
 }
@@ -514,11 +507,6 @@ select {
     .legend {
         display: flex;
         flex-direction: column;
-    }
-
-    .legend-square {
-        border: none;
-        background-color: var(--color);
     }
 
     .legend-content h4 {
