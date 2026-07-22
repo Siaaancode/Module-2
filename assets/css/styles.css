@@ -381,6 +381,7 @@ select {
 
 #bird-image {
     width: 300px;
+    align-self: center;
 }
 
 /*Media Queries*/
