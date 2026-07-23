@@ -156,6 +156,11 @@ footer p {
     margin: 0;
 }
 
+#guide {
+    margin: 20px 20px 0 20px;
+    text-align: center;
+}
+
 #income-inputs h2,
 #expense-inputs h2 {
     margin-left: 20px;
