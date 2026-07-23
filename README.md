@@ -37,18 +37,19 @@ JavaScript is used to implement the application's core functionality, automatica
 ## Project Goals
 The main goals of this project:
  
- 1. Build a fully functional web app that allows users to record, manage and store their incomes and expenses, while also automatically calculating the balances.
+1. Build a fully functional web application that allows users to record, manage, and store their income and expenses while automatically calculating their overall balance.
 
- 2. Effectively use JavaScript to implement the logic required to handle the data processing, financial calculations, and updates within the application, ensuring that users receive accurate summeries and insights.
- 
- 3. Design an intuitive and accessible user interface focusing on simplicity, clean aesthetics and ease of use. Making it a super simple apllication for all to use.
+2. Effectively use JavaScript to implement the logic required to process user data, perform financial calculations, and update the application dynamically, ensuring users receive accurate summaries and insights.
+
+3. Design an intuitive and accessible user interface that prioritises simplicity, clean aesthetics, and ease of use, making the application suitable for users of all experience levels.
 
 ## Target Audience
 
-1. General users looking to improve their budgeting and saving habits
-2. Students managing limited budgets
+1. General users looking to improve their budgeting and saving habits.
 
-My main target audience will be general users, as the website will be designed for the inputs to be general life expenses and incomes as apose to business related ones. Given time, I could create a more elaborate option for the users to choose whether they are using this for personal or professional reasons.
+2. Students managing limited budgets.
+
+The primary target audience is general users, as the application has been designed around everyday personal income and expense categories rather than business-related finances. Given more time, an additional feature could be introduced allowing users to choose between personal and business finance modes, providing a more tailored experience.
 
 ## User Stories (User Research)
 
@@ -58,7 +59,7 @@ My main target audience will be general users, as the website will be designed f
 
 Feature: Income and expense tracker with calculated totals
 
-“As a person wanting to see how my finances balance, it would be really helpful to have blank input spaces to add my own individual incomes and expenses. This would allow me to put niche names to each section that isn’t a “normal” income or expense.” Must-have
+“As a user wanting to see how my finances balance, it would be really helpful to have blank input spaces to add my own individual incomes and expenses. This would allow me to put niche names to each section that isn’t a “normal” income or expense.” Must-have
 
 Feature: Ability to input own descriptions, amounts and select categories
 
@@ -66,7 +67,7 @@ Feature: Ability to input own descriptions, amounts and select categories
 
 Feature: Additional input fields for incomes and expenses as well as ability to remove them
 
-“As a person who wants to budget better, I want to see specifically where I’m wasting money, so that I can make reasonable cuts to my expenses and save money more responsibly.“ Must-have
+“As a user who wants to budget better, I want to see specifically where I’m wasting money, so that I can make reasonable cuts to my expenses and save money more responsibly.“ Must-have
 
 Feature: Income and expense inputs categorised and grouped
 
@@ -92,9 +93,9 @@ Feature: Savings goal calculator (Total to save (£100) / x amount of months (10
 
 ## Research
 
-For this project, I researched a few different web apps that were similar to what I'm trying to create. Through this research, I can begin to understand the key points I'll need to consider when developing my own web app. 
+For this project, I researched several web applications with similar functionality to better understand existing approaches to personal finance management. This research helped identify the features, design principles, and usability considerations that should be incorporated into my own application.
 
-I've noted what was good, what was bad, what I could gain and what I'd improve. From this, I can make informed decisions about the directions I'd like to take with my own project.
+During this process, I evaluated the strengths and weaknesses of each application, noting features that worked well, areas that could be improved, and ideas that could be adapted for my own project. These findings informed the design decisions made throughout the development of Budget Birdie.
 
 ## Websites
 
@@ -204,7 +205,7 @@ Each user story has been labelled as either a must-have, should-have, or could-h
 
 ### Should-Have
 - Local storage
-- Interesting visuals for the data to be presented (ie, pie chart)
+- Interesting visuals for the data to be presented (for example, pie chart)
 
 ### Could-Have
 - Spending analysis and budgeting suggestions
@@ -212,57 +213,59 @@ Each user story has been labelled as either a must-have, should-have, or could-h
 
 ## How user features support user stories:
 
-Although web apps responsiveness has not been included in the user story section, it is a fundimental must for all projects. The application has been designed to provide a positive and accessible user experience for all users. Through responsive design and accessibility considerations, users will be able to access and use the website effectively across a range of devices and screen sizes. 
+Although responsiveness was not explicitly included as a user story, it is considered a fundamental requirement for any modern web application. The application has been designed to provide an accessible and user-friendly experience across a range of devices and screen sizes, ensuring all users can interact with the application effectively.
 
-The use of local storage allows users to save their financial data for future use, eliminating the need to repeatedly enter the same information and improving convenience. 
+The implementation of local storage allows users to save their financial information between sessions, removing the need to repeatedly enter the same data and improving the overall user experience.
 
-The core feature of the application is its ability to automatically calculate income, expenses, and remaining balance, helping users track their finances more effectively. 
+The application's core functionality is its ability to automatically calculate income, expenses, and the remaining balance, enabling users to monitor their finances more accurately and efficiently.
 
-Additional input fields allow users to customise their financial records, providing greater flexibility and ensuring they are not restricted to predefined categories. 
+Additional input fields allow users to customise their financial records by adding as many income and expense entries as required. This provides greater flexibility and ensures users are not restricted by a fixed number of input fields.
 
-Financial information is organised into income and expense categories, making it easier for users to understand and analyse their spending habits. 
+Grouping income and expense information into categories makes financial data easier to understand and enables users to identify where their money is being earned and spent.
 
-Using engaging visuals, such as a pie chart, to display expense information helps users understand how their income is distributed across different spending categories, making the data easier to interpret. 
+Finally, the use of a pie chart provides a clear visual representation of spending across different categories. Presenting financial data visually makes it easier for users to interpret their spending habits and identify areas where they may be able to improve their budgeting.
 
 # Website Structure
 
 The website will be structured to provide a clear and intuitive user experience. 
 
-The homepage will introduce the purpose of the application and provide users with a helpful "How to use" guide, as well as having call-to-action buttons. From there, users will be able to navigate to a financial inputs sections, where they can enter their income and expenses data. Once the information has been submitted, JavaScript will automatically calculate totals and display a financial summary, including the user's remaining balance and a helpful doughnut chart to visualise their expenditures. 
+The homepage will introduce the purpose of the application and provide users with a helpful "How to Use" guide, as well as having call-to-action buttons. From there, users will be able to navigate to a financial input sections, where they can enter their income and expense data. Once the information has been entered, JavaScript will automatically calculate totals and display a financial summary, including the user's remaining balance and a helpful doughnut chart to visualise their expenditure. 
 
-The website will use a responsive layout to ensure all content remains accessible and easy to use across mobile, tablet, and desktop devices. Navigation and page elements will be kept simple and intuitive, as the website is focused on a small number of core features. 
+The website will use a responsive layout to ensure all content remains accessible and easy to use across mobile, tablet, and desktop devices. Navigation and page elements will be kept simple and intuitive, as the website is focuses on a small number of core features. 
 
 By limiting the number of pages and reducing unnecessary complexity, users will be able to navigate the application more easily and remain focused on its primary purpose: managing their finances. This streamlined approach will improve usability, reduce confusion, and create a more efficient user experience.
 
 ## User Journey
 
-When users first visit the homepage, they are presented with a navigation bar that provides quick access to all sections of the application. Below this, the hero banner introduces the application with a brief description and encourages users to begin managing their finances.
+When users first visit the homepage, they are presented with a navigation bar that provides quick access to main sections of the application. Below this, the hero banner introduces the application with a brief description and encourages users to begin managing their finances.
 
-Users can either click the "How to Use" button or scroll down to access a dedicated section explaining how to use the application effectively. This guidance is intended to help new users understand the application's features before they begin. Once they are ready, they can select any of the available call-to-action buttons to navigate to the calculation page.
+Users can either click the "How to Use" button or scroll down to access a dedicated section explaining how to use the application effectively. This guidance is intended to help new users understand the application's features before they begin. Once they are ready, they can select one of the available call-to-action buttons to navigate to the calculation page.
 
-On the calculation page, users can immediately begin entering their financial information by providing a description, numerical amount, and category for each income or expense.
+On the calculation page, users can immediately begin entering their financial information by providing a description, numerical amount, and category for each income or expense entry.
 
-As data is entered, the application automatically performs the necessary calculations and updates the financial summary in real time. Separate totals are calculated for income and expenses, while a final balance is displayed by subtracting the total expenses from the total income. This provides users with an instant overview of their current financial position.
+As data is entered, the application automatically performs the required calculations and updates the financial summary in real time. Separate totals are calculated for income and expenses, while a final balance is displayed by subtracting the total expenses from the total income. This provides users with an instant overview of their current financial position.
 
-At the bottom of the page, users are presented with a doughnut chart that visually represents their expense data. The chart automatically updates as expenses are added, allowing users to easily compare spending across different categories and gain a clearer understanding of where their money is being spent.
+At the bottom of the page, users are presented with a doughnut chart that visually represents their expense data. The chart automatically updates as expenses are added or modified, allowing users to easily compare spending across different categories and gain a clearer understanding of where their money is being spent.
+
+If a user attempts to access an invalid or non-existent page, they are automatically redirected to the custom 404 error page. This page clearly communicates that the requested page could not be found and provides a simple, intuitive link that allows users to quickly navigate back to the homepage, ensuring they can continue using the website without unnecessary frustration.
 
 # Website Skeleton
 
 ## Wireframes
 
-These wireframes were created during the planning stages of my project, to establish a basic idea of the layout and generate ideas for the functions to include. They helped to visualise the placement of key information and features, as well as plans to keep an organised and clean interface. 
+These wireframes were created during the planning stages of my project to establish a initial layout structure and generate ideas for the functionality to include. They helped to visualise the placement of key information and features, as well as supporting the development of an organised and clean interface. 
 
 ### Home page
 
-The homepage was always going to be the easiest to maintain as the plan was to keep it simple, with a minimal layout to not take focus from the key features on the calculation page and avoid overwhelming users.
+The homepage was designed to be simple and easy to maintain, as the plan was to keep it simple, with a minimal layout that keeps focus on the key features on the calculation page and avoid overwhelming users.
 
-The navigation bar was designed with minimal links for easy, non-complicated navigation across the web application.
+The navigation bar was designed with minimal links for easy, clear and straightforward navigation across the web application.
 
-The hero banner was for a simple welcome and introduction of the application.
+The hero banner was for a simple welcome and introduction to the application.
 
 The "How to use" section was designed to provide a simple explanation for users to understand how to use the application.
 
-Mulitple call-to-action buttons were added to improve navigation for users by giving them different ways to access the calculation page from any point on the home page.
+Multiple call-to-action buttons were added to improve navigation for users by giving them different ways to access the calculation page from any point on the homepage.
 
 ![Navbar and hero banner](/assets/images/wireframes_home-page_navbar_and_hero-banner.png)
 
@@ -270,13 +273,19 @@ Mulitple call-to-action buttons were added to improve navigation for users by gi
 
 ### Calculation page
 
-The calculation page was where the wireframes plan changed the most. As the project was developing, new features were added and removed, that shifted the layout and purpose of the application. For example, in the wireframe image below, there was going to be a feature that allowed users to imput how frequently they received or paid a particular input.
+The calculation page was where the wireframes design changed the most. As the project was developing, new features were added and removed, that influenced the layout and purpose of the application. For example, in the wireframe image below, there was going to be a feature that allowed users to input how frequently they received or paid a particular entry.
 
 The initial design of this page was going to be too simple, that I felt it wasn't going to meet the needs of users. By only simply having input fields for data and not having a section for the data to be calculated and presented to users, would have made for a bad user experience.
 
 In the calculation page wireframe, I designed the layout for users to instantly see the areas they'd need to interact with. This would make it easier for users to understand what is needed from them and how the application works.
 
 ![Inputs](/assets/images/wireframes_calculation-page_inputs.png)
+
+### Error 404 page
+
+The 404 error page wireframe was intentionally kept simple, as its primary purpose is to clearly communicate that the requested page could not be found while providing users with a straightforward way to navigate back to the home page. The minimal layout helps keep the message clear and avoids unnecessary distractions during the error experience.
+
+![404](/assets/images/wireframe_404-page.png)
 
 ## Page layout and Interface elements
 
@@ -367,6 +376,12 @@ The legend was designed to help users easily identify the different sections of 
 ![Doughnut chart](/assets/images/doughnut-chart_image.png)
 
 The doughnut chart was added as a feature to provide users with a visual representation of their expenses in an engaging and easy-to-understand format. Each section of the chart represents a different expense category and dynamically updates to display only categories that contain entered data, ensuring the visualisation remains relevant and accurate.
+
+### Error 404 page
+
+![404](/assets/images/error-404-page.png)
+
+The custom 404 error page is displayed whenever a user attempts to access a page that does not exist, such as by entering an incorrect URL. It clearly informs users that the requested page cannot be found and provides a prominent button that allows them to return to the home page. This improves the overall user experience by offering a simple, intuitive navigation path back to the main website, reducing confusion and preventing users from reaching a dead end.
 
 ## Responsiveness
 
@@ -534,6 +549,8 @@ Essentially, localStorage is persistant, data will remain after refreshing the p
 ![index.HMTL](/assets/images/index.html_W3C_HTML_check.png)
 ### calculation-page.HTML (passed) 
 ![calculation-page.HTML](/assets/images/calculation-page.html_W3C_HTML_check.png)
+### 404.HTML (passed)
+![404.HTML](/assets/images/404-page.html_W3C_HTML_check.png)
 ### styles.css (passed) 
 ![styles.css](/assets/images/styles.ccs_W3C_CSS_check.png)
 
@@ -543,8 +560,36 @@ Essentially, localStorage is persistant, data will remain after refreshing the p
 #### index.HTML (passed) 
 ![index.HTML](/assets/images/index.html_lighthouse_pass.png)
 
-#### calculation-page (passed) 
+#### calculation-page.HTML (passed) 
 ![calculation-page.HTML](/assets/images/calculation-page.html_lighthouse_pass.png)
+
+#### 404.HTML (passed)
+![404.HTML](/assets/images/404.html_lighthouse_pass.png)
+
+### PageSpeed Insights ([PageSpeed Insights](https://pagespeed.web.dev/))
+
+After finishing my project, I used this website to check the new performance, accessibility, best practices and SEO scores for every page for both mobile and desktop.
+
+#### Home page
+##### Mobile
+![Mobile](/assets/images/website_speed_test_mobile_home-page.png)
+##### Desktop
+![Desktop](/assets/images/website_speed_test_desktop_home-page.png)
+
+#### Calculation page
+
+The mobile version of this page's performance fluxuates between 89 - 92
+
+##### Mobile
+![Mobile](/assets/images/website_speed_test_mobile_calculation-page.png)
+##### Desktop
+![Desktop](/assets/images/website_speed_test_desktop_calculation-page.png)
+
+#### Error 404 page
+##### Mobile
+![Mobile](/assets/images/website_speed_test_mobile_404-page.png)
+##### Desktop
+![Desktop](/assets/images/website_speed_test_desktop_404-page.png)
 
 ## JSLint (https://www.jslint.com/branch-v2020.11.6/index.html) - errors by function
 (Selected options - Assume... a browser and Tolerate... long lines + for statement)
@@ -1158,7 +1203,7 @@ Above is this latest version of JSLint, tested after making a bunch of changes t
 
 The testing demonstrated that users were able to successfully record both income and expense entries, with totals being calculated and updated automatically. The actual results matched the expected outcomes for each test case, confirming that the feature functioned as intended. Overall, the feature met the acceptance criteria defined in the user story and fulfilled its intended functionality.
 
- 2. “As a person wanting to see how my finances balance, it would be really helpful to have blank input spaces to add my own individual incomes and expenses. This would allow me to put niche names to each section that isn’t a “normal” income or expense.” Feature: Ability to input own descriptions, amounts and select categories
+ 2. “As a user wanting to see how my finances balance, it would be really helpful to have blank input spaces to add my own individual incomes and expenses. This would allow me to put niche names to each section that isn’t a “normal” income or expense.” Feature: Ability to input own descriptions, amounts and select categories
 
 ### Tested Scenario - Expected Result
 
@@ -1181,7 +1226,7 @@ The testing demonstrated that users were able to successfully enter their own de
 
 The testing demonstrated that users were able to freely add and remove input fields using the provided buttons. The feature supports an unlimited number of input fields, allowing users flexibility when entering data. However, adding a large number of inputs may impact page performance due to the increased amount of content being processed and displayed. The only thing that happened unexpectedly, was an additional delete button appearing under the original input field section after a page reload.
 
- 4. “As a person who wants to budget better, I want to see specifically where I’m wasting money, so that I can make reasonable cuts to my expenses and save money more responsibly.“ Feature: Income and expense inputs categorised and grouped
+ 4. “As a user who wants to budget better, I want to see specifically where I’m wasting money, so that I can make reasonable cuts to my expenses and save money more responsibly.“ Feature: Income and expense inputs categorised and grouped
 
 ### Tested Scenario - Expected Result
 
@@ -1308,6 +1353,9 @@ I was disappointed that I wasn’t able to include the additional feature of spe
 ![Calculation page](/assets/images/final_screenshots_calculation-page_2_mobile.png)
 ![Calculation page](/assets/images/final_screenshots_calculation-page_3_mobile.png)
 
+#### Error 404 page
+![404 page](/assets/images/final_screenshots_404-page_mobile.png)
+
 ### Tablets and larger (992px and up)
 #### Home page
 ![Home page](/assets/images/final_screenshots_home-page_1_tablet.png)
@@ -1315,6 +1363,9 @@ I was disappointed that I wasn’t able to include the additional feature of spe
 #### Calculation page
 ![Calculation page](/assets/images/final_screenshots_calculation-page_1_tablet.png)
 ![Calculation page](/assets/images/final_screenshots_calculation-page_2_tablet.png)
+
+#### Error 404 page
+![404 page](/assets/images/final_screenshots_404-page_tablet.png)
 
 ### Desktop and larger (1200px and up)
 #### Home page
@@ -1324,6 +1375,9 @@ I was disappointed that I wasn’t able to include the additional feature of spe
 ![Calculation page](/assets/images/final_screenshots_calculation-page_1_laptops.png)
 ![Calcuation page](/assets/images/final_screenshots_calculation-page_2_laptops.png)
 
+#### Error 404 page
+![404 page](/assets/images/final_screenshots_404-page_laptop.png)
+
 ### Larger screens (1200px and up)
 #### Home page
 ![Home page](/assets/images/final_screenshots_home-page_1_larger_laptops.png)
@@ -1331,6 +1385,9 @@ I was disappointed that I wasn’t able to include the additional feature of spe
 #### Calculation page
 ![Calculation page](/assets/images/final_screenshots_calculation-page_1_larger_laptops.png)
 ![Calculation page](/assets/images/final_screenshots_calculation-page_2_larger_laptops.png)
+
+#### Error 404 page
+![404 page](/assets/images/final_screenshots_404-page_larger_screens.png)
 
 ## Further improvements that could be made
 
@@ -1351,7 +1408,7 @@ Here is a list of further improvements I would make with extra knowledge and tim
 
 ## Media 
 - Error 404 page image, generated by ChatGPT
-![Error 404 page image](/assets/images/error404_image.png)
+![Error 404 page image](/assets/images/error404_image.webp)
 - Favicon image, generate by ChatGPT (resized by me)
 
 ![Favicon](/assets/images/favicon_image_180x180.png)
