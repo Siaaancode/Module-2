@@ -22,7 +22,7 @@ function createChart() {
     borderWidth: 5,
     data: [],
     label: "Expenses"
-            }],
+            }]
         },
         options: {
             animation: false,
